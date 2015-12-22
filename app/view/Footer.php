@@ -7,8 +7,8 @@ Beschreibung: -->
 
 <!--Sprint 3, Gruppe 4 Onlineshop
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
-UserStory: 
-Task:
+UserStory: 270 Als Kunde möchte ich ein in den wichtigesten Funktionen fertiges Ergebnis sehen
+Task: 270-1 (#10329) Zusammenführen
 Zeitaufwand: 0,5 Stunde
 Beschreibung: Es werden die Links zu den Kategorien eingefügt. -->
 
