@@ -6,12 +6,15 @@ Aufwand: 2 Stunde -->
 
 <!-- Sprint 2, Gruppe 4 Onlineshop, Version 1
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
-UserStory:
-Task:
-Zeitaufwand: 
-Beschreibung: -->
+UserStory: 110 Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben
+Task: 110-2 (#10190) Ordnerstuktur anlegen
+Zeitaufwand: 0,25 Stunden
+Task: 110-3 (#10207) URL Behandlung erstellen
+Zeitaufwand: 6 Stunden
+Beschreibung: Es wird die Klasse mit der URL-Behandlung erstellt. -->
 
 <?php
+
 // Sprint 2 Marcel Riedl Start
 class App {
 
@@ -47,4 +50,6 @@ class App {
         }
     }
 
-}// Sprint 2 Marcel Riedl Ende
+}
+
+// Sprint 2 Marcel Riedl Ende
