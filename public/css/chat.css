@@ -1,0 +1,131 @@
+﻿/*--Sprint 4, Gruppe 4 
+Verfasser: Renato Cabriolu, Matrikelnummer: 3112468
+UserStory: (330-2)  Als Kunde möchte ich mit anderen chatten
+Task: Chat Design erarbeiten 
+Aufwand: 3 Stunden
+-->*/
+.chatbox{
+	position:fixed;
+	right:20px;
+	bottom:0px;
+	width:250px;
+}
+
+.chatbody{
+	background:#E7E9EE;
+	height:400px;
+	padding:5px 0px;
+}
+
+.chatkopf,.nachrichtenkopf{
+	background:#232a31;
+	color:white;
+	padding:15px;
+	font-weight:bold;
+	cursor:pointer;
+	border-radius:5px 5px 0px 0px;
+}
+
+.nachrichtenbox{
+	position:fixed;
+	bottom:-5px;
+	width:250px;
+	background:white;
+	border-radius:5px 5px 0px 0px;
+}
+
+.nachrichtenkopf{
+	background:#2db6d8;
+}
+
+.nachrichten_body{
+	background:#E7E9EE;
+	height:200px;
+	font-size:12px;
+	padding:15px;
+	overflow:auto;
+	overflow-x: hidden;
+}
+
+.nachrichten_input{
+	width:100%;
+	border: 1px solid white;
+	border-top:1px solid #DDDDDD;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+.close{
+	float:right;
+	cursor:pointer;
+}
+
+.minimize{
+	float:right;
+	cursor:pointer;
+	padding-right:5px;
+}
+
+.user{
+	position:relative;
+	padding:10px 30px;
+}
+
+.user:hover{
+	background:#f8f8f8;
+	cursor:pointer;
+}
+
+.user:before{
+	content:'';
+	position:absolute;
+	background:#2ecc71;
+	height:10px;
+	width:10px;
+	left:10px;
+	top:15px;
+	border-radius:6px;
+}
+
+.nachrichten_partner{
+	position:relative;
+	background:#22bb5f;
+	padding:10px;
+	min-height:10px;
+	margin-bottom:5px;
+	margin-right:10px;
+	border-radius:5px;
+}
+
+.nachrichten_partner:before{
+	content:"";
+	position:absolute;
+	width:0px;
+	height:0px;
+	border: 10px solid;
+	border-color: transparent #22bb5f transparent transparent;
+	left:-20px;
+	top:7px;
+}
+
+.nachrichten_eigene{
+	background:#8FE1E0;
+	padding:10px;
+	min-height:15px;
+	margin-bottom:5px;
+	position:relative;
+	margin-left:10px;
+	border-radius:5px;
+}
+
+.nachrichten_eigene:after{
+	content:"";
+	position:absolute;
+	width:0px;
+	height:0px;
+	border: 10px solid;
+	border-color: transparent transparent transparent #8FE1E0;
+	right:-20px;
+	top:7px;
+}

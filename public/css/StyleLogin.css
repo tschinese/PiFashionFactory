@@ -1,0 +1,32 @@
+#s{
+	
+	
+	margin-bottom: 100px;
+	margin-top: 50px;
+	background-color: black;
+	padding-left: 10%;
+	color: rgb(51,122,183);
+    border-radius: 25px;
+    border: 2px solid rgb(51,122,183);
+    padding-left: 50px;
+	padding-top: 10px;
+	height: 200px;
+}
+
+.space{
+	margin-bottom: 5px;
+	
+}
+.space2{
+	margin-bottom: 10px;
+	
+}
+#short{
+	float:left;
+	margin-left: 10px;
+	padding-top: 9px;
+}
+#short2{
+	float:left;
+	margin-right: 5px;
+}
