@@ -1,11 +1,11 @@
-<!-- Sprint 5, Gruppe 4 Onlineshop, Datum: 12.12.2015
+<!-- Sprint 5, Gruppe 4 Onlineshop, Datum: 03.01.2016
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
 UserStory: 410 Als Admin möchte ich weitere Funktionen im Backend-Bereich haben
 Task: 410-1 (#10601) Farben hinzufügen und löschen
 Task: 410-2 (#10602) Groesen hinzufügen und löschen
 Task: 410-3 (#10603) Hersteller hinzufügen und löschen
 Task: 410-4 (#10604) "Produkt anlegen und löschen" überarbeiten
-Aufwand: 1 Stunde
+Aufwand: jeweils 0,25 Stunde
 Beschreibung: Verlinkungen zu den Controllern erstellen
 -->
 
@@ -25,7 +25,8 @@ Aufwand: 1 Stunde
 Beschreibung: Eine Tabelle für alle Produkte (zu sehen im Backend). 
 -->
 
-<!-- Sprint 3, Gruppe 4 Onlineshop, Verfasser Marcel Riedl, Datum: 23.11.2015
+<!-- Sprint 3, Gruppe 4 Onlineshop, Datum: 23.11.2015
+Verfasser: Marcel Riedl, Matrikelnummer: 3113845
 UserStory: 270 Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
 Task: 270-1 (#10329) Zusammenführen
 Auswand: 2 Stunden
@@ -45,6 +46,7 @@ Verfasser: Marcel Riedl Matrikelnummer: 3113845
 UserStory:  Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
 Task: #10003 Produkte anlegen
 Zeitaufwand: 8 Stunden
+Beschreibung: Diese Userstory ist nur mit aufgeführt, um die Bearbeitung der Produkte zuzuorndnen
 -->
 
 <!--Sprint: 1
@@ -61,7 +63,12 @@ Zeitaufwand: 8 Stunden
         <div class="row">
             <div class="col-md-2">
                 <ul class="nav nav-sidebar">
+                    <!-- Sprint 1 Renato Cabriolu Ende -->
+                    <!-- Sprint 5 Marcel Riedl Start -->
                     <li class="active"><a href="index.php?url=Produktcontroller">Produkt Anlegen <span class="sr-only">(aktuell)</span></a></li>
+                    <li class="active"><a href="index.php?url=ProduktloeschenController">Produkt löschen <span class="sr-only">(aktuell)</span></a></li>
+                    <!-- Sprint 5 Marcel Riedl Ende -->
+                    <!-- Sprint 1 Renato Cabriolu Start -->
                     <li><a href="#">Berichte</a></li>
                     <!-- Sprint 1 Renato Cabriolu Ende -->
                     <!-- Sprint 4 Kerstin Gräter Start-->
@@ -90,17 +97,21 @@ Zeitaufwand: 8 Stunden
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generisches Platzhalter-Bild">
                         <!-- Sprint 1 Renato Cabriolu Ende -->
-                        <!-- Sprint 3 Marcel Riedl Start -->
+                        <!-- Sprint 5 Marcel Riedl Start -->
+                        <h4><span class="text-muted"><a href="index.php?url=ProduktBackendController">Produkt bearbeiten</a></span></h4>
+                        <!-- überarbeitet 
+                        Sprint 3 Marcel Riedl Start
                         <h4><span class="text-muted"><a href="index.php?url=Produktcontroller">Neues Produkt anlegen</a></span></h4>
-                        <!-- Sprint 3 Marcel Riedl  Ende -->
+                        Sprint 3 Marcel Riedl  Ende -->
+                        <!-- Sprint 5 Marcel Riedl Ende -->
                         <!-- Sprint 1 Renato Cabriolu Start -->
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generisches Platzhalter-Bild">
                         <!-- Sprint 1 Renato Cabriolu Ende -->
-                        <!-- Sprint 3 Marcel Riedl Start -->
+                        <!-- Sprint 5 Marcel Riedl Start -->
                         <h4><span class="text-muted"><a href="index.php?url=GroeseController">Größen bearbeiten</a></span></h4>
-                        <!-- Sprint 3 Marcel Riedl Ende -->
+                        <!-- Sprint 5 Marcel Riedl Ende -->
                         <!-- Sprint 1 Renato Cabriolu Start -->
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder">
@@ -114,9 +125,9 @@ Zeitaufwand: 8 Stunden
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generisches Platzhalter-Bild">
                         <!-- Sprint 1 Renato Cabriolu Ende -->
-                        <!-- Sprint 3 Marcel Riedl Start -->
+                        <!-- Sprint 5 Marcel Riedl Start -->
                         <h4><span class="text-muted"><a href="index.php?url=HerstellerController">Hersteller bearbeiten</a></span></h4>
-                        <!-- Sprint 1 Marcel Riedl Ende -->
+                        <!-- Sprint 5 Marcel Riedl Ende -->
                         <!-- Sprint 1 Renato Cabriolu Start -->
                     </div>
                 </div>

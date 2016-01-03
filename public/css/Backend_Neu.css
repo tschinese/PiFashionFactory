@@ -1,0 +1,56 @@
+/*
+Sprint 5 Gruppe 4 Onlineshop Datum: 03.01.2016
+Verfasser: Marcel Riedl, Matrikelnummer: 3113845
+User Story: 430 Als Programmierer möchte ich verschiedene Bereiche neu designen.
+Task: 430-1 (#10604) Backend-Bereich designen  
+Zeitaufwand:  Stunde 
+Beschreibung: Es wird hier die CSS für den Backend Bereich erstellt.
+*/
+
+// Sprint 5 Marcel Riedl Start
+
+// Für alles anwendbar
+html {
+    font-size: 100%;
+    font-family: Verdana, sans-serif;
+}
+
+header, body, main, div {
+    display: block;
+}
+
+// Design für den Header
+header {
+    position: relative;
+    padding: 0 0rem 1rem 0rem;
+    padding-top: 1rem;
+}
+
+// Design für den body
+body {
+    position: relative;
+}
+
+// Design für Main
+main {
+    display: block;
+    
+}
+
+// Design für div
+div {
+    position: relative;
+    
+}
+
+// Design für tables
+table{
+    
+}
+thead{
+    
+}
+tbody{
+    
+}
+// Sprint 5 Marcel Riedl Ende
