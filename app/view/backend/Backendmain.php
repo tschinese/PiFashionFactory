@@ -42,7 +42,7 @@ Beschreibung: Er wird hier eine Liste aller verfügbarer Produkte angezeigt
 
 <!--Sprint 1, Gruppe 4 Onlineshop Datum: 23.10.2015
 Verfasser: Marcel Riedl Matrikelnummer: 3113845
-UserStory: Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
+UserStory:  Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
 Task: #10003 Produkte anlegen
 Zeitaufwand: 8 Stunden
 -->

@@ -3,7 +3,7 @@ Sprint 5 Gruppe 4 Onlineshop
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
 User Story: 410 Als Admin möchte ich weitere Funktionen für den Backend-Bereich haben.
 Task: 410-1 (#10601) Farbe hinzufügen und löschen
-Zeitaufwand:
+Zeitaufwand: 1 Stunde 
 Beschreibung: Hier wird der View für Farben erstellt. -->
 
 <!-- Sprint 5 Marcel Riedl Start -->
