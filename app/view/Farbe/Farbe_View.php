@@ -40,11 +40,32 @@ Beschreibung: Hier wird der View für Farben erstellt. -->
     </div>
     <br>
     <div>
-        <!-- Formular um Farben hinzufügen oder löschen zu können -->
+        <!-- Formular um Farben löschen zu können -->
         <form action="index.php?url=FarbeController" method="post">
-            <label for="farbe">Farbe: </label><input name="farbe" type="text"><br>
-            <input type="submit" name="hinzufuegen" value="Hinzufügen"><br>
+            <label for="farbe">zu löschende Farbe: </label>
+            <select name="farbe">
+                <?php
+                // neuer Counter für die Auswahlmöglichkeiten
+                $b = 0;
+                // while-Schleife um die Auswahlmöglichkeiten zu bestimmen
+                while ($b < $total) {
+                    // Ausgabe der Möglichkeiten
+                    echo '<option>' . $data[$b]['farbe'] . ' </option>';
+                    // Counter wird erhöht
+                    $b++;
+                }
+                ?>
+            </select><br>
+            <!-- Bestätigungsbutton -->
             <input type="submit" name="loeschen" value="Löschen"><br>
+        </form>
+    </div>
+    <!-- Formular um Farben hinzufügen zu können -->
+    <div>
+        <form action="index.php?url=FarbeController" method="post">
+            <label for="hinzufarbe">hinzuzufügende Farbe: </label> <input type="text" name="hinzufarbe"><br>
+            <!-- Bestätigungsbutton -->
+            <input type="submit" name="hinzufuegen" value="Hinzufügen">
         </form>
     </div>
     <!-- Formular um zurück zum Hauptmenu des Backends zukommen -->

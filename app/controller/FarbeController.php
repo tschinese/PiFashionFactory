@@ -8,16 +8,17 @@
 // Beschreibung: Hier wird der Controller für Farbe erstellt 
 //
 // Sprint 5 Marcel Riedl Start
+// Controller aus Sprint 2 Marcel Riedl, Überarbeitet Sprint 3 Renato Cabriolu
 class FarbeController extends Controller {
 
     // auszuführende function
     function index() {
         // Objekt der Klasse Farbe_Model erstellen
         $farbe = $this->model('Farbe_Model');
-		// Zu übergebende Daten ermitteln
-		$data = $farbe->anzeigen();
-		
-		// views zusammenführen
+        // Zu übergebende Daten ermitteln
+        $data = $farbe->anzeigen();
+
+        // views zusammenführen
         $this->view('backend/Backendheader');
         // function anzeigen aus dem Farbe_Model, um Daten im View aufbereiten zu können
         $this->view('Farbe/Farbe_View', $data);
@@ -25,7 +26,7 @@ class FarbeController extends Controller {
         // Ausführen sobald der Button hinzufuegen aus dem Farbe_View gedrückt wird
         if (isset($_POST['hinzufuegen'])) {
             // Wert aus dem Textfeld in Farbe_View bekommen
-            $fa = $_POST['farbe'];
+            $fa = $_POST['hinzufarbe'];
             // function hinzufuegen aus dem Farbe_Model aufrufen
             $farbe->hinzufuegen($fa);
         }

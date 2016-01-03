@@ -1,4 +1,15 @@
-<!--Sprint 4, Gruppe 4 Onlineshop Datum: 07.12.2015 Version 3
+<!-- Datei wurde umbenannt: alter Name: Produkt_Anzeigen.php 
+Neuer Name: Produkt_Löschen.php -->
+
+<!-- Sprint 5, Gruppe 4 Onlineshop, Datum: 03.01.2016, Version 4
+Verfasser: Marcel Riedl, Matrikelnummer: 3113845
+Userstory: 410 Als Admin möchte ich weitere Funktionen im Backend-Bereich haben.
+Task: 410-4 (#10609) "Produkt anlegen und löschen" bearbeiten
+Aufwand: 0,5 Stunden
+Beschreibung: Änderungen bei der Auswahlmöglichkeit
+-->
+
+<!-- Sprint 4, Gruppe 4 Onlineshop Datum: 07.12.2015 Version 3
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
 UserStory: 370 Als Entwickler möchte ich, dass der Onlinshop auf dem Hochschulserver läuft.
 Task: 370-2 (#10576) Änderungen im Produkt implementieren
@@ -16,7 +27,7 @@ Beschreibung: Er wird hier eine Liste aller verfügbarer Produkte angezeigt, um 
 
 <!--Sprint 2, Gruppe 4 Onlineshop, Datum: 02.11.2015 Version 1
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
-UserStory: Als Programmierer möchte ich meinen Code als Model-View-Controller (MVC) haben.
+UserStory: 110 Als Programmierer möchte ich meinen Code als Model-View-Controller (MVC) haben.
 Task: 110-2 (#10190) Eigenen Code an MVC anpassen
 Aufwand: 0,5 Stunden
 Beschreibung: Es wird ein View aller Produkte eines einzelnen Herstellers erstellt. 
@@ -24,8 +35,8 @@ Beschreibung: Es wird ein View aller Produkte eines einzelnen Herstellers erstel
 
 <!--Sprint 1, Gruppe 4 Onlineshop, Datum: 23.10.2015 Version 1
 Verfasser: Marcel Riedl Matrikelnummer: 3113845
-UserStory: Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
-Task: #10003 Produkte anlegen
+UserStory: 20 Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
+Task: 20-2 #10003 Produkte anlegen
 Zeitaufwand: 8 Stunden
 Beschreibung: 
 -->
@@ -34,15 +45,6 @@ Beschreibung:
 <main>
     <br>
     <h2>Produkt löschen</h2>
-    <div>
-        <br>
-        Geben Sie hier die Produktnummer des zu löschenden Produkts ein:
-        <!-- Formular, um ein Produkt löschen zu können -->
-        <form method="post">
-            <font size="+1">Produktnummer: </font><input type="number" name="produktnr"><br>
-            <input type="submit" name="loeschen" value="Produkt löschen">
-        </form>
-    </div>
     <div class="table-responsive">
         <!-- Tabelle aller Produkte -->
         <table class="table table-striped">
@@ -85,11 +87,42 @@ Beschreibung:
             ?>
         </table>       
     </div>
+    <div>
+        <br>
+        Geben Sie hier die Produktnummer des zu löschenden Produkts ein:
+        <!-- Formular, um ein Produkt löschen zu können -->
+        <!-- Sprint 3 Marcel Riedl Ende -->
+        <!-- Sprint 5 Marcel Riedl Start -->
+        <form action="index.php?url=ProduktloeschenController" method="post">
+            <label for="produktnr"> Produktnummer: </label> 
+            <select name="produktnr">
+                <?php
+                // neuer Counter
+                $b = 0;
+                // Ausgabe der Auswahlmöglichkeiten
+                while ($b < $total) {
+                    echo '<option>' . $data[$b]['Produktnummer'] . '</option>';
+                    // Counter erhöhen
+                    $b++;
+                }
+                ?>
+            </select>
+            <!-- Bestätigungsbutton -->
+            <input type="submit" name="loeschen" value="Produkt löschen">
+        </form>
+        <!-- Sprint 3 Marcel Riedl Alt Start
+        <form method="post">
+            <font size="+1">Produktnummer: </font><input type="number" name="produktnr"><br>
+            <input type="submit" name="loeschen" value="Produkt löschen">
+        </form> Sprint 3 Marcel Riedl alt Ende -->
+        <!-- Sprint 5 Marcel Riedl Ende -->
+        <!-- Sprint 3 Marcel Riedl Start -->
+    </div>
 </main>
 <!-- Sprint 3 Marcel Riedl Ende -->
-<!--Sprint 2: ALT
+<!--Sprint 2 Marcel Riedl Start: ALT
 
 Produkte anzeigen <br />
 Anmerkungen: Notieren Sie sich die richtige Produktnummer
 <table> <tr> <td> Produktnummer </td> <td> Produktname </td> </tr>
-Sprint 2 Ende-->
+Sprint 2 Marcel Riedl Ende-->

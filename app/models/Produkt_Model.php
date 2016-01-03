@@ -1,5 +1,12 @@
 <?php
 
+// Sprint 5, Gruppe 4 Onlineshop, Datum: 03.01.2016
+// Verfasser: Marcel Riedl, Matrikelnummer: 3113845
+// Userstory: 410 Als Admin möchte ich weitere Funktionen im Backend-Bereich haben
+// Task: 410-4 (#10609) "Produkte anlegen und löschen" überarbeiten
+// Zeitaufwand: 
+// Beschreibung: Neue function backendanlegen
+// 
 //Sprint 4, Gruppe 4 Onlineshop, 
 //Verfasser: Hanim Yerlikaya, Datum: 08.12.2015
 //UserStory: Als Kunde möchte ich eine Bildergalerie haben für die Produkte
@@ -55,6 +62,64 @@ class Produkt_Model {
         
     }
 
+    // Sprint 1 Marcel Riedl Ende
+    // Sprint 5 Marcel Riedl Start
+    function backendanlegen() {
+        // Objekt von Connect_Mysql erstellen
+        // Connect_Mysql von Kerstin Gräter
+        $this->con = new Connect_Mysql();
+        // Verbindung zur Datenbank herstellen
+        $con = $this->con->verbinden();
+
+        // SQL Statement für die Farben erstellen
+        $sql0 = 'select farbe from farbe';
+        // Statement vorbereiten
+        $stmt0 = $con->prepare($sql0);
+        // Statement ausführen
+        $stmt0->execute();
+        // Daten als Array in Variable speichern
+        $dat0 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // SQL Statement für Hersteller
+        $sql1 = 'select hersteller from hersteller';
+        // Statement vorbereiten
+        $stmt1 = $con->prepare($sql1);
+        // Statement ausführen
+        $stmt1->execute();
+        // Daten als Array in Variable speichern
+        $dat1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // SQL Statement für Größen
+        $sql2 = 'select groese from groese';
+        // Statement vorbereiten
+        $stmt2 = $con->prepare($sql2);
+        // Statement ausführen
+        $stmt2->execute();
+        // Daten als Array in Variable speichern
+        $dat2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // SQL Statement für Kategorien
+        $sql3 = 'select * from kategorie';
+        // Statement vorbereiten
+        $stmt3 = $con->prepare($sql3);
+        // Statement ausführen
+        $stmt3->execute();
+        // Daten als Array in Variable speichern
+        $dat3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Daten zusammenführen
+        $daten = array(farbe => $dat0, hersteller => $dat1, groese => $dat2, kategorie => $dat3);
+
+        // Connection schließen
+        $con = null;
+        $this->con->schließen();
+
+        // RÜckgabewert
+        return $daten;
+    }
+
+    // Sprint 5 Marcel Riedl Ende
+    // Sprint 1 Marcel Riedl Start
     // function um ein Produkt anlegen zu können
     public function anlegen($name, $hersteller, $farbe, $groesse, $preis, $kategorie, $files) {
         // Sprint 1 Marcel Riedl Ende

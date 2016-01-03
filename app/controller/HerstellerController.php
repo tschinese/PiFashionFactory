@@ -23,7 +23,7 @@ class HerstellerController extends Controller {
         // wird aktiviert sobald Button hinzufuegen im Hersteller_View gedrückt wird
         if (isset($_POST['hinzufuegen'])) {
             // Wert aus dem Textfeld hersteller im Hersteller_View bekommen
-            $her = $_POST['hersteller'];
+            $her = $_POST['hinzuhersteller'];
             // function hinzufuegen aus Hersteller_Model aufrufen
             $hersteller->hinzufuegen($her);
         }

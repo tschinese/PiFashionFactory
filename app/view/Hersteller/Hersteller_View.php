@@ -39,12 +39,35 @@ Beschreibung: Hier wird der View für Hersteller erstellt. -->
             </tbody>
         </table>
     </div>
+    <!-- Formular um einen Hersteller löschen zu können -->
     <div>
-        <!-- Formular um Hersteller hinzufügen oder Löschen zu können -->
-        <form method="post">
-            Hersteller: <input name="hersteller" type="text"><br>
-            <input type="submit" name="hinzufuegen" value="Hinzufügen"><br>
+        <form action="index.php?url=HerstellerController" method="post">
+            <label for="hersteller">zu löschender Hersteller:</label>
+            <!-- Auswahlfeld um zu löschenden Hersteller auszuwählen -->
+            <select name="hersteller">
+                <?php
+                // neuer Counter
+                $b = 0;
+                // Ausgabe der bestehenden Hersteller
+                while ($b < $total) {
+                    // Ausgabe der Auswahlmöglichkeiten
+                    echo '<option>' . $data[$b]['hersteller'] . '</option>';
+                    // Counter erhöhen
+                    $b++;
+                }
+                ?>
+            </select>
+            <!-- Bestätigungsbutton -->
             <input type="submit" name="loeschen" value="Löschen"><br>
+        </form>
+    </div>
+    <!-- Formular um einen Hersteller hinzuzufügen -->
+    <div>
+        <form action="index.php?url=HerstellerController" method="post">
+            <!-- Textfeld um neuen Hersteller hinzuzufügen -->
+            <label for="hinzuhersteller">hinzuzufügender Hersteller:</label> <input name="hinzuhersteller" type="text"><br>
+            <!-- Bestätigungsbutton -->
+            <input type="submit" name="hinzufuegen" value="Hinzufügen"><br>
         </form>
     </div>
     <!-- Formular um zurück zum Hauptmenu des Backends zukommen -->

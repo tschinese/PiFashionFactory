@@ -13,10 +13,10 @@ class GroeseController extends Controller {
     // auszuführende function
     function index() {
         // Objekt von der Klasse Groese_Model erstellen
-        
-		$groese = $this->model('Groese_Model');
-		
-		$data = $groese->anzeigen();
+
+        $groese = $this->model('Groese_Model');
+
+        $data = $groese->anzeigen();
 
         // Views erstellen mit Daten aus der Datenbank
         $this->view('backend/Backendheader');
@@ -26,7 +26,7 @@ class GroeseController extends Controller {
         // Groese in die Datenbank hinzufügen
         if (isset($_POST['hinzufuegen'])) {
             // Wert aus dem Textfeld aus Groese_View bekommen
-            $gr = $_POST['groese'];
+            $gr = $_POST['hinzugroese'];
             // Aufruf der function hinzufuegen aus dem Groese_Model
             $groese->hinzufuegen($gr);
         }

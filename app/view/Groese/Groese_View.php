@@ -39,12 +39,34 @@ Beschreibung: Hier wird der View für die Groese erstellt. -->
             ?>
         </table>
     </div>
+    <!-- Formular um eine Größe zu löschen -->
     <div>
-        <!-- Formular zur Bearbeitung von Groesen-->
         <form method="post">
-            Größe: <input name="groese" type="text"><br>
-            <input type="submit" name="hinzufuegen" value="Hinzufügen"><br>
+            <label for="groese">zu löschende Größe:</label> 
+            <select name="groese">
+                <?php
+                // neuer Counter
+                $b = 0;
+                // Abfrage aller Auswahlmöglichkeiten
+                while ($b < $total) {
+                    // Ausgabe der Möglichkeiten
+                    echo '<option>' . $data[$b]['groese'] . '</option>';
+                    // Erhöhung des Counters
+                    $b++;
+                }
+                ?>
+            </select><br>
+            <!-- Bestätigungsbutton -->
             <input type="submit" name="loeschen" value="Löschen"><br>
+        </form>
+    </div>
+    <!-- Formular um eine Größe hinzuzufügen -->
+    <div>
+        <form action="index.php?url=GroeseController" method="post">
+            <!-- Eingabe der neuen Größe -->
+            <label for="hinzugroese">hinzuzufügende Größe: </label><input name="hinzugroese" type="text"><br>
+            <!-- Bestätigungsbutton -->
+            <input type="submit" name="hinzufuegen" value="Hinzufügen"><br>
         </form>
     </div>
     <!-- Formular um zurück zum Hauptmenu des Backends zukommen -->
