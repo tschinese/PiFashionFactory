@@ -37,7 +37,7 @@ class LoginController extends Controller {
                 }else{
 					
 					 $this->view('Header',[]);
-                    $this->view('main');
+                                         $this->view('main');
 					 $this->view('Footer',[]);
                 }
             }else{

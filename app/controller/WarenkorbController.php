@@ -19,6 +19,8 @@
 
     
     session_start();
+    //Start Sprint 3 Controller des Warenkorbs
+    
     class WarenkorbController extends Controller{
         
         private $warenArray;
@@ -47,7 +49,10 @@
                $this->view('Footer');
             } 
         }
-		public function getArtikelBez(){
+        //Ende Sprint 3
+        
+        // Start Sprint 4 Liefert Daten zu bestellten Waren des Warenkorbs aus der DB für Paypal
+	public function getArtikelBez(){
             //Wenn warenkorb session gesetzt
             if(isset($_SESSION['warenkorb'])){
                 
@@ -63,7 +68,7 @@
                }
 			   return $this->warenArray;
             }
-        }
+        }//Ende Sprint 4
     }
         
     

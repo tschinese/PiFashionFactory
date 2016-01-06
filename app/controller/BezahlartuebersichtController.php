@@ -14,7 +14,7 @@
    
         public function waehlen(){
 			
-			$this->view('Header');
+            $this->view('Header');
             $this->view('Bezahlungsarten/BezahlartUebersichtView');
             $this->view('Footer');
 			

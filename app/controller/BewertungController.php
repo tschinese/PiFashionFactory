@@ -16,6 +16,7 @@
 //Beschreibung: Es wird der Controller der Rezensionssicht im Frontend erstellt. 
 session_start();
 
+// Start Sprint 3 Zur Bewertung
 class BewertungController extends Controller{
    
     private $id;
@@ -45,6 +46,8 @@ class BewertungController extends Controller{
             
         }
     }
+    // Ende Sprint 3 Zur Bewertung
+    
     //Sprint 4 Update zur Prüfung, ob Artikel bereits bestellt
     public function pruefeBestellt($id,$pId){
         
@@ -53,7 +56,7 @@ class BewertungController extends Controller{
         $rezModel = $this->model('BewertungZeigenModel');
         return $rezModel->pruefeBestellung($kundenID,$produktID);
     }
-    
+    //Ende Sprint 4 Update zur Prüfung, ob Artikel bereits bestellt
 }
 
 ?>
