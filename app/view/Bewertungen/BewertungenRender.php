@@ -18,6 +18,7 @@
 
    
 ?>
+<!-- Beginn Sprint 3 -->
 <!DOCTYPE html>
 
 <html>
@@ -67,12 +68,15 @@
             </br>
             </br>
             <hr>
-        
+            
             <!--Falls <nutzer eingeloggt, möglichkeit eine rezension zu erstellen, ansonsten auf login oder registrierungen verweisen -->
   <?php } if(isset($_SESSION['logged'])){
 			
 			$produktID = $data[0]['Produktnummer'];
-			
+                        
+            //Ende Sprint 3
+            
+                        
             //Sprint 4 Task: Rezensionserstellung nur für gekaufte Artikel
             require_once '../app/controller/BewertungController.php';
             $bewertungControl = new BewertungController();
@@ -92,7 +96,9 @@
 			<!-- Falls nicht eingeloggt -->
             Bitte <a href="index.php?url=LoginController/rufView">einloggen</a> 
             oder <a href="index.php?url=Registrieren_Controller/index.php">registrieren</a> um Rezension zu erfassen!
-     <?php  } ?>
+     <?php  }
+     //Ende Sprint 4
+     ?>
            
     </body>
 </html>

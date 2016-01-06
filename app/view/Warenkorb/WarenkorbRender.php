@@ -6,6 +6,9 @@
 //Aufwand: 2 Stunden
 //Beschreibung: Warenkorb view überarbeitet, sodass model getrennt ist.
 
+
+
+// Begin Sprint 3 Christian Frindt
     error_reporting (E_ALL);
 
    
@@ -79,6 +82,7 @@
                                            <td class="produktOrdnungC"  ><?php echo ''.number_format(($data[$loop]['SalePreis']) * $produktAnzahl, 2, ",", "."); ?> EUR</td>
                                        </tr>
                                        <!--Summe berechnen -->
+                                       <!-- Ende Sprint 3 Christian Frindt -->
                                        <!-- Anfang Ridvan 07.12.2015 -->
                                         <?php 
                                         
@@ -106,7 +110,7 @@
                                        }
                                        ?>
                                        <!-- Ende Ridvan 07.12.2015 -->
-                                     
+                                       <!-- Begin Sprint 3 Christian Frindt -->
                                 <?php  
                                }
                             }?>
@@ -134,6 +138,7 @@
                             <input class="myButton" type="submit" value="Waren entfernen">
                         </form>
                     </div>
+                    <!-- Ende Sprint 3 Christian Frindt -->
                     <!-- Ridvan Atacan Anfang 07.12.2015-->
                     <div id="Gutschein">
                         <form name ="gutschein" method ="post">
@@ -164,6 +169,7 @@
                         </form>
                     </div>
                     <!--Kerstin Gräter Ende-->
+                    <!-- Begin Christian Frindt Sprint 3 --> 
                    <a href="index.php?url=BezahlartuebersichtController/waehlen">Bestellen</a>
          <!--Ende else Block -->           
          <?php } ?>       
@@ -172,7 +178,7 @@
         
     </body>
 </html>
-
+ <!-- Ende Christian Frindt Sprint 3 --> 
 
 
 

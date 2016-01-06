@@ -16,7 +16,7 @@
 //Aufwand: 2 Stunden
 //Beschreibung: Es wird der Controller der Rezession im Frontend erstellt. 
 
-
+//Begin Sprint 3
 class BewertungZeigenModel {
 
     private $db;
@@ -50,8 +50,10 @@ class BewertungZeigenModel {
         $this->con = null;
         $this->db->schließen();
     }
+    //Ende Sprint 3
+  
     
-    //Sprint 4 Rezensionerstellung nur wenn true returned wird
+    //Start Sprint 4 Rezensionerstellung nur wenn true returned wird
     public function pruefeBestellung($id,$pId){
         
         $kundenID = $id;
@@ -74,7 +76,7 @@ class BewertungZeigenModel {
             }
         }
         
-    }
+    }//Ende Sprint 4 Rezensionerstellung nur wenn true returned wird
 
 }
 ?>

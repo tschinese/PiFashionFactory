@@ -18,7 +18,7 @@
 //Task: Zusammenführen
 //Aufwand: 15min Stunden
 //Beschreibung: Es wird das >Formular zum login erstellt...getrennt von model -->
-   
+        <!--Sprint 3 Start Christian Frindt -->
 	<!--	<div id=s>
         <form action="index.php?url=LoginController/login" method="post">
             <div class=space><label>Email</label></div><div class=space2><input type="text" name="mail" size="24" maxlength="50"/></div>
@@ -29,7 +29,7 @@
 			<!--Hanims Part Ende 
 		</form>
 		</div>-->
-			
+		<!--Ende Sprint 3 Christian Frindt -->	
 		<!-- Sprint 4 Renato Cabriolu neues designe der eingabemaske-->	
 	<main>
 	<div class="row">
