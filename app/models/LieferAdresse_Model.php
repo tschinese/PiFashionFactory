@@ -1,10 +1,3 @@
-<!-- Ridvan Atacan, 3113837
-    10.11.2015 Group #4 Onlineshop
-    Sprint 2, Task : 140-6 #10204
-    User Story: Als Programmierer möchte ich meine Codes als Model–view–controller (MVC) haben
-    Task: Eigenen Code an MVC anpassen
-    Aufwand: 5 Stunden
- -->
  <!-- Ridvan Atacan, 3113837
     24.11.2015 Group #4 Onlineshop
     Sprint 3, Task : 270-6 #10334
@@ -12,10 +5,18 @@
     Task: Zusammenführen
     Aufwand: 5 Stunden
  -->
+<!-- Ridvan Atacan, 3113837
+    10.11.2015 Group #4 Onlineshop
+    Sprint 2, Task : 140-6 #10204
+    User Story: Als Programmierer möchte ich meine Codes als Model–view–controller (MVC) haben
+    Task: Eigenen Code an MVC anpassen
+    Aufwand: 5 Stunden
+ -->
+
 <?php
 
 
-
+//Sprint 2 Anfang Ridvan Atacan 10.11.2015
 
 class LieferAdresse_Model{
  
@@ -33,6 +34,7 @@ class LieferAdresse_Model{
     }
         
     }
+	//Sprint 3 Anfang Ridvan Atacan 24.11.2015
     //Methode zum Hinzufügen einer Lieferadresse anhand der $_POST- Parameter die vom View übergeben werden
     public function hinzufügen($name,$nname,$strasse,$plz,$kid){
         
@@ -46,6 +48,7 @@ class LieferAdresse_Model{
         
         echo "Die neue Lieferadresse wurde angelegt!</main>";
     }
+	//Sprint 3 Anfang Ridvan Atacan 24.11.2015
     // Methode um die Datenbankverbindung zu trennen
     public function closeDB(){
         $this->db->schließen();
@@ -53,4 +56,5 @@ class LieferAdresse_Model{
     }
     
 }
+//Sprint 2 Ende Ridvan Atacan 10.11.2015
 

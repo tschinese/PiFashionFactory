@@ -1,3 +1,12 @@
+
+ <!-- Ridvan Atacan, 3113837
+    08.12.2015 Group #4 Onlineshop
+    Sprint 4, Task : 360-2 #10522
+    User Story: Als Programmierer baue ich einen Email-Footer ein.
+    Task: Email Footer in automatisch generierte Mails inkludieren 
+    Zeile 72-89
+    Aufwand: 0.5 Stunden
+ -->
 <?php
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Denis Kevljanin, Datum: 05.11.2015
 //UserStory: Als Kunde möchte ich eine automatische Bestellbestätigung per Mail erhalten
@@ -6,7 +15,7 @@
 //Beschreibung: Es wird eine automatich generierte Bestellbestätigung verschickt 
 
 require ('../PHPMailer/PHPMailerAutoload.php');
-require ('../app/models/userdata.php');
+require ('../models/userdata.php');
    
 //Erstellen der Klasse Mail
 class Mail{
@@ -17,7 +26,7 @@ public function mail() {
 
     //Objekte von Userdata und PHPMailer erstellen
     $data = new Userdata();
-    $mail = new PHPMailer();
+    $mail = new PHPMailer;
     //Variablen
     $bestellung = $data->getBestellung();
     $kundennummer = $data->getKundennummer();
@@ -78,7 +87,7 @@ public function mail() {
 
                        Dies ist eine automatisch versendete Nachricht. Bitte antworten Sie nicht auf dieses Schreiben, da die Adresse nur zur Versendung von E-Mails eingerichtet ist. </font>
                       </fieldset>';
-					  $mail->send();
+	//Sprint 4 Ridvan Zeile 77-89
     //Bestätigung über Versand bzw. ErrorInfo
     if(!$mail->send()) {
         echo 'Message could not be sent.';

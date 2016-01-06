@@ -1,4 +1,12 @@
 <!-- Ridvan Atacan, 3113837
+    08.12.2015 Group #4 Onlineshop
+    Sprint 4, Task : 370-10 #10588
+    User Story: Als Entwickler möchte ich, dass der Onlineshop auf dem Hochschulserver läuft.
+    Task: Die Gutschein-Funktion erweitern und in den Bestellvorgang implementieren  
+    Zeile 89-99
+    Aufwand: 5 Stunden
+ -->
+<!-- Ridvan Atacan, 3113837
    24.11.2015 Group #4 Onlineshop
    Sprint 3, Task : 280-1 #10460
    User Story: Als Kunde möchte ich von Rabattaktionen durch Gutschein-Codes profitieren können.
@@ -8,10 +16,10 @@
 <?php
 
 //include '../config/Connect_Mysql.php';
-
+//Sprint 3 Anfang Ridvan Atacan 24.11.2015
 class Gutschein_Model {
 
-    private $query;
+    
     private $sql;
     private $result1;
     private $a;
@@ -72,10 +80,14 @@ class Gutschein_Model {
             $this->result1 = $this->result['GID'];
         }
         if ($ergebnis == "Richtig") {
-            return true;
-        } 
+            echo"Gutschein gültig";
+        } else{
+            echo"Gutschein ungültig";
+        }
         
     }
+	//Sprint 3 Ende Ridvan Atacan 24.11.2015
+    //Sprint 4 Anfang Ridvan 07.12.2015
     public function rabatt($code){
       
         $query = "SELECT Faktor FROM Gutschein WHERE GID =".$code;
@@ -85,6 +97,6 @@ class Gutschein_Model {
         
         Return $this->faktor;
         }
-
+    //Sprint 4 Ende Ridvan 07.12.2015
      
 }

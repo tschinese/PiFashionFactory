@@ -1,3 +1,18 @@
+ <!-- Ridvan Atacan, 3113837
+    08.12.2015 Group #4 Onlineshop
+    Sprint 4, Task : 380-2 #10593
+    User Story: Als Kunde möchte ich getätigte Bestellungen zuücksenden können.
+    Task: Gewählte Bestellung zum eingeloggten Kunden aus der Datenbank lese
+    ab Zeile 150
+    Aufwand: 3 Stunden
+ -->
+<!-- Ridvan Atacan, 3113837
+    24.11.2015 Group #4 Onlineshop
+    Sprint 3, Task : 270-6 #10334
+    User Story: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
+    Task: Zusammenführen
+    Aufwand: 5 Stunden
+ -->
 <!-- Ridvan Atacan, 3113837
     10.11.2015 Group #4 Onlineshop
     Sprint 2, Task : 170-1 #10197
@@ -5,15 +20,10 @@
     Task: Alte Bestellungen anzeigen
     Aufwand: 10 Stunden
  -->
- <!-- Ridvan Atacan, 3113837
-    24.11.2015 Group #4 Onlineshop
-    Sprint 3, Task : 270-6 #10334
-    User Story: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
-    Task: Zusammenführen
-    Aufwand: 5 Stunden
- -->
+
  
 <?php
+//Anfang Ridvan Atacan 10.11.2015 Sprint 2
 require '../app/view/Header.php';
 // Zugriff auf die Datenbankverbindungsklasse
 
@@ -65,11 +75,12 @@ class MeineBestellungen_Model{
 	//Im weiteren Verlauf wird es möglich sein nur dem eingeloggten Kunden seine Bestellungen darzustellen
      public function alleBestellungen(){
          echo'<main><strong>Alle Bestellungen</br></strong>';        
-        //Anfang Ridvan 07.12.2015
+        //Anfang Ridvan 07.12.2015 Sprint 4
+		//Zugriff auf die SESSION ID von Christian Frindt
          $this->actualid = $_SESSION['logged']['id'];
         echo("Hallo <strong>" .$this->Kundenname($_SESSION['logged']['id'])['Vorname']." " .$this->Kundenname($_SESSION['logged']['id'])['Nachname']."</strong>!");
 		//Zugriff auf die Tabellen auf der Datenbank mittels SQL Statements und PDO		
-        //Ende Ridvan 07.12.2015
+        //Ende Ridvan 07.12.2015 Sprint 4
        
         $query = "SELECT bestellnummer,Gesamtpreis,Datum FROM Bestellung WHERE Kunde_Kundennummer = " .$this->actualid ;
         
@@ -125,8 +136,8 @@ class MeineBestellungen_Model{
        $this->db->schließen();
        $this->con = 0;
    }
-   
-   //Anfang Ridvan Atacan 07.12.2015
+   //Ende Ridvan Atacan 10.11.2015 Sprint 2
+   //Anfang Ridvan Atacan 07.12.2015 Sprint 4
    
    public function Kundenname($id){
        
@@ -158,5 +169,5 @@ class MeineBestellungen_Model{
        
        return($ruck);
    }
-    
+    //Ende Ridvan Atacan 07.12.2015 Sprint 4
 }

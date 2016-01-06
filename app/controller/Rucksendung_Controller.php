@@ -1,3 +1,10 @@
+ <!-- Ridvan Atacan, 3113837
+    08.12.2015 Group #4 Onlineshop
+    Sprint 4, Task : 380-1 #10591
+    User Story: Als Kunde möchte ich getätigte Bestellungen zuücksenden können.
+    Task: Grundlage und Oberfläche für die Rücksendung programmieren
+    Aufwand: 3 Stunden
+ -->
 <?php
 
 class Rucksendung_Controller extends Controller{
@@ -14,12 +21,12 @@ class Rucksendung_Controller extends Controller{
         $this->view("Header");
         $tst = $this->model("MeineBestellungen_Model");
         $ruck = $tst->rucksendung($_POST['bestellid']);
-       
-        $this->view('Bestellung/Rucksendung_View2',$ruck);
-        echo("Hallo2");
+        $ruck2 = $ruck['Bestellnummer'];
+        $this->view('Bestellung/Rucksendung_View2',$ruck2);
+        
         echo ("</main>");
         $this->view("Footer");
-        echo("Hallo3");
+        
     }
 }
 $objekt = new Rucksendung_Controller();
