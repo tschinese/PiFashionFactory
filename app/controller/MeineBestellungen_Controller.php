@@ -1,10 +1,3 @@
- <!-- Ridvan Atacan, 3113837
-    24.11.2015 Group #4 Onlineshop
-    Sprint 3, Task : 270-6 #10334
-    User Story: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
-    Task: Zusammenführen
-    Aufwand: 5 Stunden
- -->
 <!-- Ridvan Atacan, 3113837
     10.11.2015 Group #4 Onlineshop
     Sprint 2, Task : 170-1 #10197
@@ -12,21 +5,27 @@
     Task: Alte Bestellungen anzeigen
     Aufwand: 10 Stunden
  -->
-
+ <!-- Ridvan Atacan, 3113837
+    24.11.2015 Group #4 Onlineshop
+    Sprint 3, Task : 270-6 #10334
+    User Story: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
+    Task: Zusammenführen
+    Aufwand: 5 Stunden
+ -->
 
 <?php
-//Sprint 2 Anfang Ridvan 10.11.2015
+
  
 class MeineBestellungen_Controller extends Controller{
     
     //Methode innerhalb der Klasse wird bei Erzeugung eines Controller Objekts erzeugt
     public function index() {
        
-         //Sprint 3 Anfang Ridvan 24.11.2015
+         
          $bestellung = $this->model('MeineBestellungen_Model');
          $data = $bestellung->alleBestellungen();
          $this->view('Bestellung/MeineBestellungen_View', $data);
-         //Sprint 3 Ende Ridvan 24.11.2015
+         
          
          
     }
@@ -64,4 +63,4 @@ class MeineBestellungen_Controller extends Controller{
 
     $objekt = new MeineBestellungen_Controller();
     
- //Sprint 2 Ende Ridvan 10.11.2015
+  
