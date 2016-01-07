@@ -13,7 +13,9 @@
 //Beschreibung: Controller der Filterfunktion
 class FilterController extends controller {
 
-    public function index() {
+    public function index($kategorie) {
+        
+        $sql_kategorieFinal = "Kategorie_katID = '.$kategorie.'";
 		//überprüfen ob eine oder mehrere checkboxes ausgewählt wurden
         if (isset($_POST['preis']) or ( isset($_POST['groesse'])) or isset($_POST['farbe'])) {
 			//value von preis[] in Variable übertragen und in array speichern 
@@ -46,7 +48,7 @@ class FilterController extends controller {
 
 			//Model und View erstellen und diesen entsprechende Werte zuteilen
             $filterModel = $this->model('FilterModel');
-            $data = $filterModel->filter($sql_preisFinal, $sql_groesseFinal, $sql_farbeFinal);
+            $data = $filterModel->filter($sql_preisFinal, $sql_groesseFinal, $sql_farbeFinal, $sql_kategorieFinal);
             $this->view('Header', []);
             $this->view('Produkt/SidebarView', $data);
             $this->view('Footer', []);
