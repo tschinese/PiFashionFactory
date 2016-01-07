@@ -2,7 +2,7 @@
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
 Userstory: 410 Als Admin möchte ich weitere Funktionen im Backend-Bereich haben
 Task: 410-4(#10609) "Produkt anlegen und löschen" überarbeiten
-Zeitaufwand: 
+Zeitaufwand: 1 Stunde
 Beschreibung: Überarbeitung des Formulars zum Anlegen -->
 
 <!--  //Sprint 4, Gruppe 4 Onlineshop, Version 4
