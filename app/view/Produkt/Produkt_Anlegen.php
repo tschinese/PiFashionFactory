@@ -38,7 +38,7 @@ Task: 20-2 (#10003) Produkte anlegen
 
 <!-- Sprint 3 Marcel Riedl Start -->
 <main>        
-    <br>
+    <br><br><br>
     <h1>Produkt anlegen</h1>
     <!-- Sprint 2 Marcel Riedl ALT
             <p>Anmerkungen: <br>
@@ -62,10 +62,11 @@ Task: 20-2 (#10003) Produkte anlegen
                 // Counter erstellen
                 $a = 0;
                 // Größe des Arrays ermitteln
-                $total = sizeof($data);
+                $dat0 = $data['hersteller'];
+                $total = sizeof($dat0);
                 // Ausgabe der verschiedenen Möglichkeiten
                 while ($a < $total) {
-                    echo '<option>' . $data['hersteller'][$a]['hesteller'] . '</option>';
+                    echo '<option>' . $data['hersteller'][$a]['hersteller'] . '</option>';
                     // Counter erhöhen
                     $a++;
                 }
@@ -76,6 +77,8 @@ Task: 20-2 (#10003) Produkte anlegen
                 <?php
                 // Counter erstellen
                 $b = 0;
+                $dat1 = $data['farbe'];
+                $total = sizeof($dat1);
                 // Ausgabe der verschiedenen Möglichkeiten
                 while ($b < $total) {
                     echo '<option>' . $data['farbe'][$b]['farbe'] . '</option>';
@@ -89,6 +92,8 @@ Task: 20-2 (#10003) Produkte anlegen
                 <?php
                 // Counter erstellen
                 $c = 0;
+                $dat2 = $data['groese'];
+                $total = sizeof($dat2);
                 // Ausgabe der verschiedenen Möglichkeiten
                 while ($c < $total) {
                     echo '<option>' . $data['groese'][$c]['groese'] . '</option>';
@@ -103,18 +108,13 @@ Task: 20-2 (#10003) Produkte anlegen
                 <?php
                 // Counter erstellen
                 $d = 0;
+                $dat3 = $data['kategorie'];
+                $total = sizeof($dat3);
+
                 // Ausgabe der verschiedenen Möglichkeiten
                 while ($d < $total) {
-                    // Überprüfung, welche Oberkategorie Betroffen ist
-                    if ($data['kategorie'][$d]['Oberkategorie_OkerkatID'] = 1) {
-                        echo '<option> Damen ' . $data['kategorie'][$d]['kategorie'] . '</option>';
-                    } else if ($data['kategorie'][$d]['Oberkategorie_OkerkatID'] = 2) {
-                        echo '<option> Herren ' . $data['kategorie'][$d]['kategorie'] . '</option>';
-                    } else if ($data['kategorie'][$d]['Oberkategorie_OkerkatID'] = 3) {
-                        echo '<option> Kinder ' . $data['kategorie'][$d]['kategorie'] . '</option>';
-                    } else if ($data['kategorie'][$d]['Oberkategorie_OkerkatID'] = 4) {
-                        echo '<option>' . $data['kategorie'][$d]['kategorie'] . '</option>';
-                    }
+                    // Ausgabe der Kategorien
+                    echo '<option>' . $data['kategorie'][$d]['Oberkat'] . ' ' . $data['kategorie'][$d]['kategorie'] . '</option>';
                     // Counter erhöhen
                     $d++;
                 }
@@ -135,6 +135,12 @@ Task: 20-2 (#10003) Produkte anlegen
             <!-- Sprint 4 Hanim Yerlikaya Ende -->
             <!-- Sprint 3 Marcel Riedl Start -->
             <input type="submit" name="anlegen" value="Anlegen">
+        </form>
+    </div>
+    <!-- Button um zurück zur Produkt bearbeitung zu kommen -->
+    <div>
+        <form action="index.php?url=ProduktBackendController" method="post">
+            <input type="submit" value="Zurück">
         </form>
     </div>
 </main>

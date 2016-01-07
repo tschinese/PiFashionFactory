@@ -78,7 +78,7 @@ class Produkt_Model {
         // Statement ausführen
         $stmt0->execute();
         // Daten als Array in Variable speichern
-        $dat0 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
 
         // SQL Statement für Hersteller
         $sql1 = 'select hersteller from hersteller';
@@ -87,7 +87,7 @@ class Produkt_Model {
         // Statement ausführen
         $stmt1->execute();
         // Daten als Array in Variable speichern
-        $dat1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
         // SQL Statement für Größen
         $sql2 = 'select groese from groese';
@@ -96,19 +96,20 @@ class Produkt_Model {
         // Statement ausführen
         $stmt2->execute();
         // Daten als Array in Variable speichern
-        $dat2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
         // SQL Statement für Kategorien
-        $sql3 = 'select * from kategorie';
+        $sql3 = 'select k.kategorie, o.Oberkat from kategorie k join oberkategorie o '
+                . 'where k.Oberkategorie_OberkatID = o.OberkatID;';
         // Statement vorbereiten
         $stmt3 = $con->prepare($sql3);
         // Statement ausführen
         $stmt3->execute();
         // Daten als Array in Variable speichern
-        $dat3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat3 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
         // Daten zusammenführen
-        $daten = array(farbe => $dat0, hersteller => $dat1, groese => $dat2, kategorie => $dat3);
+        $daten = array('farbe' => $dat0, 'hersteller' => $dat1, 'groese' => $dat2, 'kategorie' => $dat3);
 
         // Connection schließen
         $con = null;
