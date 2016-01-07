@@ -26,12 +26,11 @@ class ProduktloeschenController extends Controller {
         $this->view('backend/Backendheader');
         // Übergabe der benötigten Daten
         // Sprint 5 Marcel Riedl: Änderung des View Namens
-        $this->view('Produkt/Produkt_Löschen', $produkt->alleProdukte());
-
+        $this->view('Produkt/Produkt_Loeschen', $produkt->alleProdukte());
         // Ausführung sobald der Button loeschen im Produkt_Anzeigen ausgeführt wird
         // Sprint 5 Marcel Riedl: Name der Variablen überarbeitet
         if (isset($_POST['loeschen'])) {
-            $produkt->löeschen($_POST['produktnr']);
+            $produkt->loeschen($_POST['produktnr']);
         }
     }
 

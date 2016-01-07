@@ -18,7 +18,9 @@
 	<?php 
 		// Lieferadresse anzeigen
 		var_dump($data);
-		$total = sizeOf($data);
+		$dat0 = $data[0];
+                $dat1 = $data[1];
+                $total = sizeOf($dat1);
 		$a = 0;
 		
 		while ($a < $total){

@@ -8,7 +8,7 @@ Beschreibung: Hier wird der View zur Analyse 'Gesamtumsatz' erstellt
 <h2>Gesamtumsatz</h2>
 
 <?php
-    echo 'Gesamtumsatz: '.$data['Umsatz'];
+    echo '<font size="+1">Gesamtumsatz: </font><b>' .$data['Umsatz']. ' €</b>';
 ?>
 
 </div>

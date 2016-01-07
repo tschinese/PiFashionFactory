@@ -11,6 +11,9 @@ Beschreibung: Hier wird der View zur Analyse 'Umsatz eines Kunden' erstellt
 <!--    Formular zur Eingabe der Kundennummer-->
     <form action="index.php?url=AnalyseUmsatzkundeController" method="post">
         Geben Sie hier die Kundennummer ein: <input type="text" name="kunde">
+<!--        Kerstin Gräter START, Sprint 5-->
+
+<!--        Kerstin Gräter ENDE, Sprint 5-->
         <input type="submit" name="los" value="Los">
     </form>
 

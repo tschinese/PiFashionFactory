@@ -8,17 +8,29 @@ Beschreibung: Hier wird der View zur Analyse 'Umsatz pro Produkt' erstellt
 
 <div>
     <h2>Umsatz pro Produkt</h2>
-<!--    Formular um Produktnummer einzugeben-->
+    <!--    Formular um Produktnummer einzugeben-->
     <form action="index.php?url=AnalyseProduktgewinnController" method="post">
-        Geben Sie hier die Produktnummer ein: <input type="text" name="produkt">
+        <label for="produkt">Auswahl</label>
+        <select name="produkt">
+            <?php
+            $a = 0;
+            $dat = $data['auswahl'];
+            $total = sizeof($dat);
+
+            while ($a < $total) {
+                echo '<option>' . $data['auswahl'][$a]['Produktnummer']. ', ' .$data['auswahl'][$a]['Benennung']. '</option>';
+                $a++;
+            }
+            ?>
+        </select>
         <input type="submit" name="los" value="Los">
     </form>
 
     <?php
-        //Ausgabe
-        if ($data != null){
-            echo '<br><br><font size="+1">Umsatz: <b>'.$data.'</b>';
-	}
+    //Ausgabe
+    if ($data != null) {
+        echo '<br><br><font size="+1">Umsatz: <b>' . $data['analyse'] . '</b>';
+    }
     ?>
 </div>
 </section>
