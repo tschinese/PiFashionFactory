@@ -80,7 +80,7 @@ Beschreibung:
     </div>
     <div class="table-responsive">
         <!-- Tabelle aller Produkte -->
-        <table class="table table-striped">
+        <table class="TabelleBackend">
             <!-- Tabellen Kopf -->
             <thead>
             <th>Produktnummer</th>

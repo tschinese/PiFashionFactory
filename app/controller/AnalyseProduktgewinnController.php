@@ -11,9 +11,14 @@ class AnalyseProduktgewinnController extends Controller{
 	
 	function index(){
                 //Analyse_Model von Riedl
-		$analyse = $this->model(Analyse_Model);
+		$analyse = $this->model('Analyse_Model');
+                $auswahl = $this->model('AnalyseAuswahl_Model');
 		$nr = $_POST['produkt'];
-		$data = $analyse->produktgewinn($nr);
+                echo $nr;
+		$dat1 = $analyse->produktgewinn($nr);
+                $dat2 = $auswahl->produktgewinnauswahl();
+                $data = array('analyse' => $dat1, 'auswahl'=>$dat2, 'nummer'=>$nr);
+                var_dump($dat1);
 		$this->view('Backend/Backendheader');
 		$this->view('Analyse/Analyse_Sidebar');
 		$this->view('Analyse/Analyse_Produktgewinn', $data);

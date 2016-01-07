@@ -7,50 +7,91 @@ Zeitaufwand:  Stunde
 Beschreibung: Es wird hier die CSS für den Backend Bereich erstellt.
 */
 
-// Sprint 5 Marcel Riedl Start
+/*<!--Sprint: 2
+ * @author: Renat Cabriolu
+ * Datum: 25.10.2015
+ * User Story (Nr.: 150)  Backend Bereich (Design) 
+ * Zeit insgesamt: 1h
 
-// Für alles anwendbar
-html {
+*/
+
+// Sprint 2 Renato Cabriolu Start
+header, nav, main, aside, footer {
+    display: block;
+}
+
+html{
     font-size: 100%;
     font-family: Verdana, sans-serif;
 }
 
-header, body, main, div {
-    display: block;
+/*layoutbereich im body*/
+body{
+    width: 100%;
+    font-size: 0.875rem;
+    margin: 1rem auto;
 }
 
-// Design für den Header
+/* layoutbereich header*/
 header {
     position: relative;
     padding: 0 0rem 1rem 0rem;
     padding-top: 1rem;
 }
 
-// Design für den body
-body {
+header h1{
+    padding: 0;
+    margin: 0.75rem 0;
+    padding-top: 5rem;
+}
+
+/*links im header*/
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
     position: relative;
 }
 
-// Design für Main
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 main {
-    display: block;
-    
+    min-height: 500px;
+    background: white;
+    padding: 0rem;
 }
 
-// Design für div
-div {
-    position: relative;
-    
+footer{
+    color: #aaa;
+    padding: 2rem;
+    background: black;
 }
 
-// Design für tables
+main section{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+div{
+    background: whitesmoke;
+}
+
 table{
-    
+    border: #2c2c29;
+    border-collapse: collapse;
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 20%;
 }
+
 thead{
-    
+    background-color: activecaption;
+    size: landscape;
 }
-tbody{
-    
-}
-// Sprint 5 Marcel Riedl Ende
+// Sprint 2 Renato Cabriolu Ende
