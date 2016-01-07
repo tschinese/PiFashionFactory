@@ -28,7 +28,6 @@ class FilterModel {
 
 //Funktion mit dem SQL Prepare Statement und schließen der Connection
     public function filter($preis, $groesse, $farbe, $kategorie) {
-        
         $select = "SELECT * FROM Produkt ";
         $where = "WHERE ";
 		//if-Anweisungen um die richtige query aufzubauen
