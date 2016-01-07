@@ -1,5 +1,12 @@
 <?php
+// Sprint 5, Gruppe 4 Onlineshop, Datum: 07.01.2016 Version 1
+// Verfasser: Kerstin Gräter, Matrikelnummer: 3113720
+// UserStory:(450-1) Als Admin möchte ich über eine vernünftige Auswahl-Möglichkeit im Backend-Bereich verfügen.
+// Task: #10611 Auswahl in den Analyse-Funktionen überarbeiten 
+// Gesamtaufwand Task:  Stunde
+// Beschreibung: Hier wird das Model mit den functions für die Auswahlmöglichkeit der Analysen erstellt
 
+//Sprint 5, Kerstin Gräter START
 require_once '../app/config/Connect_Mysql.php';
 
 class AnalyseAuswahl_Model {
@@ -40,3 +47,4 @@ class AnalyseAuswahl_Model {
     }
 
 }
+// Sprint 5, Kerstin Gräter ENDE

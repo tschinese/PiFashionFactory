@@ -1,4 +1,10 @@
 <?php
+// Sprint 5, Gruppe 4 Onlineshop, Datum: 07.01.2016 Version 2
+// Verfasser: Kerstin Gräter, Matrikelnummer: 3113720
+// UserStory:(450-1) Als Admin möchte ich über eine vernünftige Auswahl-Möglichkeit im Backend-Bereich verfügen.
+// Task: #10611 Auswahl in den Analyse-Funktionen überarbeiten 
+// Gesamtaufwand Task:  Stunde
+// Beschreibung: Controller wurde angepasst auf Auswahlmöglichkeiten
 
 //Sprint 4, Gruppe 4 Onlineshop, Datum: 07.12.2015, Version 1
 //Verfasser: Kerstin Gräter, Matrikelnummer: 3113720
@@ -7,6 +13,7 @@
 //Gesamtaufwand: 9 Stunden
 //Beschreibung: Controller für alle Analysen
 
+//Sprint 4, Kerstin Gräter START
 class AnalyseController extends Controller {
 
     function index() {
@@ -27,7 +34,8 @@ class AnalyseController extends Controller {
         }
         // Analyse umsatzprodukt anzeigen
         if (isset($_POST['umsatzprodukt'])) {
-            $data = array('auswahl'=>$auswahl->produktgewinnauswahl(), 'analyse');
+            //Sprint 5, Kerstin Gräter, Line 37
+            $data = array('auswahl'=>$auswahl->produktgewinnauswahl(), 'analyse', 'nummer');
             $this->view('Analyse/Analyse_Produktgewinn', $data);
         }
         // Analyse bestellungprodukt anzeigen
@@ -57,3 +65,4 @@ class AnalyseController extends Controller {
     }
 
 }
+//Sprint 4, Kerstin Gräter ENDE

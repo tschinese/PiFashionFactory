@@ -10,7 +10,7 @@ Beschreibung: Hier wird der View zur Analyse 'Bestellungen pro Kunde' erstellt
     
 <!--    Formular zur Eingabe der Kundennummer-->
     <form action="index.php?url=AnalyseBestellungenKundeController" method="post">
-        Geben Sie hier die Kundennummer ein: <input type="text" name="kundennummer">
+        Geben Sie hier den Nachnamen des Kunden ein: <input type="text" name="nName">
         <input type="submit" name="los" value="Los">
     </form>
 
