@@ -23,8 +23,10 @@
                         <li><a href="#">Exportieren</a></li>
                     </ul>
 					<!-- Form mit allen Checkboxen -->
-                         <form action="index.php?url=FilterController" method="post">
+						
+                         <form action="index.php?url=FilterController/<?php $kategorie = $data["kategorie"]; echo $kategorie; ?>" method="post">
                             <b>Preis</b><br>
+							
                             <input type="checkbox" name="preis[]" id="preis" value="50"/>< 50€<br>
                             <input type="checkbox" name="preis[]" id="preis" value="100"/>< 100€<br>
                             <input type="checkbox" name="preis[]" id="preis" value="200"/>< 200€<br>
@@ -45,20 +47,20 @@
                 <?php
 				//Schleife copied von @Riedl, Marcel
                 $a = 0;
-                $total = sizeof($data);
-
+                $total = sizeof($data["daten"]);
                 while ($a < $total) {
-                    if ($data[$a]['SalePreis'] < $data[$a]['Preis']) {
+                    if ($data["daten"][$a]['SalePreis'] < $data[$a]['Preis']) {
                         $preis = $data[$a]['SalePreis'];
                     } else {
-                        $preis = $data[$a]['Preis'];
+                        $preis = $data["daten"][$a]['Preis'];
                     }
                     echo '<dir class="col-xs-6 col-lg-4"><h2><a href = "index.php?url=ProduktansichtController/'
-                    . $data[$a]['Produktnummer'] . '">' . $data[$a]['Benennung'] . '</a></h2>';
+                    . $data["daten"][$a]['Produktnummer'] . '">' . $data["daten"][$a]['Benennung'] . '</a></h2>';
                     echo 'Preis: ' . $preis . ' Hersteller: ' . $data[$a]['Hersteller_hersteller']
-                    . '&nbsp<br>' . ' Farbe: ' . $data[$a]['Farbe_farbe'] . ' Größe: ' . $data[$a]['Groese_groese'] . '</dir>';
+                    . '&nbsp<br>' . ' Farbe: ' . $data["daten"][$a]['Farbe_farbe'] . ' Größe: ' . $data["daten"][$a]['Groese_groese'] . '</dir>';
                     $a++;
                 }
+				 
                 ?>
 
 

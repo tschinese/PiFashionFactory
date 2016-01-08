@@ -18,7 +18,7 @@ Beschreibung: Hier wird der View zur Analyse 'Umsatz pro Produkt' erstellt
             $total = sizeof($dat);
 
             while ($a < $total) {
-                echo '<option>' . $data['auswahl'][$a]['Produktnummer'] . '</option>';
+                echo '<option>' . $data['auswahl'][$a]['Produktnummer']. ', ' .$data['auswahl'][$a]['Benennung']. '</option>';
                 $a++;
             }
             ?>
@@ -29,9 +29,6 @@ Beschreibung: Hier wird der View zur Analyse 'Umsatz pro Produkt' erstellt
     <?php
     //Ausgabe
     if ($data != null) {
-        var_dump($data['nummer']);
-        $zahl = $data['analyse'];
-        echo $zahl;
         echo '<br><br><font size="+1">Umsatz: <b>' . $data['analyse'] . '</b>';
     }
     ?>

@@ -12,8 +12,8 @@ class AnalyseBestellungenKundeController extends Controller{
 	function index(){
                 //Analyse_Model von Riedl
 		$analyse = $this->model(Analyse_Model);
-		$nr = $_POST['kundennummer'];
-		$data = $analyse->bestellungenkunde($nr);
+		$nName = $_POST['nName'];
+		$data = $analyse->bestellungenkunde($kundennummer);
 		$this->view('Backend/Backendheader');
 		$this->view('Analyse/Analyse_Sidebar');
 		$this->view('Analyse/Analyse_Bestellungenkunde', $data);

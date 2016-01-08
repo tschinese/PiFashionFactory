@@ -28,26 +28,30 @@ class FilterModel {
 
 //Funktion mit dem SQL Prepare Statement und schließen der Connection
     public function filter($preis, $groesse, $farbe, $kategorie) {
+        
         $select = "SELECT * FROM Produkt ";
         $where = "WHERE ";
 		//if-Anweisungen um die richtige query aufzubauen
         if (!empty($preis) && empty($groesse) && empty($farbe)) {
-            $sql = $select . $where . '(' . $preis . ') AND (' . $kategorie . ')' ;
+            $sql =  $select . $where . $preis . ' AND ' . $kategorie ;
         } else if (!empty($groesse) && empty($preis) && empty($farbe)) {
-            $sql = $select . $where . $groesse . ') AND (' . $kategorie . ')' ;
+            $sql = $select . $where . $groesse . ' AND '. $kategorie ;
         } else if (!empty($farbe) && empty($groesse) && empty($preis)) {
-            $sql = $select . $where . $farbe . ') AND (' . $kategorie . ')' ;
+            $sql = $select . $where . '(' . $farbe . ') AND '. $kategorie;
         } else if (!empty($preis) && !empty($groesse) && empty($farbe)) {
-            $sql = $select . $where . '(' . $preis . ') AND (' . $groesse . ') AND (' . $kategorie . ')' ;
+            $sql = $select . $where . '(' . $preis . ') AND (' . $groesse . ') AND '. $kategorie;
         } else if (!empty($preis) && !empty($farbe) && empty($groesse)) {
-            $sql = $select . $where . '(' . $preis . ') AND (' . $farbe . ') AND (' . $kategorie . ')' ;
+            $sql = $select . $where . '(' . $preis . ') AND (' . $farbe . ') AND '. $kategorie ;
         } else if (!empty($groesse) && !empty($farbe) && empty($preis)) {
-            $sql = $select . $where . '(' . $groesse . ') AND (' . $farbe . ') AND (' . $kategorie . ')' ;
+            $sql = $select . $where . '(' . $groesse . ') AND (' . $farbe . ') AND '. $kategorie ;
         } else if (!empty($preis) && !empty($groesse) && !empty($farbe)) {
-            $sql = $select . $where . '(' . $preis . ') AND (' . $groesse . ') AND (' . $farbe . ') AND (' . $kategorie . ')' ;
+            $sql = $select . $where . '(' . $preis . ') AND (' . $groesse . ') AND (' . $farbe . ') AND '. $kategorie ;
         } else {
+			
             $sql = "SELECT * FROM Produkt";
+			
         }
+		
 		//Prepare Statement
         $stmt = $this->con->prepare($sql);
 

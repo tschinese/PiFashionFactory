@@ -11,6 +11,7 @@ Beschreibung: Hier wird die Menüleiste erstellt
         <div>
             <form action="index.php?url=Analysecontroller" method="post">
                 <br><br>
+                <br>
                 <input name="durchschnittspreis" type="submit" value="Durchschnittsbestellpreis">
                 <input name="gesamtumsatz" type="submit" value="Gesamtumsatz">
                 <input name="umsatzprodukt" type="submit" value="Umsatz pro Produkt">
