@@ -2,8 +2,8 @@
 
 // Sprint 5, Gruppe 4 Onlineshop, Datum: 07.01.2016 Version 2
 // Verfasser: Marcel Riedl, Matrikelnummer: 3113845
-// UserStory: 
-// Task: 
+// UserStory: 490 Als Programmierer möchte ich bereits vorhandenen Code updaten
+// Task: 490-1 eigene Files überarbeiten
 // Zeitaufwand: 1 Stunde
 // Beschreibung: Gewinnberechnung umgeschrieben
 //
