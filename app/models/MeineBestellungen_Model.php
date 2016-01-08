@@ -150,14 +150,14 @@ class MeineBestellungen_Model{
    }
    
    public function Bestellzeit($id){
-       
-        $query = "SELECT Datum FROM bestellung WHERE Kunde_Kundennummer = ".$id;
+        //Nachtrag Sprint 5
+        $query = "SELECT Datum FROM bestellung WHERE Bestellnummer = ".$id;
         $this->sql = $this->con->prepare($query);
         $this->sql->execute();
         $this->datum = $this->sql->fetch(PDO::FETCH_ASSOC);
-        
-        
-        return $this->datum;
+        //Nachtrag Sprint 5
+        $datum = $this->datum["Datum"];
+        return $datum;
    }
    
    public function rucksendung($id){
@@ -166,8 +166,21 @@ class MeineBestellungen_Model{
        $this->sql = $this->con->prepare($query);
        $this->sql->execute();
        $ruck = $this->sql->fetch(PDO::FETCH_ASSOC);
-       
+       $this->closeDB();
        return($ruck);
    }
+   //Sprint 5 Anfang
+   public function storno($bid){
+      
+       $query = "DELETE FROM bestellung WHERE Bestellnummer =".$bid;
+       $this->sql = $this->con->prepare($query);
+       $this->sql->execute();
+       $this->closeDB();
+       echo("<main><strong>Die Bestellung wurde storniert!</strong><br>");
+       echo("Für die Rücksendung senden Sie die Ware bitte an folgende Adresse: ");
+       echo("<br>Fashion Factory GmbH<br>Wileystraße 1<br>89231 Neu-Ulm");
+       echo("<br>Falls Sie die Ware noch nicht bekommen haben, wird Ihnen diese nicht mehr zugesendet.</main> ");
+       }
+       //Sprint 5 Ende
     //Ende Ridvan Atacan 07.12.2015 Sprint 4
 }

@@ -21,12 +21,44 @@ class Rucksendung_Controller extends Controller{
         $this->view("Header");
         $tst = $this->model("MeineBestellungen_Model");
         $ruck = $tst->rucksendung($_POST['bestellid']);
-        $ruck2 = $ruck['Bestellnummer'];
-        $this->view('Bestellung/Rucksendung_View2',$ruck2);
+        $this->view('Bestellung/Rucksendung_View2',$ruck);
         
         echo ("</main>");
         $this->view("Footer");
         
     }
+    //Sprint 5 Anfang
+    public function stornieren(){
+        
+        $this->view("Header"); 
+        if($this->bestellzeit() <= 14){
+        $strn = $this->model("MeineBestellungen_Model");
+        $strn->storno($_SESSION['bestellnr']);
+        }
+        else{
+            echo("<main><strong><br>Storno nicht möglich, die 14-tägige Frist wurde überschritten!</strong></main>");
+        }
+        //$this->view('Bestellung/Rucksendung_View');
+        $this->view("Footer");
+    }
+    
+    public function bestellzeit(){
+      $this->view("Header");
+      $zeit = $this->model("MeineBestellungen_Model");
+    //$this->view("Bestellung/Rucksendung_View2");
+      $bestellzeit = $zeit->bestellzeit($_SESSION['bestellnr']);
+      $splitzeit = explode(" ",$bestellzeit);
+      echo "<br><main> Zeitpunkt der Bestellung: ";
+      
+      echo $splitzeit[0];
+      echo "<br> Aktueller Zeitpunkt: ";
+      echo $aktuell = date('Y-m-d');
+      echo "<br> Vergangene Zeit seit der Bestellung: ";
+      echo $tage = ((strtotime($aktuell) - strtotime($splitzeit[0]))/60/60/24 + " Tage sind vergangen!");
+      
+      
+      return $tage;
+    }
+    //Sprint 5 Ende
 }
 $objekt = new Rucksendung_Controller();

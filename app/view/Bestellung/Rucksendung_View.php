@@ -8,7 +8,7 @@
     $timestamp = time();
     $datum = date("d.m.Y - H:i", $timestamp);
     //echo $datum;
-    echo "<br><strong><i>Diese Seite befindet sich noch im Aufbau</i><br>";
+   
     ?>
     <br> Geben Sie die betroffene Bestellnummer ein, die Sie mit der Bestätigungs-Email erhalten haben!
     <form action ="index.php?url=Rucksendung_Controller/test" method ="post">

@@ -27,7 +27,7 @@ class MeineBestellungen_Controller extends Controller{
          $data = $bestellung->alleBestellungen();
          $this->view('Bestellung/MeineBestellungen_View', $data);
          //Sprint 3 Ende Ridvan 24.11.2015
-         
+         $this->view("Footer");
          
     }
     

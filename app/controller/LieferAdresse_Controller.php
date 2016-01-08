@@ -43,7 +43,7 @@ class LieferAdresse_Controller extends Controller{
         if (isset($_POST["submit"])) {
 		//Sprint 3 Anfang Ridvan 24.11.2015
         $this->hinzufügen();
-        $this->view('Bestellung/Rucksendung_View',[]);
+        
         //Aufruf der Methode innerhalb dieser Klasse
         }
         $this->view('Footer',[]);

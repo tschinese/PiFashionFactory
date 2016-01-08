@@ -30,5 +30,5 @@
         }
         //$gesamtpreis = $result['Gesamtpreis'];
         
-        echo "</table>";
+        //echo "</table>";
  

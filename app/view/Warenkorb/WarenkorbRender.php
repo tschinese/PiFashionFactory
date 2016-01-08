@@ -85,8 +85,10 @@
                                        <!-- Ende Sprint 3 Christian Frindt -->
                                        <!-- Anfang Ridvan 07.12.2015 -->
                                         <?php 
-                                        
-                                       if(isset($_POST['code'])&& !empty($_POST['code'])){
+                                       // Nachtrag Anfang Sprint 5 07.01.2016 Ridvan Atacan
+                                        $_SESSION['gutschein'] = array('boolean' => false, 'gesamtpreis' => 0);
+                                       // Nachtrag Ende Sprint 5 07.01.2016 Ridvan Atacan
+                                        if(isset($_POST['code'])&& !empty($_POST['code'])){
                                           
                                           require_once '../app/controller/Gutschein_Controller.php';
                                           
@@ -98,6 +100,11 @@
                                           $loop ++;     
                                           
                                           $summe = $summe - $summe * $faktor['Faktor'];
+                                         // Nachtrag Anfang Sprint 5 07.01.2016 Ridvan Atacan
+                                         $_SESSION['gutschein']['boolean'] = true;
+                                         $_SESSION['gutschein']['gesamtpreis'] = sprintf("%.2f",$summe);
+                                         
+                                        // Nachtrag Ende Sprint 5 07.01.2016 Ridvan Atacan
                                        }else if(isset($_POST['code'])&& empty($_POST['code'])){
                                           $summe = $summe+($produktAnzahl * $data[$loop]['SalePreis']); 
                                           $loop ++; 
