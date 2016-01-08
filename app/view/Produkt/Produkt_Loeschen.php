@@ -1,5 +1,5 @@
 <!-- Datei wurde umbenannt: alter Name: Produkt_Anzeigen.php 
-Neuer Name: Produkt_Löschen.php -->
+Neuer Name: Produkt_Loeschen.php -->
 
 <!-- Sprint 5, Gruppe 4 Onlineshop, Datum: 03.01.2016, Version 4
 Verfasser: Marcel Riedl, Matrikelnummer: 3113845
@@ -43,11 +43,44 @@ Beschreibung:
 
 <!-- Sprint 3 Marcel Riedl Start -->
 <main>
-    <br>
+    <br><br><br>
     <h2>Produkt löschen</h2>
+    <div>
+        <br>
+        Geben Sie hier die Produktnummer des zu löschenden Produkts ein:
+        <!-- Formular, um ein Produkt löschen zu können -->
+        <!-- Sprint 3 Marcel Riedl Ende -->
+        <!-- Sprint 5 Marcel Riedl Start -->
+        <form action="index.php?url=ProduktloeschenController" method="post">
+            <label for="produktnr"> Produktnummer: </label> 
+            <select name="produktnr">
+                <?php
+                // neuer Counter
+                $b = 0;
+                // Anzahl der übermittelten Datensätze
+                $total = sizeof($data);
+                // Ausgabe der Auswahlmöglichkeiten
+                while ($b < $total) {
+                    echo '<option>' . $data[$b]['Produktnummer'] . '</option>';
+                    // Counter erhöhen
+                    $b++;
+                }
+                ?>
+            </select>
+            <!-- Bestätigungsbutton -->
+            <input type="submit" name="loeschen" value="Produkt löschen">
+        </form>
+        <!-- Sprint 3 Marcel Riedl Alt Start
+    <form method="post">
+        <font size="+1">Produktnummer: </font><input type="number" name="produktnr"><br>
+        <input type="submit" name="loeschen" value="Produkt löschen">
+    </form> Sprint 3 Marcel Riedl alt Ende -->
+        <!-- Sprint 5 Marcel Riedl Ende -->
+        <!-- Sprint 3 Marcel Riedl Start -->
+    </div>
     <div class="table-responsive">
         <!-- Tabelle aller Produkte -->
-        <table class="table table-striped">
+        <table class="TabelleBackend">
             <!-- Tabellen Kopf -->
             <thead>
             <th>Produktnummer</th>
@@ -63,8 +96,6 @@ Beschreibung:
             <?php
             // Counter erstellen
             $a = 0;
-            // Anzahl der übermittelten Datensätze
-            $total = sizeof($data);
             echo '<tbody>';
             // Ausgabe der Daten
             while ($a < $total) {
@@ -86,37 +117,6 @@ Beschreibung:
             echo '</tbody>';
             ?>
         </table>       
-    </div>
-    <div>
-        <br>
-        Geben Sie hier die Produktnummer des zu löschenden Produkts ein:
-        <!-- Formular, um ein Produkt löschen zu können -->
-        <!-- Sprint 3 Marcel Riedl Ende -->
-        <!-- Sprint 5 Marcel Riedl Start -->
-        <form action="index.php?url=ProduktloeschenController" method="post">
-            <label for="produktnr"> Produktnummer: </label> 
-            <select name="produktnr">
-                <?php
-                // neuer Counter
-                $b = 0;
-                // Ausgabe der Auswahlmöglichkeiten
-                while ($b < $total) {
-                    echo '<option>' . $data[$b]['Produktnummer'] . '</option>';
-                    // Counter erhöhen
-                    $b++;
-                }
-                ?>
-            </select>
-            <!-- Bestätigungsbutton -->
-            <input type="submit" name="loeschen" value="Produkt löschen">
-        </form>
-        <!-- Sprint 3 Marcel Riedl Alt Start
-        <form method="post">
-            <font size="+1">Produktnummer: </font><input type="number" name="produktnr"><br>
-            <input type="submit" name="loeschen" value="Produkt löschen">
-        </form> Sprint 3 Marcel Riedl alt Ende -->
-        <!-- Sprint 5 Marcel Riedl Ende -->
-        <!-- Sprint 3 Marcel Riedl Start -->
     </div>
 </main>
 <!-- Sprint 3 Marcel Riedl Ende -->

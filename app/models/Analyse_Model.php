@@ -1,5 +1,12 @@
 <?php
 
+// Sprint 5, Gruppe 4 Onlineshop, Datum: 07.01.2016 Version 2
+// Verfasser: Marcel Riedl, Matrikelnummer: 3113845
+// UserStory: 490 Als Programmierer möchte ich bereits vorhandenen Code updaten
+// Task: 490-1 eigene Files überarbeiten
+// Zeitaufwand: 1 Stunde
+// Beschreibung: Gewinnberechnung umgeschrieben
+//
 //Sprint 4, Gruppe 4 Onlineshop, Datum: 09.11.2015 Version 1
 //Verfasser: Marcel Riedl, Matrikelnummer: 3113845
 //UserStory: #320 Als Admin möchte ich verschiedene Analyse-Funktionen im Backend haben.
@@ -18,35 +25,48 @@ class Analyse_Model {
     private $con;
     private $sql;
 
+    // Sprint 4 Marcel Riedl Ende
+    // Sprint 5 Marcel Riedl Start
     // function um den Gewinn durch ein einzelnen Produkt zu ermitteln
     function produktgewinn($produktnummer) {
         // SQL Statement
-        $this->sql = 'select menge, preis from bestellliste where produkt_produktnummer = ' . $produktnummer;
+        $sql1 = 'select Sum(menge) as menge from bestellliste where produkt_produktnummer = ' . $produktnummer;
+        $sql2 = 'select Preis, SalePreis from produkt where Produktnummer = ' . $produktnummer;
         // Verbindung zur Datenbank herstellen
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
         // Prepared Statement vorbereiten
-        $stmt = $con->prepare($this->sql);
+        $stmt1 = $con->prepare($sql1);
+        $stmt2 = $con->prepare($sql2);
         // Statement ausführen
-        $row = $stmt->execute();
+        $stmt1->execute();
+        $stmt2->execute();
         // Daten ausgeben
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        $dat1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+        $huhu = $stmt2->fetch(PDO::FETCH_ASSOC);
+
+        if ($huhu['SalePreis'] < $huhu['Preis']) {
+            $preis = $huhu['SalePreis'];
+        } else {
+            $preis = $huhu['Preis'];
+        }
+        $gewinn = $preis * $dat1['menge'];
+        $data = array(1 => $dat1, 2 => $preis);
         // Aufruf der Methode gewinnberechnung
-        $preis = $this->gewinnberechnung($row);
+//        $preis = $this->gewinnberechnung($data);
         // Verbindung zur Datenbank schließen
         $con = null;
         $this->con->schließen();
         // return wert
-        return $preis;
+        return $gewinn;
     }
 
+    //Sprint 5 Marcel Riedl Ende
+    //Sprint 4 Marcel Riedl Start
     // Gewinnberechnung
     function gewinnberechnung($row) {
-        // Anzahl der übergebenen Datensätze
         $total = sizeof($row);
-        // Counter erstellen
         $a = 0;
-        // Gesamtpreis berechnen
         while ($a < $total) {
             $menge = $row[$a]['menge'];
             $preis = $row[$a]['preis'];
@@ -54,7 +74,6 @@ class Analyse_Model {
             $gesamtpreis = $menge * $preis;
             $gpreis+=$gesamtpreis;
         }
-        // return Wert
         return $gpreis;
     }
 

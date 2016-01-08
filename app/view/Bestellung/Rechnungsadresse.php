@@ -1,4 +1,11 @@
-<!--//Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 23.11.2015 Version 2
+<!--
+//Sprint 5, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 07.01.2016 Version 1
+//UserStory: 
+//Task: Update Bestellabwicklung 
+//Aufwand: 
+//Beschreibung: Änderung der Anzeige der Lieferadresse 
+
+//Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 23.11.2015 Version 2
 //UserStory: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
 //Task: (270-2) #10330 Zusammenführen
 //Aufwand: 7 Stunden
@@ -15,8 +22,11 @@
     <div>
         <h2>Ihre Rechnungsadresse:</h2>
         <?php
-        $total = sizeof($data);
-
+        //Kerstin Gräter START, Sprint 5
+        $dat0 = $data[0];
+        $dat1 = $data[1];
+        $total = sizeof($dat0);
+        //Kerstin Gräter ENDE, Sprint 5
         $a = 0;
 
 // Ausgabe
@@ -32,7 +42,7 @@
 		<form action="index.php?url=BestellungAbschliesenCon" method="post">
 			<input type="checkbox" name="lieferadresse">Rechnungsadresse als Lieferadresse<br><br>
 		<?php
-
+                        $total = sizeof($dat1);
 			$a = 0;
 			while($a < $total){
 				echo '<div><input type="checkbox" name="adresse'.$a.'" value="">Name: '.$data[1][$a]['Vorname'].' '.$data[1][$a]['Nachname'].'<br>';

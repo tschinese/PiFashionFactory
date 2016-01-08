@@ -1,4 +1,10 @@
 <?php
+//Sprint 5, Gruppe 4 Onlineshop, Datum: 06.01.2016, Version 1
+//Verfasser: Kerstin Gräter, Matrikelnummer: 3113720
+//UserStory: 
+//Task: Update des Bestellvorgangs 
+//Gesamtaufwand: 
+//Beschreibung: Einfügen des Gutscheinpreises falls vorhanden und beenden von Sessions
 
 //Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 23.11.2015 Version 2
 //UserStory: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
@@ -93,26 +99,29 @@ class Bestellung_Model {
         $stmt->execute();
 
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		$con = null;
-		$this->con->schließen();
+	$con = null;
+	$this->con->schließen();
         return $row;
+       
     }
 	
-	// function um Lieferadressen anzuzeigen
-	function lieferadresseanzeigen($kundennummer){
-		$sql = 'select l.Vorname, l.Nachname, l.Straße, l.Postleitzahl_PLZ, p.Ort from lieferadresse l join postleitzahl p where l.Kunde_Kundennummer = '. $kundennummer.' and l.Postleitzahl_PLZ = p.PLZ';
-		$this->con = new Connect_Mysql();
-		$con = $this->con->verbinden();
-		
-		$stmt = $con->prepare($sql);
-		$stmt->execute();
-		$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		
-		$con = null;
-		$this->con->schließen();
-		
-		return $data;
-	}
+    // function um Lieferadressen anzuzeigen
+    function lieferadresseanzeigen($kundennummer){
+
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+
+        $sql = 'select l.Vorname, l.Nachname, l.Straße, l.Postleitzahl_PLZ, p.Ort from lieferadresse l join postleitzahl p where l.Kunde_Kundennummer = '. $kundennummer.' and l.Postleitzahl_PLZ = p.PLZ';
+        $this->sql=$sql;
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $con = null;
+        $this->con->schließen();
+
+        return $data;
+    }
 
     // function um die Bestellung abzuschließen --> Speicherung in Table Bestellung und Bestellliste sowie berechnung von
     // Gesamtpreis und Abschicken der Bestätigungsmail
@@ -124,7 +133,7 @@ class Bestellung_Model {
         $gesamtpreis = 0;
         $kundennr = $_SESSION['logged']['id'];
         $this->con = new Connect_Mysql();
-		$con = $this->con->verbinden();
+	$con = $this->con->verbinden();
 		
         $sql1 = 'insert into bestellung (bestellnummer, Gesamtpreis, Datum, Kunde_Kundennummer) values (null, 0.0, null , ' . $kundennr . ');';
             //Aufsführung von sql1
@@ -140,8 +149,8 @@ class Bestellung_Model {
             $menge = $_SESSION['warenkorb'][$a]['anzahl'];
             $produktnr = $_SESSION['warenkorb'][$a]['produktNummer'];
             
-			$sql3 = 'insert into Bestellliste (Produkt_Produktnummer, Bestellung_Bestellnummer, Menge) values (' 
-			. $produktnr . ', ' . $bestellnr . ',' . $menge . ') ';
+            $sql3 = 'insert into Bestellliste (Produkt_Produktnummer, Bestellung_Bestellnummer, Menge) values (' 
+                . $produktnr . ', ' . $bestellnr . ',' . $menge . ') ';
                 //Ausführung von sql3
                 $stmt = $con->query($sql3);
             $sql = 'select Preis, SalePreis from produkt where Produktnummer = ' . $produktnr;
@@ -156,16 +165,22 @@ class Bestellung_Model {
                     $preis = $row0['Preis'] * $menge;
                 }
             //Aufsummieren auf Gesamtpreis
-            $gesamtpreis+=$preis;
-			$a++;
+                if($_SESSION['']){
+                    
+                }
+                else {
+                 $gesamtpreis+=$preis;   
+                }
+                
+            $a++;
         }
         
 		
         
-		$sql4 = 'Update Bestellung set Gesamtpreis = ' . $gesamtpreis . 'where Bestellnummer = ' . $bestellnr;
-            //Ausführung sql4
-            $stmt = $con->prepare($sql4);
-            $stmt->execute();
+        $sql4 = 'Update Bestellung set Gesamtpreis = ' . $gesamtpreis . 'where Bestellnummer = ' . $bestellnr;
+        //Ausführung sql4
+        $stmt = $con->prepare($sql4);
+        $stmt->execute();
 		
 
         //Objekt von Denis Kevljanins Mail
@@ -174,21 +189,26 @@ class Bestellung_Model {
 		
 //		echo 'MAIL ABGESCHICKT<br>';
 		
-		$sql5 = 'select p.Produktnummer, p.Benennung, p.Preis, p.Farbe_farbe, p.Groese_groese, p.Hersteller_hersteller, l.Menge, b.Gesamtpreis '
-		.'from produkt p join (bestellung b join bestellliste l)'
-		.' where l.Bestellung_bestellnummer = '
-		.$bestellnr.' and b.bestellnummer = '
-		.$bestellnr.' and b.Kunde_Kundennummer = '
-		.$kundennr.' and p.Produktnummer = l.Produkt_Produktnummer';
-			$stmt = $con->prepare($sql5);
-			$stmt->execute();
-			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$sql5 = 'select p.Produktnummer, p.Benennung, p.Preis, p.Farbe_farbe, p.Groese_groese, p.Hersteller_hersteller, l.Menge, b.Gesamtpreis '
+            .'from produkt p join (bestellung b join bestellliste l)'
+            .' where l.Bestellung_bestellnummer = '
+            .$bestellnr.' and b.bestellnummer = '
+            .$bestellnr.' and b.Kunde_Kundennummer = '
+            .$kundennr.' and p.Produktnummer = l.Produkt_Produktnummer';
+	$stmt = $con->prepare($sql5);
+	$stmt->execute();
+	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        //Kerstin Gräter START, Sprint 5
+        // Session Warenkorb beenden
+        unset($_SESSION['warenkorb']);
+        //Kerstin Gräter ENDE, Sprint5
+        
         //Connection schließen
-
-		$con = null;
+	$con = null;
         $this->con->schließen();
         
-		return $data;
+	return $data;
     }
 
 }

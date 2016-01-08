@@ -60,8 +60,9 @@ Zeitaufwand: 8 Stunden-->
                     </ul>
                     <!-- Sprint 3 Denis Kevljanin Ende -->
                     <!-- Sprint 4 Denis Kevljanin Start -->
-                    <form action="index.php?url=FilterController" method="post">
-                        <b>Preis</b><br>
+                    <form action="index.php?url=FilterController/<?php $kategorie = $data[1]['Kategorie_katID']; echo $kategorie; ?>" method="post">
+                        
+						<b>Preis</b><br>
                         <input type="checkbox" name="preis[]" id="preis" value="50"/>< 50€<br>
                         <input type="checkbox" name="preis[]" id="preis" value="100"/>< 100€<br>
                         <input type="checkbox" name="preis[]" id="preis" value="200"/>< 200€<br>

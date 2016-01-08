@@ -32,7 +32,7 @@ class Produktcontroller extends Controller {
         // Sprint 3 Marcel Riedl Ende
         // Sprint 5 Marcel Riedl Start        
         // Aufruf der benötigten Daten aus der Datenbank
-        $data->backendanlegen();
+        $data = $produkt->backendanlegen();
         // Sprint 5 Marcel Riedl Ende
         // Sprint 3 Marcel Riedl Start
         // Übergabe der Daten an den View

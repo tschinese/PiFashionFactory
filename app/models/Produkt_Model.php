@@ -4,7 +4,7 @@
 // Verfasser: Marcel Riedl, Matrikelnummer: 3113845
 // Userstory: 410 Als Admin möchte ich weitere Funktionen im Backend-Bereich haben
 // Task: 410-4 (#10609) "Produkte anlegen und löschen" überarbeiten
-// Zeitaufwand: 
+// Zeitaufwand: 1 Stunde
 // Beschreibung: Neue function backendanlegen
 // 
 //Sprint 4, Gruppe 4 Onlineshop, 
@@ -78,7 +78,7 @@ class Produkt_Model {
         // Statement ausführen
         $stmt0->execute();
         // Daten als Array in Variable speichern
-        $dat0 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
 
         // SQL Statement für Hersteller
         $sql1 = 'select hersteller from hersteller';
@@ -87,7 +87,7 @@ class Produkt_Model {
         // Statement ausführen
         $stmt1->execute();
         // Daten als Array in Variable speichern
-        $dat1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
         // SQL Statement für Größen
         $sql2 = 'select groese from groese';
@@ -96,19 +96,20 @@ class Produkt_Model {
         // Statement ausführen
         $stmt2->execute();
         // Daten als Array in Variable speichern
-        $dat2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
         // SQL Statement für Kategorien
-        $sql3 = 'select * from kategorie';
+        $sql3 = 'select k.kategorie, o.Oberkat from kategorie k join oberkategorie o '
+                . 'where k.Oberkategorie_OberkatID = o.OberkatID;';
         // Statement vorbereiten
         $stmt3 = $con->prepare($sql3);
         // Statement ausführen
         $stmt3->execute();
         // Daten als Array in Variable speichern
-        $dat3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dat3 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
         // Daten zusammenführen
-        $daten = array(farbe => $dat0, hersteller => $dat1, groese => $dat2, kategorie => $dat3);
+        $daten = array('farbe' => $dat0, 'hersteller' => $dat1, 'groese' => $dat2, 'kategorie' => $dat3);
 
         // Connection schließen
         $con = null;
@@ -311,7 +312,7 @@ class Produkt_Model {
     // function um Produkte aus einer Kategorie zu sehen
     function liste($kategorie) {
         // SQL Statement
-        $this->sql = 'Select Produktnummer, Benennung, Farbe_farbe, Groese_groese, Hersteller_hersteller, Preis, SalePreis from Produkt where Kategorie_katID = ' . $kategorie;
+        $this->sql = 'Select Produktnummer, Benennung, Farbe_farbe, Groese_groese, Hersteller_hersteller, Preis, SalePreis, Kategorie_katID from Produkt where Kategorie_katID = ' . $kategorie;
         // Verbindung zur Datenbank herstellen
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();

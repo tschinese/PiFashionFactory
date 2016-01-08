@@ -28,7 +28,7 @@ Beschreibung: Button "Shop" hinzugefügt, um als Admin nach Anmeldung in den Sho
 
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="Backend.css">
+<link rel="stylesheet" href="css/Backend_Neu.css">
 
 <!-- Unterstützung für Media Queries und HTML5-Elemente in IE8 über HTML5 shim und Respond.js -->
 <!-- ACHTUNG: Respond.js funktioniert nicht, wenn du die Seite über file:// aufrufst -->
