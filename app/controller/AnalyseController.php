@@ -34,21 +34,34 @@ class AnalyseController extends Controller {
         }
         // Analyse umsatzprodukt anzeigen
         if (isset($_POST['umsatzprodukt'])) {
-            //Sprint 5, Kerstin Gräter, Line 37
+            //Sprint 5, Kerstin Gräter START
             $data = array('auswahl'=>$auswahl->produktgewinnauswahl(), 'analyse', 'nummer');
+            //Sprint 5, Kerstin Gräter ENDE
             $this->view('Analyse/Analyse_Produktgewinn', $data);
         }
         // Analyse bestellungprodukt anzeigen
         if (isset($_POST['bestellungprodukt'])) {
-            $this->view('Analyse/Analyse_Menge');
+            //Sprint 5, Kerstin Gräter START 
+            $da = $auswahl->mengebestellungauswahl();
+            $data = array('auswahl'=>$da, 'analyse', 'nummer');
+            //Sprint 5, Kerstin Gräter ENDE
+            $this->view('Analyse/Analyse_Menge', $data);
         }
         // Analyse rezensionprodukt anzeigen
         if (isset($_POST['rezensionprodukt'])) {
-            $this->view('Analyse/Analyse_Rezension');
+            //Sprint 5, Kerstin Gräter START
+            $da = $auswahl->rezensionauswahl();
+            $data = array('auswahl'=>$da, 'analyse', 'nummer');
+            //Sprint 5, Kerstin Gräter ENDE
+            $this->view('Analyse/Analyse_Rezension', $data);
         }
         // Analyse produktkategorie anzeigen
         if (isset($_POST['produktkategorie'])) {
-            $this->view('Analyse/Analyse_Kategorieprodukt');
+            //Sprint 5, Kerstin Gräter START
+            $da = $auswahl->kategorieauswahl();
+            $data = array('auswahl'=>$da, 'analyse', 'nummer');
+            //Sprint 5, Kerstin Gräter ENDE
+            $this->view('Analyse/Analyse_Kategorieprodukt', $data);
         }
         // Analyse anzahlkunden anzeigen
         if (isset($_POST['anzahlkunden'])) {
@@ -56,11 +69,19 @@ class AnalyseController extends Controller {
         }
         // Analyse bestellungkunde anzeigen
         if (isset($_POST['bestellungkunde'])) {
-            $this->view('Analyse/Analyse_Bestellungenkunde');
+            //Sprint 5, Kerstin Gräter START 
+            $da = $auswahl->bestellungenkundeauswahl();
+            $data = array('auswahl'=>$da, 'analyse', 'nummer');
+            //Sprint 5, Kerstin Gräter ENDE
+            $this->view('Analyse/Analyse_Bestellungenkunde', $data);
         }
         // Analyse umsatzkunde anzeigen
         if (isset($_POST['umsatzkunde'])) {
-            $this->view('Analyse/Analyse_Umsatzkunde');
+            //Sprint 5, Kerstin Gräter START
+            $da = $auswahl->umsatzkundeauswahl();
+            $data = array('auswahl'=>$da, 'analyse', 'nummer');
+            //Sprint 5, Kerstin Gräter ENDE
+            $this->view('Analyse/Analyse_Umsatzkunde', $data);
         }
     }
 

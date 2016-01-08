@@ -17,8 +17,9 @@ class AnalyseAuswahl_Model {
         
     }
     
+    //function für Auswahl eines Kunden der Analyse Umsatz pro Kunde 
     function umsatzkundeauswahl(){
-        $sql = 'select * from kunde';
+        $sql = 'select Kundennummer, Vorname, Nachname from kunde';
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
         $stmt = $con->prepare($sql);
@@ -31,7 +32,7 @@ class AnalyseAuswahl_Model {
         return $daten;
         
     }
-    
+    //function für Auswahl eines Produkts der Analyse Umsatz pro Produkt 
     function produktgewinnauswahl(){
         $sql = 'select * from produkt';
         $this->con = new Connect_Mysql();
@@ -45,6 +46,64 @@ class AnalyseAuswahl_Model {
         
         return $daten;
     }
+    
+    //function für die Auswahl eines Produkts der Analyse Menge der Bestellungen eines Produkts
+    function mengebestellungauswahl(){
+        $sql = 'Select Produktnummer, Benennung from Produkt';
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $daten = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $con = null;
+        $this->con->schließen();
+        
+        return $daten;
+    }
+    //function für die Auswahl eines Kunden der Analyse Bestellungen pro Kunde
+    function bestellungenkundeauswahl(){
+        $sql = 'Select Kundennummer, Vorname, Nachname from Kunde';
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $daten = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $con = null;
+        $this->con->schließen();
+        
+        return $daten;           
+    }
+    //funciton für die Auswahl eines Produkts der Analyse Rezension pro Produkt
+    function rezensionauswahl(){
+        $sql = 'Select Produktnummer, Benennung from produkt';
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $daten = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $con = null;
+        $this->con->schließen();
+        
+        return $daten;
+    }
+    //function für Auswahl einer Kategorie der Analyse Anzahl der Produkte innerhalb einer Kategorie
+    function kategorieauswahl(){
+        $sql = 'select katID, kategorie from Kategorie';
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $daten = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $con = null;
+        $this->con->schließen();
+        
+        return $daten;
+    }
+    
 
 }
 // Sprint 5, Kerstin Gräter ENDE
