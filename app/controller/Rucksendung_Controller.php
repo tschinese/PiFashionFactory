@@ -53,9 +53,9 @@ class Rucksendung_Controller extends Controller{
       echo $splitzeit[0];
       echo "<br> Aktueller Zeitpunkt: ";
       echo $aktuell = date('Y-m-d');
-      echo "<br> Vergangene Zeit seit der Bestellung: ";
-      echo $tage = ((strtotime($aktuell) - strtotime($splitzeit[0]))/60/60/24 + " Tage sind vergangen!");
       
+      $tage = ((strtotime($aktuell) - strtotime($splitzeit[0]))/60/60/24);
+      echo "<br> Vergangene Zeit seit der Bestellung: " .$tage. " Tage sind vergangen!";
       
       return $tage;
     }

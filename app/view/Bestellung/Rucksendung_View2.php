@@ -7,15 +7,19 @@
  --> 
     <?php
     
-    //Sprint 4 
-    if($data==true){
-    echo"<br><main><fieldset>";
+    //Sprint 4
+    //Sprint 5 Anfang Teil1
+    $rs = new MeineBestellungen_Model();
+    $rst = $rs->pruef($data['bestellnummer']);
+     if($data==true && $rst == $_SESSION['logged']['id']){
+    //Sprint 5 Ende Teil1
+         echo"<br><main><fieldset>";
     echo"<strong>Ausgewählte Bestellung: </strong><br><br>";
             echo "Bestellnummer : " .$data['bestellnummer'];
             echo "<br>Gesamtpreis : " .$data['Gesamtpreis']. " €";
             echo "<br>Datum : " .$data['Datum'];
             echo "</fieldset><br>";
-    //Sprint 5 Anfang
+    //Sprint 5 Anfang Teil2
                 echo " Möchten Sie diese Bestellung stornieren bzw. zurücksenden?";
     }
     else{
@@ -30,7 +34,7 @@
         <title></title>
     </head>
     <?php
-        if($data==true){
+        if($data==true && $rst == $_SESSION['logged']['id']){
         
         
         ?>
@@ -58,4 +62,4 @@
         }
         ?>
 </html>
-        <!-- Sprint 5 Ende -->      
+        <!-- Sprint 5 Ende Teil2-->      

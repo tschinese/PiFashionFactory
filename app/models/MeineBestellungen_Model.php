@@ -39,6 +39,7 @@ class MeineBestellungen_Model{
     private $sql;
     private $result;
     private $count;
+    
     //Datenbankverbindung versuchen aufzubauen sobald ein Objekt der Klasse erzeugt wird
     public function __construct(){
         
@@ -170,8 +171,19 @@ class MeineBestellungen_Model{
        return($ruck);
    }
    //Sprint 5 Anfang
+   public function pruef($bid){
+       
+       $query2 = "SELECT Kunde_Kundennummer FROM bestellung where Bestellnummer = ".$bid;
+       $this->sql = $this->con->prepare($query2);
+       $this->sql->execute();
+       $kn = $this->sql->fetch(PDO::FETCH_ASSOC);
+       $this->closeDB();
+       return $kn['Kunde_Kundennummer'];
+       
+   }
    public function storno($bid){
       
+       
        $query = "DELETE FROM bestellung WHERE Bestellnummer =".$bid;
        $this->sql = $this->con->prepare($query);
        $this->sql->execute();
