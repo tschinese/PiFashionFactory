@@ -191,7 +191,7 @@ class MeineBestellungen_Model{
        echo("<main><strong>Die Bestellung wurde storniert!</strong><br>");
        echo("Für die Rücksendung senden Sie die Ware bitte an folgende Adresse: ");
        echo("<br>Fashion Factory GmbH<br>Wileystraße 1<br>89231 Neu-Ulm");
-       echo("<br>Falls Sie die Ware noch nicht bekommen haben, wird Ihnen diese nicht mehr zugesendet.</main> ");
+       echo("<br>Falls Sie die Ware noch nicht bekommen haben, wird Ihnen diese nicht mehr zugesendet. ");
        }
        //Sprint 5 Ende
     //Ende Ridvan Atacan 07.12.2015 Sprint 4
