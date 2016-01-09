@@ -7,6 +7,7 @@
  -->
  
 <!--Eine navigationsbar die Sein Eigenes Profil Bearbeiten lässt-->
+<!--Sprint 3 Start Renato Cabriolu-->
 <main>
  <section id="about" data-speed="2" data-type="background">
                 <div class="container-fluid">
@@ -26,3 +27,4 @@
                 </div>
 </section>
 </main>
+<!--Sprint 3 Ende Renato Cabriolu-->

@@ -13,6 +13,7 @@
     Aufwand: 4 Stunden
  -->
 
+ <!--Sprint 4: Start Renato Cabriou-->
 <main>
 
     <p><br/></p>
@@ -119,13 +120,13 @@
   		</div>
   		<div class="col-md-2"></div>
 	</div>
-    
+     <!--Sprint 4: Ende Renato Cabriou-->
 
 
 
      
      
- 
+ <!-- Sprint 3 Start Renato Cabriolu
      <!--Das ist das aktuelle Registrierenformular das per post die eingabefelder an den RegistrierenController senden und die methode Hinzufügen ausführt -->
 	     
         <!-- <p> <h3>Zum Registrieren, bitte das Formular ausfuellen. </h3> </p>
@@ -178,4 +179,5 @@
 			<input type="submit" value="Registerieren">
 			</p>
 	</form>-->
+      <!--Sprint 3 Ende Renato Cabriolu       --> 
 </main>

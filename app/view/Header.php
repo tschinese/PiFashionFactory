@@ -67,7 +67,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<?php session_start(); ?>
+<!--Sprint 1 Start Renato Cabriolu-->
 <html lang="de">
     <head>
         <meta charset="utf-8">
@@ -109,7 +109,7 @@ and open the template in the editor.
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <!-- Sprint 1 Renato Cabriolu Start -->
+                                <!-- Sprint 1 Renato Cabriolu Ende -->
                                 <!-- Sprint 3 Marcel Riedl Start -->
                                 <a href="index.php?url=Kategoriecontroller/2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herren <span class="caret"></span></a>
                                 <!-- Sprint 2 Marcel Riedl Ende -->
