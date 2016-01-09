@@ -5,9 +5,9 @@
  * Zeit insgesamt: 5h
  * Bemerkung : es gab probleme mit Bootstrape und der zerlegung in die verschiedneen View Abteilungen 
 
-*/
+*/-->
 
-
+<!-- Sprint 2 Start Renato Cabriolu-->
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -249,6 +249,6 @@
 </main> 
 </body>
 </html>
-
+<!-- Sprint 2 Ende Renato Cabriolu-->
 
    

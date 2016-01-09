@@ -10,8 +10,15 @@
     Sprint 1, Task : 40
     User Story: Als Kunde möchte ich eine Registrierung mit persönlichem Konto auf der Seite besitzen 
  -->
+ 
+ 
+ 
+ <!--sprint 1 wurde verworfen, es war nicht MVC fähig die verworfene datei ist im Sprint1 ordner Renato Cabriolu und heißt
+ Registrieren.php und RegistrierungVerarbeiten.php und SQL_Registrieren.sql
+ -->
+ 
 <?php
-
+// Sprint 3 Start : Renato Cabriolu
 class Registrieren_Controller extends Controller{
 
     private $Email;
@@ -58,3 +65,4 @@ class Registrieren_Controller extends Controller{
 }
 
 $obj = new Registrieren_Controller();
+// Sprint 3 Ende : Renato Cabriolu

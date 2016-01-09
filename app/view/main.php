@@ -7,6 +7,7 @@
 -->
 
 <main>
+   <!--Sprint 2 Start Renato Cabriolu-->
     <!-- Sliedebar im Header-->
     <section class="feator-rotator">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -57,4 +58,5 @@
                 <span class="sr-only">Weiter</span>
             </a>
         </div><!-- /.carousel -->
+        <!--Sprint 2 Ende Renato Cabriolu-->
 </main> 

@@ -15,20 +15,27 @@ Beschreibung: Der User kann ein einen neuen Passwort beantragen.
 Mysql-Connection benutzt von Kerstin Gräter  -->
 
 
-
+<!--Sprint 4 Start Renato Cabriolu designe erstellt-->
 <main>
+    <!--Sprint 4 ende Renato Cabriolu designe erstellt-->
+    <!--Sprint 3 Start Hanim Yerlikaya-->
     <form method="post" action="index.php?url=ForgottenPassword/validate">
+        <!--Sprint 3 Ende Hanim Yerlikaya-->
+        <!--Sprint 4 Start Renato Cabriolu designe erstellt-->
         <label>Email: </label><input type="text" name="email" />
         <button type="submit">Anfordern</button>
     </form>
 	
-		<!--Sprint 4 Start Renato Cabriolu designe erstellt-->
   		<div class="col-md-2"></div>
   		<div class="col-md-8">
   			<div class="panel panel-default">
   				<div class="panel-body">
+                                      <!--Sprint 4 Ende Renato Cabriolu designe erstellt-->
+                                        <!--Sprint 3 Start Hanim Yerlikaya-->
 				<form action="index.php?url=ForgottenPassword/validate" method="post" class="form-inline" role="form">
-					<div class="form-group">
+					  <!--Sprint 3 Ende Hanim Yerlikaya-->
+                                     <!--Sprint 4 Start Renato Cabriolu designe erstellt-->
+                                    <div class="form-group">
 					<label for="email">Email :</label>
 					<input type="email" class="form-control" id="email" placeholder="Email" name = "email">
 					</div>

@@ -30,7 +30,7 @@
 		</form>
 		</div>-->
 		<!--Ende Sprint 3 Christian Frindt -->	
-		<!-- Sprint 4 Renato Cabriolu neues designe der eingabemaske-->	
+<!-- Sprint 4 Renato Cabriolu neues designe der eingabemaske-->	
 	<main>
 	<div class="row">
   		<div class="col-md-2"></div>

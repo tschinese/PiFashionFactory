@@ -3,8 +3,9 @@
  * Datum: 10.11.2015
  * User Story (Nr.: 140-7) Eigenen Code an MVC anpassen 
  * Zeit insgesamt: 3h
- * bemerkung : wenn der mancontroller richtig funktioniert die mainview für den herren berreich
+ * bemerkung : wurde ersetzt galt als designe vorlage für die herren ansicht
 -->
+<!--Sprint 2 Start Renato Cabriolu-->
 <main>
             <section id="intro" data-speed="1" data-type="background">
                 <h1 class="page-header"></h1>
@@ -123,3 +124,4 @@
                 </div>
             </section>  
         </main>
+<!--Sprint 2 Ende Renato Cabriolu-->

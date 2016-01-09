@@ -15,7 +15,7 @@ Beschreibung: Button "Shop" hinzugefügt, um als Admin nach Anmeldung in den Sho
 
 */
 
-<!-- Sprint 2 Renato Cabriolu Start 
+<!-- Sprint 2 Renato Cabriolu Start -->
 
 <!DOCTYPE html>
 <html lang="de">
