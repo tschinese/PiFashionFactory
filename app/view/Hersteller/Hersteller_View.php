@@ -8,14 +8,48 @@ Beschreibung: Hier wird der View für Hersteller erstellt. -->
 
 <!-- Sprint 5 Marcel Riedl Start -->
 <main>
-    <br><br><br>
+    <br>
     <!-- Überschrift -->
     <div>
-        <h4> Hersteller bearbeiten </h4>
+        <h1 class="page-header"> Hersteller bearbeiten </h1>
+    </div>
+    <!-- Formular um einen Hersteller löschen zu können -->
+    <div>
+        <form action="index.php?url=HerstellerController" method="post">
+            <label for="hersteller">zu löschender Hersteller:&nbsp;</label>
+            <!-- Auswahlfeld um zu löschenden Hersteller auszuwählen -->
+            <select name="hersteller">
+                <?php
+                // neuer Counter
+                $b = 0;
+                // Anzahl der dazugehörigen Datenätze ermittlen
+                $total = sizeof($data);
+                // Ausgabe der bestehenden Hersteller
+                while ($b < $total) {
+                    // Ausgabe der Auswahlmöglichkeiten
+                    echo '<option>' . $data[$b]['hersteller'] . '</option>';
+                    // Counter erhöhen
+                    $b++;
+                }
+                ?>
+            </select>&nbsp;
+            <!-- Bestätigungsbutton -->
+            <input type="submit" name="loeschen" value="Löschen">
+        </form>
+    </div>
+    <!-- Formular um einen Hersteller hinzuzufügen -->
+    <div>
+        <form action="index.php?url=HerstellerController" method="post">
+            <!-- Textfeld um neuen Hersteller hinzuzufügen -->
+            <label for="hinzuhersteller">hinzuzufügender Hersteller:&nbsp;</label> 
+            <input name="hinzuhersteller" type="text">&nbsp;
+            <!-- Bestätigungsbutton -->
+            <input type="submit" name="hinzufuegen" value="Hinzufügen"><br>
+        </form>
     </div>
     <div>
         <!-- Tabelle für die vorhandenen Daten aus der Datenbank erstellen -->
-        <table>
+        <table class="table table-striped">
             <!-- Tabellen Kopf erstellen -->
             <thead>
             <th>vorhandene Hersteller</th>
@@ -26,8 +60,6 @@ Beschreibung: Hier wird der View für Hersteller erstellt. -->
                 <?php
                 // Counter erstellen
                 $a = 0;
-                // Anzahl der dazugehörigen Datenätze ermittlen
-                $total = sizeof($data);
                 // Ausgabe der Datensätze
                 while ($a < $total) {
                     // Daten aus der Datenbank
@@ -38,37 +70,6 @@ Beschreibung: Hier wird der View für Hersteller erstellt. -->
                 ?>
             </tbody>
         </table>
-    </div>
-    <!-- Formular um einen Hersteller löschen zu können -->
-    <div>
-        <form action="index.php?url=HerstellerController" method="post">
-            <label for="hersteller">zu löschender Hersteller:</label>
-            <!-- Auswahlfeld um zu löschenden Hersteller auszuwählen -->
-            <select name="hersteller">
-                <?php
-                // neuer Counter
-                $b = 0;
-                // Ausgabe der bestehenden Hersteller
-                while ($b < $total) {
-                    // Ausgabe der Auswahlmöglichkeiten
-                    echo '<option>' . $data[$b]['hersteller'] . '</option>';
-                    // Counter erhöhen
-                    $b++;
-                }
-                ?>
-            </select>
-            <!-- Bestätigungsbutton -->
-            <input type="submit" name="loeschen" value="Löschen"><br>
-        </form>
-    </div>
-    <!-- Formular um einen Hersteller hinzuzufügen -->
-    <div>
-        <form action="index.php?url=HerstellerController" method="post">
-            <!-- Textfeld um neuen Hersteller hinzuzufügen -->
-            <label for="hinzuhersteller">hinzuzufügender Hersteller:</label> <input name="hinzuhersteller" type="text"><br>
-            <!-- Bestätigungsbutton -->
-            <input type="submit" name="hinzufuegen" value="Hinzufügen"><br>
-        </form>
     </div>
     <!-- Formular um zurück zum Hauptmenu des Backends zukommen -->
     <div>

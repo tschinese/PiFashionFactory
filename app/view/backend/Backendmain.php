@@ -58,26 +58,32 @@ Beschreibung: Diese Userstory ist nur mit aufgeführt, um die Bearbeitung der Pr
 
 <!-- Sprint 1 Renato Cabriolu Start -->
 <main>
-
+    <br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
                 <ul class="nav nav-sidebar">
                     <!-- Sprint 1 Renato Cabriolu Ende -->
-                    <!-- Sprint 5 Marcel Riedl Start -->
-                    <li class="active"><a href="index.php?url=Produktcontroller">Produkt Anlegen <span class="sr-only">(aktuell)</span></a></li>
-                    <li class="active"><a href="index.php?url=ProduktloeschenController">Produkt löschen <span class="sr-only">(aktuell)</span></a></li>
-                    <!-- Sprint 5 Marcel Riedl Ende -->
-                    <!-- Sprint 1 Renato Cabriolu Start -->
-                    <li><a href="#">Berichte</a></li>
-                    <!-- Sprint 1 Renato Cabriolu Ende -->
                     <!-- Sprint 4 Kerstin Gräter Start-->
                     <li><a href="index.php?url=AnalyseController">Analysen</a></li>
                     <!-- Sprint 4 Kerstin Gräter Ende -->
-                    <!-- Sprint 1 Renato Cabriolu Start -->
-                    <li><a href="#">Exportieren</a></li>
+                    <!-- Sprint 1 Renato Cabriolu Start 
+                    <li><a href="#">Berichte</a></li>
+                    Sprint 1 Renato Cabriolu Ende -->
+                    <!-- Sprint 5 Marcel Riedl Start -->
+                    <li class="active"><a href="index.php?url=ProduktBackendController">Produkte bearbeiten <span class="sr-only">(aktuell)</span></a></li>
+                    <!-- Sprint 5 Marcel Riedl Ende -->
+                    <!-- Sprint 1 Renato Cabriolu Start 
+                    <li><a href="#">Exportieren</a></li>-->
                 </ul>
                 <ul class="nav nav-sidebar">
+                    <!-- Sprint 1 Renato Cabriolu Ende -->
+                    <!-- Sprint 5 Marcel Riedl Start -->
+                    <li class="active"><a href="index.php?url=FarbeController">Farbe bearbeiten <span class="sr-only">(aktuell)</span></a></li>
+                    <li class="active"><a href="index.php?url=HerstellerController">Hersteller bearbeiten <span class="sr-only">(aktuell)</span></a></li>
+                    <li class="active"><a href="index.php?url=GroeseController">Größe bearbeiten <span class="sr-only">(aktuell)</span></a></li>
+                    <!-- Sprint 5 Marcel Riedl Ende -->
+                    <!-- Sprint 1 Renato Cabriolu Start
                     <li><a href="">Nav-Eintrag</a></li>
                     <li><a href="">Noch ein Nav-Eintrag</a></li>
                     <li><a href="">Und noch einer</a></li>
@@ -87,7 +93,7 @@ Beschreibung: Diese Userstory ist nur mit aufgeführt, um die Bearbeitung der Pr
                 <ul class="nav nav-sidebar">
                     <li><a href="">Noch ein Nav-Eintrag</a></li>
                     <li><a href="">Und noch einer</a></li>
-                    <li><a href="">Anderer Nav-Eintrag</a></li>
+                    <li><a href="">Anderer Nav-Eintrag</a></li>-->
                 </ul>
             </div>
             <div class="col-md-10">

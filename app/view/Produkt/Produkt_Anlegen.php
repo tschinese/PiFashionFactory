@@ -38,8 +38,8 @@ Task: 20-2 (#10003) Produkte anlegen
 
 <!-- Sprint 3 Marcel Riedl Start -->
 <main>        
-    <br><br><br>
-    <h1>Produkt anlegen</h1>
+    <br>
+    <h1 class="page-header">Produkt anlegen</h1>
     <!-- Sprint 2 Marcel Riedl ALT
             <p>Anmerkungen: <br>
                 1. Um einen Artikel löschen oder aktualisieren zu können, benötigen Sie die dazugehörige Produktnummer.<br>
@@ -55,8 +55,8 @@ Task: 20-2 (#10003) Produkte anlegen
         <form action="index.php?url=produktcontroller" method="POST" enctype="multipart/form-data">
             <!-- Sprint 4 Hanim Yerlikaya Ende -->
             <!-- Sprint 5 Marcel Riedl Start -->
-            <label for="name">Name:</label> <input type="text" name="name"><br>
-            <label for="hersteller">Hersteller:</label> 
+            <label for="name">Name:&nbsp;</label> <input type="text" name="name"><br>
+            <label for="hersteller">Hersteller:&nbsp;</label> 
             <select name="hersteller">
                 <?php
                 // Counter erstellen
@@ -72,7 +72,7 @@ Task: 20-2 (#10003) Produkte anlegen
                 }
                 ?>
             </select><br>
-            <label for="farbe">Farbe:</label> 
+            <label for="farbe">Farbe:&nbsp;</label> 
             <select name="farbe">
                 <?php
                 // Counter erstellen
@@ -87,7 +87,7 @@ Task: 20-2 (#10003) Produkte anlegen
                 }
                 ?>
             </select><br>
-            <label for="groese">Größe:</label> 
+            <label for="groese">Größe:&nbsp;</label> 
             <select name="groese">
                 <?php
                 // Counter erstellen
@@ -102,8 +102,8 @@ Task: 20-2 (#10003) Produkte anlegen
                 }
                 ?>
             </select><br>
-            <label for="preis">Preis:</label> <input type="text" name="preis"><br>
-            <label for="kategorie">Kategorie:</label> 
+            <label for="preis">Preis:&nbsp;</label> <input type="text" name="preis"><br>
+            <label for="kategorie">Kategorie:&nbsp;</label> 
             <select name="kategorie">
                 <?php
                 // Counter erstellen
@@ -133,10 +133,12 @@ Task: 20-2 (#10003) Produkte anlegen
             <!-- Sprint 4 Hanim Yerlikaya Start -->
             <input type="file" name="images[]" multiple/>
             <!-- Sprint 4 Hanim Yerlikaya Ende -->
+            <br>
             <!-- Sprint 3 Marcel Riedl Start -->
             <input type="submit" name="anlegen" value="Anlegen">
         </form>
     </div>
+    <br>
     <!-- Button um zurück zur Produkt bearbeitung zu kommen -->
     <div>
         <form action="index.php?url=ProduktBackendController" method="post">

@@ -85,10 +85,21 @@ main section{
 // Sprint 2 Renato Cabriolu Ende
 // Sprint 5 Marcel Riedl Start
 
+.linkProdukt{
+    font-family: Verdana, sans-serif;
+    color: #528ecc;
+}
+
+.linkProdukt:hover{
+    color: black;
+    font-size: 110%;
+}
+
 select{
     width: auto;
-    padding: 8px 15px;
-    border: none;
+    padding: 6px 15px;
+    margin: 8px 0;
+    border: 1px solid gray;
     border-radius: 4px;
     background-color: #f1f1f1;
 }

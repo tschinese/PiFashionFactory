@@ -43,8 +43,8 @@ Beschreibung:
 
 <!-- Sprint 3 Marcel Riedl Start -->
 <main>
-    <br><br><br>
-    <h2>Produkt löschen</h2>
+    <br>
+    <h1 class="page-header">Produkt löschen</h1>
     <div>
         <br>
         Geben Sie hier die Produktnummer des zu löschenden Produkts ein:
@@ -80,7 +80,7 @@ Beschreibung:
     </div>
     <div class="table-responsive">
         <!-- Tabelle aller Produkte -->
-        <table class="TabelleBackend">
+        <table class="table table-striped">
             <!-- Tabellen Kopf -->
             <thead>
             <th>Produktnummer</th>
