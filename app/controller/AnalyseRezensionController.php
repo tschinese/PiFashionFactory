@@ -3,7 +3,7 @@
 // Verfasser: Kerstin Gräter, Matrikelnummer: 3113720
 // UserStory:(450-1) Als Admin möchte ich über eine vernünftige Auswahl-Möglichkeit im Backend-Bereich verfügen.
 // Task: #10611 Auswahl in den Analyse-Funktionen überarbeiten 
-// Gesamtaufwand Task:  Stunde
+// Gesamtaufwand Task: 8 Stunden
 // Beschreibung: Controller wurde angepasst auf Auswahlmöglichkeiten
 
 //Sprint 4, Gruppe 4 Onlineshop, Datum: 07.12.2015, Version 1

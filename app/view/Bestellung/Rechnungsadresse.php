@@ -1,8 +1,8 @@
 <!--
 //Sprint 5, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 07.01.2016 Version 1
-//UserStory: 
-//Task: Update Bestellabwicklung 
-//Aufwand: 
+//UserStory: #490 Als Programmierer möchte ich bereits vorhandenen Code updaten
+//Task: (490-2) eigene Files überarbeiten
+//Gesamtaufwand: 2 Stunden
 //Beschreibung: Änderung der Anzeige der Lieferadresse 
 
 //Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 23.11.2015 Version 2
