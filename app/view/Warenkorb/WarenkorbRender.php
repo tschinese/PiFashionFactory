@@ -95,12 +95,23 @@
                                           $gtschContr = new Gutschein_Controller();
                                           
                                           $faktor = $gtschContr->rabatt();
-                                          
+                                          //Sprint 5 Anfang
+                                          $art =$gtschContr->art();
+                                          //Sprint 5 Ende
                                           $summe =$summe+($produktAnzahl * $data[$loop]['SalePreis']); 
                                           $loop ++;     
-                                          
+                                          //Sprint 5 Anfang
+                                          if($art['Art'] ==true){
                                           $summe = $summe - $summe * $faktor['Faktor'];
-                                         // Nachtrag Anfang Sprint 5 07.01.2016 Ridvan Atacan
+                                          }else{
+                                          $summe = $summe - $faktor['Faktor'];    
+                                          if($summe < 0 ){
+                                              $summe = 0;
+                                          }
+                                          
+                                          }
+                                          //Sprint 5 Ende
+                                            // Nachtrag Anfang Sprint 5 07.01.2016 Ridvan Atacan
                                          $_SESSION['gutschein']['boolean'] = true;
                                          $_SESSION['gutschein']['gesamtpreis'] = sprintf("%.2f",$summe);
                                          
@@ -154,7 +165,7 @@
                        
                         <!-- Zugriff auf css-Style von Christian Frindt-->
                         
-                        <input class ="myButton" type ="submit" name ="submit" value = "Anwenden">
+                        <input class ="myButton" type ="submit" name ="anwenden" value = "Anwenden">
                          <?php
                         if($codenull == true){
                             echo('<span style="color:#FA0A0A"><br>Kein Gutscheincode eingegeben!');
@@ -164,6 +175,13 @@
                          
                             echo('<span style="color:#FA0A0A"><br>Gutscheincode falsch!');
                         }*/
+                        //Ridvan Atacan Sprint 5 Anfang
+                        if(isset($_POST['anwenden'])&&isset($_POST['code'])){
+                            $gutschein = new Gutschein_Model();
+                            $gutschein->löschen($_POST['code']);
+                            
+                        }
+                        //Ridvan Atacan Sprint 5 Ende
                         ?>
                         </form>
                     </div>

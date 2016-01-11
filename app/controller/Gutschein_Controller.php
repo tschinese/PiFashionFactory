@@ -49,16 +49,7 @@ class Gutschein_Controller extends Controller {
         $this->view('Footer');
      
     }
-    public function erstellen($wert){
-        
-        $this->view('Header');
-        $this->view('Bestellung/GutscheinGeschenk_View2',$wert);
-        $this->view('Footer');
-    }
-    public function generieren($wert){
-        $this->view('Header');
-        $this->view('Footer');
-    }
+  
     //Ende Sprint 5
     public function testen() {
 
@@ -75,6 +66,36 @@ class Gutschein_Controller extends Controller {
         return $faktor;
     }
     //Sprint 4 Ende Ridvan 07.12.2015
+    //Sprint 5 Anfang
+    public function art(){
+        
+        $gutschein=$this->model('Gutschein_Model');
+        $art = $gutschein->art($_POST['code']);
+        
+        return $art;
+    }
+      public function erstellen($wert){
+        
+        $this->view('Header');
+        $this->view('Bestellung/GutscheinGeschenk_View2',$wert);
+        $this->view('Footer');
+    }
+    public function generieren(){
+        $this->view('Header');
+        $wert = $_POST['data'];
+        
+        echo"<main>";
+        if(isset($_POST['bestätigen'])){
+        $rand = rand(1111111111,2147483647);
+        echo("<strong>Gutschein Nummer: " .$rand."<br></strong>");
+        echo("<strong>Wert " .$wert." €<br></strong> ");
+        echo "Den Gutschein mit der Nummer: <strong>".$rand."</strong> haben wir soeben für Sie generiert. <br>Sie können Ihn als Geschenk einem Freund oder Verwandten weiterleiten. <br>Einlösen können Sie ihn, wenn Sie im Warenkorb die Gutscheinbox damit ausfülen. <br>Ihnen werden dann ".$wert." € vom Einkaufspreis abgezogen.";
+        }
+        $gutschein = $this->model('Gutschein_Model');
+        $gutschein->erstellen($_POST['data'],$rand);
+        echo("hallo");
+        $this->view('Footer');
+    }
 }
 
 $obj = new Gutschein_Controller();

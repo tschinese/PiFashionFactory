@@ -5,7 +5,8 @@ echo("<br>Möchten Sie diesen Gutscheincode verbindlich generieren lassen?");
 ?>
 <br>
 <form action ="index.php?url=Gutschein_Controller/generieren" method ="post">
-<input type ="submit" name="bestätigen" value="Zahlungspflichtig bestellen">
+    <?php echo"<input type='hidden' name='data' value='$data'>"?>
+    <input type ="submit" name="bestätigen" value="Zahlungspflichtig bestellen">
 </form>
 <form action ="index.php?url=Profielcontroller" method ="post">
 <input type ="submit" name="abbrechen" value="Abbrechen">

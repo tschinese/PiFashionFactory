@@ -29,7 +29,7 @@
                                 <li><a href="index.php?url=KontoController/uebersicht">Bankkonto Ansicht</a></li>
                                 <!--Ende Sprint 5  Christian -->
 				<!--Start Sprint 5 Ridvan -->
-				<li><a href="index.php?url=Gutschein_Controller/schenken">Gutschein verschenken</a></li>
+				<li><a href="index.php?url=Gutschein_Controller/schenken">Geschenk-Gutschein</a></li>
                                 <!--Ende Sprint 5 Ridvan -->
 				<li><a href="index.php?url=MeineBestellungen_Controller">Bestellungen</a></li>
                                 <li><a href="index.php?url=LieferAdresse_Controller">Lieferadresse</a></li>
