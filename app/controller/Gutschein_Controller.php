@@ -41,7 +41,25 @@ class Gutschein_Controller extends Controller {
         }
         $this->view('Footer', []);
     }
-
+    //Anfang Sprint 5 
+    public function schenken(){
+        $this->view('Header');
+        $this->view('Bestellung/GutscheinGeschenk_View');
+        
+        $this->view('Footer');
+     
+    }
+    public function erstellen($wert){
+        
+        $this->view('Header');
+        $this->view('Bestellung/GutscheinGeschenk_View2',$wert);
+        $this->view('Footer');
+    }
+    public function generieren($wert){
+        $this->view('Header');
+        $this->view('Footer');
+    }
+    //Ende Sprint 5
     public function testen() {
 
         $gutsch = new Gutschein_Model();

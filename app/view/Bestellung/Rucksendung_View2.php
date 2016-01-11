@@ -23,7 +23,7 @@
                 echo " Möchten Sie diese Bestellung stornieren bzw. zurücksenden?";
     }
     else{
-        echo"<strong> Zu dieser Bestellnummer liegt uns keine Bestellung vor!</strong>";
+        echo"<strong><main> Zu dieser Bestellnummer liegt uns keine Bestellung vor!</strong>";
     }
            
             ?>

@@ -32,8 +32,9 @@
     echo("Hey <strong>" .$name['Vorname']." " .$name['Nachname']."</strong>,<br>Falls Sie mehrere Lieferadressen haben, können Sie diese hier hinzufügen!");
      ?>
      <!-- Ende Ridvan Atacan 07.12.2015 Sprint 4-->
-	<!-- Anfang Ridvan Atacan 24.11.2015 Sprint 3-->
- <form action = "index.php?url=LieferAdresse_Controller" method ='post'>
+     <!-- Anfang Ridvan Atacan 24.11.2015 Sprint 3-->
+
+     <form action = "index.php?url=LieferAdresse_Controller" method ='post'>
                
 
 
@@ -56,3 +57,4 @@
         <form action ="index.php?url=Bestellungcontroller" method ="Post">
             <input type ="submit" name ="warenkrb" value ="Zum Warenkorb">
         </form>
+ 

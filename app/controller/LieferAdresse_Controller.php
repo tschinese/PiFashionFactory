@@ -41,13 +41,21 @@ class LieferAdresse_Controller extends Controller{
         $this->model('LieferAdresse_Model');
         
         if (isset($_POST["submit"])) {
-		//Sprint 3 Anfang Ridvan 24.11.2015
+	//Sprint 5 Anfange	
+        if(empty($_POST['name'])||($_POST['nname'])||($_POST['strasse'])||($_POST['plz'])){
+            echo("<span style='color:#FF0000'><strong>Bitte alle Felder ausfüllen!</strong><br>");
+        }
+        else{
+        //Sprint 5 Ende
+        //Sprint 3 Anfang Ridvan 24.11.2015
         $this->hinzufügen();
         
         //Aufruf der Methode innerhalb dieser Klasse
-        }
+        }}
         $this->view('Footer',[]);
-    }
+    
+        
+        }
     //Methode zum Erzeugen eines Model Objekts und Übergabe der Parameter für die Datenbankanfrage
     public function hinzufügen(){
         

@@ -21,9 +21,17 @@ class Rucksendung_Controller extends Controller{
         $this->view("Header");
         $tst = $this->model("MeineBestellungen_Model");
         $ruck = $tst->rucksendung($_POST['bestellid']);
+        //Sprint 5 Anfang
+        if(empty($_POST['bestellid'])){
+            $this->view('Bestellung/Rucksendung_View');
+            echo("<span style='color:#FF0000'><strong>Bitte eine Bestellnummer angeben!</strong><br>");
+        }else{
+        //Sprint 5 Ende
         $this->view('Bestellung/Rucksendung_View2',$ruck);
+         echo ("</main>");
         
-        echo ("</main>");
+        }
+       
         $this->view("Footer");
         
     }
