@@ -1,9 +1,8 @@
 <?php
-//Sprint 5, Gruppe 4 Onlineshop, Datum: 06.01.2016, Version 1
-//Verfasser: Kerstin Gräter, Matrikelnummer: 3113720
-//UserStory: 
-//Task: Update des Bestellvorgangs 
-//Gesamtaufwand: 
+//Sprint 5, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 07.01.2016 Version 1
+//UserStory: #490 Als Programmierer möchte ich bereits vorhandenen Code updaten
+//Task: (490-2) eigene Files überarbeiten
+//Gesamtaufwand: 2 Stunden
 //Beschreibung: Einfügen des Gutscheinpreises falls vorhanden und beenden von Sessions
 
 //Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 23.11.2015 Version 2
@@ -164,14 +163,17 @@ class Bestellung_Model {
                 }else{
                     $preis = $row0['Preis'] * $menge;
                 }
-            //Aufsummieren auf Gesamtpreis
-                if($_SESSION['']){
-                    
-                }
-                else {
-                 $gesamtpreis+=$preis;   
-                }
                 
+                //Sprint 5, Kerstin Gräter START
+                //Aufsummieren auf Gesamtpreis
+//                if(isset($_POST['code'])&& !empty($_POST['code'])){
+//                    $gesamtpreis+=$_SESSION['gutschein']['gesamtpreis'];
+//                }
+//                else {
+//                    $gesamtpreis+=$preis;                    
+//                }
+                //Sprint 5, Kerstin Gräter ENDE
+            $gesamtpreis+=$preis;
             $a++;
         }
         
@@ -184,10 +186,11 @@ class Bestellung_Model {
 		
 
         //Objekt von Denis Kevljanins Mail
-//		$mail = new Mail();
+		//$mail = new Mail();
+                
         
 		
-//		echo 'MAIL ABGESCHICKT<br>';
+		//echo 'MAIL ABGESCHICKT<br>';
 		
 	$sql5 = 'select p.Produktnummer, p.Benennung, p.Preis, p.Farbe_farbe, p.Groese_groese, p.Hersteller_hersteller, l.Menge, b.Gesamtpreis '
             .'from produkt p join (bestellung b join bestellliste l)'
@@ -200,8 +203,9 @@ class Bestellung_Model {
 	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         //Kerstin Gräter START, Sprint 5
-        // Session Warenkorb beenden
+        // Session Warenkorb und gutschein beenden
         unset($_SESSION['warenkorb']);
+        unset($_SESSION['gutschein']);
         //Kerstin Gräter ENDE, Sprint5
         
         //Connection schließen

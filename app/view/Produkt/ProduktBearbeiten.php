@@ -8,16 +8,18 @@ Beschreibung: Es wird ein View erstellt, um auf die verschiedenen Funktionen zu 
 
 <!-- Sprint 5 Marcel Riedl Ende -->
 <main>
-    <br><br><br>
+    <br>
     <!-- Überschrift -->
     <div>
-        <h2>Produkte bearbeiten</h2>
+        <h1 class="page-header">Produkte bearbeiten</h1>
     </div>
     <!-- Links auf die Controller um die jeweiligen Funktionen auszuführen -->
     <div>
-        <a href="index.php?url=Produktcontroller">Produkte anlegen</a><br>
-        <a href="index.php?url=ProduktloeschenController">Produkte löschen</a>
+        <h3><a class="linkProdukt" href="index.php?url=Produktcontroller">Produkte anlegen</a></h3>
+        
+        <h3><a class="linkProdukt" href="index.php?url=ProduktloeschenController">Produkte löschen</a></h3>
     </div>
+    <br>
     <!-- Formular um zurück zum Hauptmenu des Backends zukommen -->
     <div>
         <form action="index.php?url=backend" method="post">
