@@ -20,11 +20,12 @@ class Chat_Model{
     
     //Methode zum empfnagen von nachrichten
     public function empfangen($kunde_id){
+        echo 'chatmodel empfangen';
 			try{
 			$db = $this->connection->verbinden();
 			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         
-			$sql ="SELECT message_date, message  FROM chat WHERE kunde_id = '1' ORDER BY message_date ASC";
+			$sql ="SELECT message_date, message  FROM chat WHERE kunde_id = '' ORDER BY message_date ASC";
 			$stmt = $db->prepare($sql);
             $stmt->execute();
              $stmt->setFetchMode(PDO::FETCH_ASSOC);   
@@ -40,11 +41,12 @@ class Chat_Model{
 	
 	//Methode zum senden von Nachrichten
     function senden($message, $kunde_id, $time){
+        echo 'chatmodel senden';
 		try{
 			$db = $this->connection->verbinden();
 			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        
-			$sql ="INSERT INTO chat VALUES (null, '$kunde_id', '$message', ".date("Y-m-d H:i:s")."   )";
+                                                                                        //.date("Y-m-d H:i:s").
+			$sql ="INSERT INTO chat VALUES (null, '$kunde_id', '$message', '2016-01-02')";
 			$stmt = $db->prepare($sql);
             $stmt->execute();
            

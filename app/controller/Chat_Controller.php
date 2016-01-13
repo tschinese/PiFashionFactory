@@ -25,6 +25,7 @@ class Chat_Controller extends Controller{
     }
 	
 	public function loadChat(){
+            echo 'chat controller loadchat';
 				$chat= $this->model('Chat_Model');
 				$this->view('Header',[]);
 				$this->view('chat/chat',$chat->empfangen('1')); // TODO 
@@ -35,6 +36,7 @@ class Chat_Controller extends Controller{
 	}
 	
 	public function sendChat(){
+            echo 'chatcontroller sende chat';
 		$model= $this->model('Chat_Model');
         $model->senden(Parameter);
         

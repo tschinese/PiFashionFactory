@@ -7,8 +7,9 @@
  -->
  <!--Quelle http://www.agb.de/--> 
 
- //Gibt den main bereich der AGB aus
+
 <main>
+    <blockquote>
  
     Allgemeine Geschäftsbedingungen der Firma Fashion-Factory<br />
 
@@ -261,5 +262,5 @@ zur Verfügung.</b>
 <br />
 <br />
 <p>Stand der AGB Nov.2015</p>
-
+</blockquote>
 </main>

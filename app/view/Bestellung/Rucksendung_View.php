@@ -1,4 +1,5 @@
 <main>
+    <blockquote>
     <strong> Willkommen im Rücksendezentrum! </strong><br>
     <?php
     $best = $this->model("MeineBestellungen_Model");
@@ -15,5 +16,5 @@
     <input type ="text" name ="bestellid" placeholder ="BestellNummer">
     <input type ="submit" value ="Weiter">
     </form>
- 
-    
+    </blockquote>
+</main>

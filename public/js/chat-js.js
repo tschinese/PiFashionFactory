@@ -40,6 +40,7 @@ $('textarea').keypress(
 				document.location='/index.php?url=Chat_Controller/sendChat?newMessage=test'; 
 				$.post('/index.php?url=Chat_Controller/sendChat?newMessage=test', {newMessage: msg});
 				*/
+                         
 				$('<div class="nachrichten_eigene">'+msg+'</div>').insertBefore('.nachrichten_push');
 				$('.nachrichten_body').scrollTop($('.nachrichten_body')[0].scrollHeight);
 		}
