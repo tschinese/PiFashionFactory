@@ -26,5 +26,16 @@ class BestellungAbschliesenCon extends Controller {
 		$this->view('Bestellung/Abgeschlossen', $data);
 		
         $this->view('Footer');
+        
+        //Hanim Start
+        if(isset($_SESSION['logged']['id']))
+        {
+            require_once ('../app/models/Profil_Model.php');
+            $profil = new Profil_Model();
+            $profil = $profil->laden($_SESSION['logged']['id']);
+            require_once ('../app/controller/BestellungEmail.php');
+            BestellungEmail::send($profil, $data);
+        }
+        //Hanim End
     }
 }
