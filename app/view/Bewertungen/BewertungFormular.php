@@ -17,6 +17,7 @@
         <link href="../public/css/StyleBewertungFormular.css" type="text/css" rel="stylesheet">
     </head>
     <body>
+        <main>
         <p> <h2>REZENSION VERFASSEN</h2> </p>
             </br></br>
                 <form method="post">
@@ -36,7 +37,7 @@
 			<div id=blank><a href="index.php?url=BewertungController/bewertungAnzeigen/<?php echo $data[0]?>">zurück zur Rezensionsübersicht</a></div>
 			</p>
 	</form>
-        
+       </main>
     </body>
 </html>
 

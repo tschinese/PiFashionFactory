@@ -1,4 +1,12 @@
- <!-- Ridvan Atacan, 3113837
+ <!--
+Sprint 5, Gruppe 4 Onlineshop, Verfasser: Renato Cabriolu, Datum: 10.01.2016 Version 1
+UserStory: Als Kunde möchte ich ein Einheitliches Designe haben.
+Task: 430-3  Lieferadresse designen
+Aufwand: 1 Stunden
+Beschreibung: Eingabeformulat gestaltet
+ <!-- 
+ 
+ Ridvan Atacan, 3113837
     08.12.2015 Group #4 Onlineshop
     Sprint 4, Task : 370-9 #10586
     User Story: Als Entwickler möchte ich, dass der Onlineshop auf dem Hochschulserver läuft.
@@ -58,3 +66,88 @@
             <input type ="submit" name ="warenkrb" value ="Zum Warenkorb">
         </form>
  
+                <!-- Start Renato Cabriolu Sprint 5-->
+        <p><br/></p>
+	<div class="row">
+  		<div class="col-md-2"></div>
+  		<div class="col-md-8">
+  			<div class="panel panel-default">
+  				<div class="panel-body">
+    					<div class="page-header" style="margin-top:5px;">
+    						<h3>Lieferadresse Hinzufügen</h3>
+    					</div>
+    					<form action="index.php?url=LieferAdresse_Controller" method="post" class="form-horizontal" role="form">
+  						<div class="form-group">
+    							<label for="name" class="col-sm-2 control-label">Vorname</label>
+    							<div class="col-sm-10">
+    								<div class="input-group">
+    									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                                                        <input type="text" class="form-control" id="name" placeholder="Vorname" name = "name">
+      							</div>
+    							</div>
+  						</div>
+                                            	<div class="form-group">
+    							<label for="nname" class="col-sm-2 control-label">Nachname</label>
+    							<div class="col-sm-10">
+    								<div class="input-group">
+    									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                                                        <input type="text" class="form-control" id="nname" placeholder="Nachname" name = "nname">
+      							</div>
+    							</div>
+  						</div>
+                          
+            
+                                            	<div class="form-group">
+    							<label for="strasse" class="col-sm-2 control-label">Strasse</label>
+    							<div class="col-sm-10">
+    								<div class="input-group">
+    									<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+                                                                        <input type="text" class="form-control" id="strasse" placeholder="Straße" name = "strasse">
+      							</div>
+    							</div>
+  						</div>
+                                              	<div class="form-group">
+    							<label for="plz" class="col-sm-2 control-label">Plz :</label>
+    							<div class="col-sm-10">
+    								<div class="input-group">
+    									<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+                                                                        <input type="text" class="form-control" id="plz" placeholder="89073" name = "plz">
+      							</div>
+    							</div>
+  						</div>
+						<!--Sprint 4 Start Renato Cabriolu bestätigung anzeigen beim Registrieren-->
+						<script>
+							function display_alert()
+							  {
+							   alert("Lieferadresse Hinzugefügt!");
+							  }
+						</script>
+  						<div class="form-group">
+    							<div class="col-sm-offset-2 col-sm-10">
+      							<button type="submit" onclick="display_alert()" name="submit" class="btn btn-primary">Hinzufügen</button>
+    							<!--onclick="index.php?url=Registrieren_Controller/Hinzufuegen"
+									<input type="submit" value="Registerieren">-->
+									</div>
+  						</div><!--Sprint 4 Ende Renato Cabriolu bestätigung anzeigen beim Registrieren-->
+                                
+					</form>
+                                    <div class="form-group">
+    							<div class="col-sm-offset-2 col-sm-10">
+      							<button type="submit" onclick="index.php?url=Bestellungcontroller" method ="Post" name="submit" class="btn btn-primary">Hinzufügen</button>
+    							<!--onclick="index.php?url=Registrieren_Controller/Hinzufuegen"
+									<input type="submit" value="Registerieren">-->
+									</div>
+  						</div>
+  				</div>
+			</div>
+  		</div>
+  		<div class="col-md-2"></div>
+	</div>
+        
+        
+        
+   
+        <form action ="index.php?url=Bestellungcontroller" method ="Post">
+            <input type ="submit" name ="warenkrb" value ="Zum Warenkorb">
+        </form>
+      <!--  Renato Cabriolu Sprint 5 Ende-->

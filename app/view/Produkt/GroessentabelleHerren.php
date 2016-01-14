@@ -1,4 +1,12 @@
 <!--
+Sprint 5, Gruppe 4 Onlineshop, Verfasser: Renato Cabriolu, Datum: 10.01.2016 Version 1
+UserStory: Als Kunde möchte ich ein Einheitliches Designe haben.
+Task: 430-1  Produktansicht Designen
+Aufwand: 0.1 Stunden
+Beschreibung: Blockansicht
+
+
+<!--
 Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 19.11.2015 Version 1
 UserStory: Als Kunde möchte ich eine Größentabelle sehen können, um einschätzen zu können, ob ein Produkt passt.
 Task: 220-1 (#10328) Größentabelle implementieren
@@ -7,8 +15,10 @@ Beschreibung: Größentabelle für Herren
 View
 -->
 <main>
+<!-- Sprint 3 Start : Kerstin Gräter-->
+<main>
     <style>
-/*        style für tabellen, wird noch ausgelagert*/
+        /*style für table muss noch ausgelagert werden*/ 
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -17,7 +27,11 @@ View
             padding: 15px;
         }
     </style>
-
+    <!-- Sprint 3 Ende : Kerstin Gräter-->
+    <!-- Sprint 5 Start : Renato Cabriolu-->
+    <blockquote>
+     <!-- Sprint 5 Ende : Renato Cabriolu-->
+    <!-- Sprint 3 Start : Kerstin Gräter-->
     <h2>Größentabelle Herren</h2>
     <br>
     <br>
@@ -206,7 +220,13 @@ View
     </table>
     <br>
     <br>
+     <!-- Sprint 5 Ende : Kerstin Gräter-->
+    <!-- Sprint 4 Start : Renato Cabriolu-->
+    </blockquote>
+    <!-- Sprint 5 Ende: Renato Cabriolu-->
+    <!-- Sprint 3 Start : Kerstin Gräter-->
 </main>
+<!-- Sprint 3 Ende : Kerstin Gräter-->
 
 
 

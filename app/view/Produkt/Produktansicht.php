@@ -1,3 +1,13 @@
+<!--
+Sprint 5, Gruppe 4 Onlineshop, Verfasser: Renato Cabriolu, Datum: 10.01.2016 Version 1
+UserStory: Als Kunde möchte ich ein Einheitliches Designe haben.
+Task: 430-1  Produktansicht Designen
+Aufwand: 0.1 Stunden
+Beschreibung: Blockansicht
+
+
+
+
 <!--Sprint 4, Gruppe 4 Onlineshop, Datum: 08.12.2015 Version 5
 Verfasser: Hanim Yerlikaya, 
 UserStory: 300 Als Kunde möchte ich eine Bildergalerie haben für die Produkte
@@ -39,7 +49,13 @@ Task: 10-2 #10003 Produkte anlegen
 Zeitaufwand: 8 Stunden-->
 
 <!-- Sprint 2 Marcel Riedl Start -->
-<main><div class="col-xs-6 col-lg-4">
+<main>
+        <!-- Sprint 2 Marcel Riedl Ende -->
+        <!-- Sprint 5 Renato Cabriolu Start -->
+       <blockquote>
+        <!-- Sprint 5 Renato Cabriolu Ende -->
+        <!-- Sprint 2 Marcel Riedl Start -->
+    <div class="col-xs-6 col-lg-4">
         <?php
         // Sprint 2 Marcel Riedl Ende
         // Sprint 3 Christian Frindt Start
@@ -91,6 +107,7 @@ Zeitaufwand: 8 Stunden-->
     <!-- Sprint 1 Denis Kevljanin START -->
     <form action='#' method="POST">
         <input type="submit" value="Sofortkaufen">
+  
     </form> 
     <!-- Sprint 1 Denis Kevljanin ENDE -->
     <!--  Sprint 3 Kerstin Gräter Start-->
@@ -102,5 +119,10 @@ Zeitaufwand: 8 Stunden-->
     <a href="index.php?url=BewertungController/bewertungAnzeigen/<?php echo $data['data']['Produktnummer'] ?>">Rezensionen</a>
     <!-- Sprint 3 Christian Frindt Ende -->
     <!-- Sprint 2 Marcel Riedl Start -->
+      <!-- Sprint 2 Marcel Riedl Ende -->
+      <!-- Sprint 5 Renato Cabriolu Start -->
+       <blockquote>
+        <!-- Sprint 5 Renato Cabriolu Ende -->
+        <!-- Sprint 2 Marcel Riedl Start -->
 </main> 
 <!-- Sprint Marcel Riedl Ende -->
