@@ -78,7 +78,9 @@ and open the template in the editor.
         <link href="../public/css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="../public/css/sty.css">
         <link rel="stylesheet" href="../public/css/chat.css">
-
+        
+        <link href="../public/css/KontoStyle.css" type="text/css" rel="stylesheet">
+        
         <script src="../public/js/jquery-1.6.1.min.js"></script>
         <script src="../public/js/bootstrap.min.js"></script>
         <script src="../public/js/bootstrap.min_1.js"></script>
