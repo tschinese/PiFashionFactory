@@ -31,6 +31,9 @@ class KontoController extends Controller{
             $bankK = $this->model('KontoModel');
             //Übergabe an das Konto Model zum speichern eines neuen Kontos
             $bankK->sichereDaten($idKunde,$ktyp, $kNummer, $blz); 
+            $this->view('Header');
+            $this->view('Konto/KontoUebersicht');
+            $this->view('Header');
          
         }
         //wenn diese Variabeln gesetzt = Kreditkarte
