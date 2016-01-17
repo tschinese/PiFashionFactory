@@ -117,15 +117,10 @@ $profil = $data;
   						</div>
                                         
 						<!--Sprint 4 Start Renato Cabriolu bestätigung anzeigen beim Registrieren-->
-						<script>
-							function display_alert()
-							  {
-							   alert("Profil wurde Bearbeitet!");
-							  }
-						</script>
+						
   						<div class="form-group">
     							<div class="col-sm-offset-2 col-sm-10">
-      							<button type="submit" onclick="display_alert()" name="action" class="btn btn-primary">Bearbeiten</button>
+      							<button type="submit" name="action" class="btn btn-primary">Bearbeiten</button>
     							
 									</div>
   						</div>

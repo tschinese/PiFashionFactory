@@ -57,8 +57,14 @@ class Registrieren_Controller extends Controller{
         $this->view('Header',[]);
         $this->view('Registrieren/Registrieren',[ $this->model('Registrieren_Model')]);
         $this->view('Footer',[]);
-
-
+        
+        ?>
+        <script>
+	 {
+            alert("Sie wurden Registriert!");
+	}
+	</script>
+<?php
         
     }
 

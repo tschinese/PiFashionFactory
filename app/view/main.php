@@ -33,8 +33,8 @@
                     <img class="second-slide" src="../public/Grafiken/fashion2.jpg" alt="Zweite Folie">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Dein Style</h1>
-                            <p><a class="btn btn-lg btn-primary" href="index.php?url=Registrieren_Controller" role="button">Zum Registrieren</a></p>
+                            <h1>Zum Login</h1>
+                            <p><a class="btn btn-lg btn-primary" href="index.php?url=LoginController" role="button">Hier geht es zum Login</a></p>
                         </div>
                     </div>
                 </div>

@@ -20,10 +20,10 @@ Mysql-Connection benutzt von Kerstin Gräter  -->
 $profil = $data;
 ?>
 
-<main>
+<main><!--
 <h2>Profil</h2>
 <table>
-<!-- Eingügen vin Isset-->
+<!-- Eingügen vin Isset
 <tr><td>Vorame:</td><td><?php print $profil->vorname; ?></td></tr>
 <tr><td>Nachname:</td><td><?php print $profil->name; ?></td></tr>
 <tr><td>Geschlecht:</td><td><?php print $profil->geschlecht; ?></td></tr>
@@ -37,7 +37,7 @@ $profil = $data;
 <button type="submit">Bearbeiten</button>
 </form>
 <!-- Sprint 3 Hanim Yerlikaya Ende -->
-<!-- Sprint 5 Renato Cabriolu Start -->
+<!--Sprint 5 Renato Cabriolu Start -->
  <p><br/></p>
 	<div class="row">
   		<div class="col-md-2"></div>

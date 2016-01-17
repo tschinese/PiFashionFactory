@@ -31,7 +31,7 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon">@</span>
-      								<input type="email" class="form-control" id="Email" placeholder="Email" name = "Email">
+      								<input type="email" class="form-control" id="Email" placeholder="Email" name = "Email"  required="required">
 							<!--  <td><input class="tf" type = "text" name = "Email" required="required"  maxlength="45" value="max.mustermann@hotmail.de" /></td>-->
 
       							</div>
@@ -42,7 +42,7 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-      								<input type="password" class="form-control" id="Passwort" placeholder="Password" name = "Passwort">
+      								<input type="password" class="form-control" id="Passwort" placeholder="Password" name = "Passwort" required="required">
       							</div>
     							</div>
   						</div>
@@ -51,7 +51,7 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                                                        <input type="text" class="form-control" id="Vorname" placeholder="Vorname" name = "Vorname">
+                                                                        <input type="text" class="form-control" id="Vorname" placeholder="Vorname" name = "Vorname" required="required">
       							</div>
     							</div>
   						</div>
@@ -60,7 +60,7 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                                                        <input type="text" class="form-control" id="Nachname" placeholder="Nachname" name = "Nachname">
+                                                                        <input type="text" class="form-control" id="Nachname" placeholder="Nachname" name = "Nachname" required="required">
       							</div>
     							</div>
   						</div>
@@ -69,7 +69,7 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                                                        <input type="text" class="form-control" id="Heschlecht" placeholder="Geschlecht" name = "Geschlecht">
+                                                                        <input type="text" class="form-control" id="Heschlecht" placeholder="Geschlecht" name = "Geschlecht" required="required">
       							</div>
     							</div>
   						</div>
@@ -78,7 +78,7 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"><span class="glyphicon glyphicon-gift"></span></span>
-                                                                        <input type="date" class="form-control" id="Geburtsdatum" placeholder="JJJJ-MM-TT" name = "Geburtsdatum">
+                                                                        <input type="date" class="form-control" id="Geburtsdatum" placeholder="JJJJ-MM-TT" name = "Geburtsdatum" required="required">
       							</div>
     							</div>
   						</div>
@@ -87,7 +87,7 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
-                                                                        <input type="text" class="form-control" id="Plz" placeholder="89073" name = "Plz">
+                                                                        <input type="text" class="form-control" id="Plz" placeholder="89073" name = "Plz" required="required">
       							</div>
     							</div>
   						</div>
@@ -96,20 +96,18 @@
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
-                                                                        <input type="text" class="form-control" id="Strasse" placeholder="Straße" name = "Strasse">
+                                                                        <input type="text" class="form-control" id="Strasse" placeholder="Straße" name = "Strasse" required="required">
       							</div>
     							</div>
   						</div>
+                                            
 						<!--Sprint 4 Start Renato Cabriolu bestätigung anzeigen beim Registrieren-->
-						<script>
-							function display_alert()
-							  {
-							   alert("Sie wurden Registriert!");
-							  }
-						</script>
+						
+                                                
+                                             
   						<div class="form-group">
     							<div class="col-sm-offset-2 col-sm-10">
-      							<button type="submit" onclick="display_alert()" name="action" class="btn btn-primary">Registrieren</button>
+      							<button type="submit" name="action" class="btn btn-primary">Registrieren</button>
     							<!--onclick="index.php?url=Registrieren_Controller/Hinzufuegen"
 									<input type="submit" value="Registerieren">-->
 									</div>

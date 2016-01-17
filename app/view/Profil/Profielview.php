@@ -18,7 +18,7 @@
 <!--Eine navigationsbar die Sein Eigenes Profil Bearbeiten lässt-->
 <!--Sprint 3 Start Renato Cabriolu-->
 <main>
- <section id="about" data-speed="2" data-type="background">
+ <section id="about" data-speed="2" data-type="home">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-3 col-md-2 sidebar">

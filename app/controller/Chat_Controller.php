@@ -38,10 +38,10 @@ class Chat_Controller extends Controller{
 	public function sendChat(){
             echo 'chatcontroller sende chat';
 		$model= $this->model('Chat_Model');
-        $model->senden(Parameter);
+        $model->senden($message, $_SESSION['logged'], $time = date("Y-m-d H:i:s",$timestamp));
         
        $this->view('Header',[]);
-       $this->view('chat/chat',$chat->empfangen('1')); // TODO 
+       $this->view('chat/chat',$chat->empfangen($_SESSION['logged'])); // TODO 
 																// ID/User aus Session holen, sobald diese in Session steht.
 																// Session aktuell:
 																// logged|a:3:{s:4:"flag";b:0;s:2:"id";N;s:5:"admin";b:0;}
