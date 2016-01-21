@@ -43,8 +43,12 @@ class KontoController extends Controller{
             $expireD = $_POST['expireD'];
             $ktyp = $_POST['art'];
             $bankK = $this->model('KontoModel');
+            
             //Übergabe an das Konto Model zum speichern einer neuen Kreditkarte
             $bankK->sichereDaten($idKunde,$ktyp, $ziffer, $expireD);
+            $this->view('Header');
+            $this->view('Konto/KontoUebersicht');
+            $this->view('Header');
         }
         
     }
@@ -55,11 +59,23 @@ class KontoController extends Controller{
         $kontoReturn = $this->model('KontoModel');
         //Aufruf des Konto Models für Rückgabe aller angelegten Kontos
         $res = $kontoReturn->getKontos($idKunde);
-        
+         
         $this->view('Header');
         //Aufruf der View zum Anzeigen der angelgten Kontos mit Ergebnis aus Datenbank
         $this->view('Konto/KontoUebersicht',$res);
         $this->view('Footer');
+        
+    }
+    
+    public function wahl(){
+        
+        //Speichern der User_ID
+        $idKunde = $_SESSION['logged']['id'];
+        $kontoReturn = $this->model('KontoModel');
+        //Aufruf des Konto Models für Rückgabe aller angelegten Kontos
+        $res = $kontoReturn->getKontos($idKunde);
+
+        return $res;
         
     }
     
