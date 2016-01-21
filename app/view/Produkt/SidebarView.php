@@ -19,16 +19,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
-                    <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Überblick <span class="sr-only">(aktuell)</span></a></li>
-                        <div>
-                            <label for="range">Bereich</label>
-                            <input type="range" name="range" id="range" min="0" max="10" step="2">
-                        </div>
-                        <li><a href="#">Berichte</a></li>
-                        <li><a href="#">Analysen</a></li>
-                        <li><a href="#">Exportieren</a></li>
-                    </ul>
 					<!-- Sprint 4 ENDE -->
 					<!-- Form mit allen Checkboxen -->
 					<!-- Sprint 5 -->
@@ -51,7 +41,7 @@
                             <input type="checkbox" name="farbe[]" id="farbe" value="rot"/>rot<br>
                             <input type="checkbox" name="farbe[]" id="farbe" value="schwarz"/>schwarz<br>
                             <input type="checkbox" name="farbe[]" id="farbe" value="beige"/>beige<br>
-                            <input type="submit" name="submit" value="Submit"/>
+                            <input type="submit" name="submit" value="Filtern" style="color: black"/>
                         </form>
 					<!-- Sprint 5 ENDE -->
                 </div>
