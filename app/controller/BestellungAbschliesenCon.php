@@ -17,17 +17,22 @@ class BestellungAbschliesenCon extends Controller {
 
     function index() {
         $this->view('Header');
-        
-
+        if(isset($_POST['Zahlmethode'])){
+            $konto = $_POST['Zahlmethode'];
+			$kontonummer = 'Sie haben mit dem Konto '.$_POST['Zahlmethode'].' bezahlt.';
+        }else{
+            $konto = 'Paypal';
+            $kontonummer = 'Sie haben mit Paypal bezahlt.';
+        }
 		
         $bestellung = $this->model('Bestellung_Model');
-		$data = $bestellung->bestellungabschließen();
+		$data = array('bestellung' => $bestellung->abschliessen($konto), 'konto' => $kontonummer);
         
 		$this->view('Bestellung/Abgeschlossen', $data);
 		
         $this->view('Footer');
         
-        //Hanim Start
+        //Hanim Starts
         if(isset($_SESSION['logged']['id']))
         {
             require_once ('../app/models/Profil_Model.php');

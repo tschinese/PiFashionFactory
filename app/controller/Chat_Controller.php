@@ -38,7 +38,8 @@ class Chat_Controller extends Controller{
 	public function sendChat(){
             echo 'chatcontroller sende chat';
 		$model= $this->model('Chat_Model');
-        $model->senden(Parameter);
+                $timestamp = date("Y-m-d H:i:s");
+        $model->senden($message, "1", $timestamp);
         
        $this->view('Header',[]);
        $this->view('chat/chat',$chat->empfangen('1')); // TODO 

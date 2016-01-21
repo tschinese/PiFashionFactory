@@ -20,10 +20,10 @@ Mysql-Connection benutzt von Kerstin Gräter  -->
 $profil = $data;
 ?>
 
-<main>
+<main><!--
 <h2>Profil</h2>
 <table>
-<!-- Eingügen vin Isset-->
+<!-- Eingügen vin Isset
 <tr><td>Vorame:</td><td><?php print $profil->vorname; ?></td></tr>
 <tr><td>Nachname:</td><td><?php print $profil->name; ?></td></tr>
 <tr><td>Geschlecht:</td><td><?php print $profil->geschlecht; ?></td></tr>
@@ -37,7 +37,7 @@ $profil = $data;
 <button type="submit">Bearbeiten</button>
 </form>
 <!-- Sprint 3 Hanim Yerlikaya Ende -->
-<!-- Sprint 5 Renato Cabriolu Start -->
+<!--Sprint 5 Renato Cabriolu Start -->
  <p><br/></p>
 	<div class="row">
   		<div class="col-md-2"></div>
@@ -80,17 +80,12 @@ $profil = $data;
     							</div>
   						</div>
                                                 <div class="form-group">
-    							<label for="PlZ" class="col-sm-2 control-label">Pls</label>
+    							<label for="PlZ" class="col-sm-2 control-label">Plz</label>
     							<div class="col-sm-10">
                                                             <input class="form-control" id="deaktiviertesFeld" type="text" placeholder="<?php print $profil->plz; ?>" disabled>
     							</div>
   						</div>
-                                                <div class="form-group">
-    							<label for="Ort" class="col-sm-2 control-label">Ort</label>
-    							<div class="col-sm-10">
-                                                            <input class="form-control" id="deaktiviertesFeld" type="text" placeholder="<?php print $profil->ort; ?>" disabled>
-    							</div>
-  						</div>
+                                             
 					
   						<div class="form-group">
                                                      <form method="post" action="index.php?url=Profilcontroller/bearbeiten">
