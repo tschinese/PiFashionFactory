@@ -80,17 +80,12 @@ $profil = $data;
     							</div>
   						</div>
                                                 <div class="form-group">
-    							<label for="PlZ" class="col-sm-2 control-label">Pls</label>
+    							<label for="PlZ" class="col-sm-2 control-label">Plz</label>
     							<div class="col-sm-10">
                                                             <input class="form-control" id="deaktiviertesFeld" type="text" placeholder="<?php print $profil->plz; ?>" disabled>
     							</div>
   						</div>
-                                                <div class="form-group">
-    							<label for="Ort" class="col-sm-2 control-label">Ort</label>
-    							<div class="col-sm-10">
-                                                            <input class="form-control" id="deaktiviertesFeld" type="text" placeholder="<?php print $profil->ort; ?>" disabled>
-    							</div>
-  						</div>
+                                             
 					
   						<div class="form-group">
                                                      <form method="post" action="index.php?url=Profilcontroller/bearbeiten">

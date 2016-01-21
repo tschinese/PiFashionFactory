@@ -18,7 +18,7 @@
         
     </head>
     <body>
-        
+        <main>
         <div id="ueber">
             
         <h1>Kontoübersicht</h1>
@@ -73,7 +73,7 @@
            </div>
         
         </div>
-        
+        </main>
     </body>
     
 </html>

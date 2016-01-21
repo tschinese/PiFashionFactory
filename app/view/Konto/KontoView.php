@@ -19,7 +19,7 @@
     </head>
     
     <body>
-        
+        <main>
         <div id="all">
             
         <h1> Hier können Sie ihr neues Bezahlkonto anlegen </h1>
@@ -54,7 +54,7 @@
         </div>
         
         </div>
-        
+            <main>
     </body>
     
     
