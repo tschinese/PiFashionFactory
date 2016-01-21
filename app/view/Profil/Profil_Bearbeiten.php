@@ -21,9 +21,9 @@ Mysql-Connection benutzt von Kerstin Gräter  -->
 $profil = $data;
 ?>
 
-<main>
+<main><!--
 <h2>Profil</h2>
-<!-- Link angepasst und Isset eingefügt-->
+<!-- Link angepasst und Isset eingefügt
 <form action="index.php?url=Profilcontroller/aktualisieren" method="post">
     <input type="text" name="id" value="<?php print $profil->id; ?>" hidden />
     <table>
@@ -63,7 +63,7 @@ $profil = $data;
     							<div class="col-sm-10">
     								<div class="input-group">
                                                                     <span class="input-group-addon"></span>
-      								<input type="Text" class="form-control" id="vorname" value="<?php print $profil->vorname; ?>" placeholder="Vorname" name = "Vorname">
+      								<input type="Text" class="form-control" id="vorname" value="<?php print $profil->vorname; ?>" placeholder="Vorname" name = "vorname">
 							
 
       							</div>
@@ -89,11 +89,11 @@ $profil = $data;
     							</div>
   						</div>
   						<div class="form-group">
-    							<label for="geburtsdatum" class="col-sm-2 control-label">Geburtsdatum</label>
+    							<label for="geburtstag" class="col-sm-2 control-label">Geburtsdatum</label>
     							<div class="col-sm-10">
     								<div class="input-group">
     									<span class="input-group-addon"></span>
-                                                                        <input type="date" class="form-control" id="geburtsdatum" value="<?php print $profil->geburtstag; ?>" placeholder="JJJJ-MM-TT" name = "geburtsdatum">
+                                                                        <input type="date" class="form-control" id="geburtstag" value="<?php print $profil->geburtstag; ?>" placeholder="JJJJ-MM-TT" name = "geburtstag">
       							</div>
     							</div>
   						</div>
