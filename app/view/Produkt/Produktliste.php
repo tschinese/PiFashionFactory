@@ -48,16 +48,6 @@ Zeitaufwand: 8 Stunden-->
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
-                    <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Überblick <span class="sr-only">(aktuell)</span></a></li>
-                        <div>
-                            <label for="range">Bereich</label>
-                            <input type="range" name="range" id="range" min="0" max="10" step="2">
-                        </div>
-                        <li><a href="#">Berichte</a></li>
-                        <li><a href="#">Analysen</a></li>
-                        <li><a href="#">Exportieren</a></li>
-                    </ul>
                     <!-- Sprint 3 Denis Kevljanin Ende -->
                     <!-- Sprint 4 Denis Kevljanin Start -->
                     <form action="index.php?url=FilterController/<?php $kategorie = $data[1]['Kategorie_katID']; echo $kategorie; ?>" method="post">
@@ -76,7 +66,7 @@ Zeitaufwand: 8 Stunden-->
                         <input type="checkbox" name="farbe[]" id="farbe" value="rot"/>rot<br>
                         <input type="checkbox" name="farbe[]" id="farbe" value="schwarz"/>schwarz<br>
                         <input type="checkbox" name="farbe[]" id="farbe" value="beige"/>beige<br>
-                        <input type="submit" name="submit" value="Submit"/>
+                        <input type="submit" name="submit" value="Filtern" style="color: black"/>
                     </form>
                     <!-- Sprint 4 Denis Kevljanin Ende -->
                 </div>
