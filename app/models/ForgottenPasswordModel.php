@@ -25,7 +25,7 @@ class ForgottenPasswordModel
         $db = $this->connection->verbinden();
 	$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $sql = 'UPDATE EMail SET Passwort=:password_h where email = :email;';
+        $sql = 'UPDATE EMail SET Passwort= "'.$password_h.'" where email = "'.$email.'";';
 	$stmt = $db->prepare($sql);
 	$stmt->execute(array('email' => $email, 'password' => $password));
         
