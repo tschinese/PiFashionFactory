@@ -44,7 +44,6 @@ class Analyse_Model {
         // Daten ausgeben
         $dat1 = $stmt1->fetch(PDO::FETCH_ASSOC);
         $huhu = $stmt2->fetch(PDO::FETCH_ASSOC);
-
         if ($huhu['SalePreis'] < $huhu['Preis']) {
             $preis = $huhu['SalePreis'];
         } else {
@@ -52,9 +51,9 @@ class Analyse_Model {
         }
         $gewinn = $preis * $dat1['menge'];
         $data = array(1 => $dat1, 2 => $preis);
-        // Aufruf der Methode gewinnberechnung
-//        $preis = $this->gewinnberechnung($data);
-        // Verbindung zur Datenbank schließen
+        // Sprint 4  Marcel Riedl Start Aufruf der Methode gewinnberechnung
+		// $preis = $this->gewinnberechnung($data);      ALT!!!!
+        // Sprint 4 Marcel Riedl Ende Verbindung zur Datenbank schließen
         $con = null;
         $this->con->schließen();
         // return wert
@@ -80,7 +79,8 @@ class Analyse_Model {
     // Menge der Bestellungen eines Produkts ausgeben
     function menge($produktnummer) {
         // SQL Statement
-        $this->sql = 'select sum(menge) as Bestellungen_pro_Produkt from bestellliste where produkt_produktnummer = ' . $produktnummer;
+        $this->sql = 'select sum(menge) as Bestellungen_pro_Produkt from bestellliste' 
+			. 'where produkt_produktnummer = ' . $produktnummer;
 
         // Verbindung zur Datenbank herstellen
         $this->con = new Connect_Mysql();
@@ -121,7 +121,8 @@ class Analyse_Model {
     // Anzahl der Rezensionen zu einem Produkt
     function rezension($produktnummer) {
         // SQL Statement
-        $this->sql = 'select count(rezensionID) as Rezensionen_pro_Produkt from rezension where produkt_produktnummer = ' . $produktnummer;
+        $this->sql = 'select count(rezensionID) as Rezensionen_pro_Produkt from rezension where produkt_produktnummer = ' 
+			. $produktnummer;
         // Verbindung zur Datenbank herstellen
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
