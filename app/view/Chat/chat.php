@@ -57,11 +57,11 @@ while ($i<count($data)){
 			}
 			
 		} else {
-			//echo 'Es wurde keine Nachricht eingegeben!';
+			echo 'Es wurde keine Nachricht eingegeben!';
 		}
 		
 	} else {
-		//echo 'Kein Name wurde eingegeben!';
+		echo 'Kein Name wurde eingegeben!';
 	}
 	
 ?>

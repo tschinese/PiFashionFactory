@@ -34,7 +34,7 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Zum Login</h1>
-                            <p><a class="btn btn-lg btn-primary" href="index.php?url=LoginController" role="button">Hier geht es zum Login</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="index.php?url=LoginController/rufView" role="button">Hier geht es zum Login</a></p>
                         </div>
                     </div>
                 </div>

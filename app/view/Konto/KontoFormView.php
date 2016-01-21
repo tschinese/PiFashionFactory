@@ -18,6 +18,7 @@
         
     </head>
     <body>
+        <main>
         <!-- Aufruf des Controllers zum speichern der Kontodaten bei bestätigung des Formulars -->
         <form action="index.php?url=KontoController/writeDB" method="post">
            
@@ -59,6 +60,7 @@
                            <input type="submit" value="submit"> 
                            
         </form>
+        </main>
 
     </body>
 </html>

@@ -27,8 +27,8 @@ class Chat_Model{
                         
 			$sql ="SELECT message_date, message  FROM chat WHERE kunde_id = '' ORDER BY message_date ASC";
 			$stmt = $db->prepare($sql);
-                        $stmt->execute();
-                        $stmt->setFetchMode(PDO::FETCH_ASSOC);   
+            $stmt->execute();
+             $stmt->setFetchMode(PDO::FETCH_ASSOC);   
 			return $stmt->fetchAll ();
 			}
 			catch(PDOException $e)
