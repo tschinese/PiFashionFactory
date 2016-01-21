@@ -1,4 +1,5 @@
 <main>
+     <blockquote>
     <strong> Willkommen im FAQ </strong><br><br>
 
     <strong>Warum muss ich ein Benutzerprofil bei FashionFactory erstellen?</strong><br>
@@ -27,3 +28,4 @@
     <strong>Wie gebe ich einen Artikel zurück?</strong>
 
     <div>Sie können Ihre(n) Artikel innerhalb von 14 Tagen nach Erhalt Ihres Pakets zurückgeben. Die Artikel müssen ungetragen und in einwandfreiem Zustand sein.Alle Pakete enthalten ein Rücksendeetikett und einen Lieferschein. Bitte verwenden Sie dieses Etikett, wenn Sie Artikel zurücksenden möchten. Zur Rücksendung kommen sie <a href="index.php?url=Rucksendung_Controller">hier</a>. Weitere Informationen finden sie dort.</div>
+    </blockquote>

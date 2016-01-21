@@ -1,0 +1,22 @@
+<!--
+//Sprint 5, Gruppe 4 Onlineshop, 
+//Verfasser: Christian Frindt, Datum: 08.01.2016 Version 1.0
+//UserStory: Als Kunde möchte ich verschiedene Kontenarten
+//Task: Kontenverwaltungsplattform programmieren
+//Aufwand: 15min
+//Beschreibung: Style Konto
+-->
+
+
+#ueber{
+    
+    background-color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+    
+}
+#inner{
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}

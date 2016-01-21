@@ -1,12 +1,9 @@
-<!--
-Sprint 5, Gruppe 4 Onlineshop, Verfasser: Renato Cabriolu, Datum: 10.01.2016 Version 1
-UserStory: Als Kunde möchte ich ein Einheitliches Designe haben.
-Task: 430-1  Produktansicht Designen
-Aufwand: 0.1 Stunden
-Beschreibung: Blockansicht
-
-
-
+<!--//Sprint 5, Gruppe 4 Onlineshop, Verfasser: Denis Kevljanin, Datum: 10.01.2016
+//UserStory: Als Kunde möchte ich eine Schnellkauffunktion für Produkte haben 
+//Task: Schnellkauffunktion programmieren
+//Gesamtaufwand: 20 Stunden
+//Aufwand File: 8 Stunden
+//Beschreibung: Prüfen ob Benutzer eingeloggt ist und ein Konto hinterlegt hat-->
 
 <!--Sprint 4, Gruppe 4 Onlineshop, Datum: 08.12.2015 Version 5
 Verfasser: Hanim Yerlikaya, 
@@ -49,13 +46,7 @@ Task: 10-2 #10003 Produkte anlegen
 Zeitaufwand: 8 Stunden-->
 
 <!-- Sprint 2 Marcel Riedl Start -->
-<main>
-        <!-- Sprint 2 Marcel Riedl Ende -->
-        <!-- Sprint 5 Renato Cabriolu Start -->
-       <blockquote>
-        <!-- Sprint 5 Renato Cabriolu Ende -->
-        <!-- Sprint 2 Marcel Riedl Start -->
-    <div class="col-xs-6 col-lg-4">
+<main><div class="col-xs-6 col-lg-4">
         <?php
         // Sprint 2 Marcel Riedl Ende
         // Sprint 3 Christian Frindt Start
@@ -104,12 +95,44 @@ Zeitaufwand: 8 Stunden-->
         <input type="submit" value="In den Warenkorb">
     </form>
     <!-- Sprint 3 Christian Frindt Ende-->
-    <!-- Sprint 1 Denis Kevljanin START -->
-    <form action='#' method="POST">
-        <input type="submit" value="Sofortkaufen">
-  
-    </form> 
-    <!-- Sprint 1 Denis Kevljanin ENDE -->
+    <!-- Sprint 5 Denis Kevljanin START -->
+    <?php 
+        //Prüfabfragen, die voraussetzen, dass OneClickButton angezeigt wird
+		
+        //Prüfen ob User eingeloggt
+        if($_SESSION['logged']['flag'] == true){
+			//Kundennummer aus Sessionvariable holen
+            $kID = $_SESSION['logged']['id'];
+            //Prüfen ob User ein eingetragenes Kontobesitzt
+			
+			//requiren des Models KontoModel von @Frindt, Christian
+            require_once '../app/models/KontoModel.php';
+			//Obejekt erstellen
+            $knt = new KontoModel();
+			//Variable check deklarieren
+            $check = false;
+			//Produktnummer aus ResultSet holen
+            $pID = $data['data']['Produktnummer'];
+			//Konto überprüfen
+            $check = $knt->pruefeKonto($kID);
+			//Button anzeigen falls eingeloggt und Konto vorhanden
+            if($check == true){
+                
+                ?>
+				<!-- Button und POST Values -->
+                <form action='index.php?url=OneClickBuyController/createOrder' method="POST">
+					<input type="hidden" value=<?php echo $kID; ?> id="kID" name="kID" >
+					<input type="hidden" value=<?php echo $pID; ?> id="pID" name="pID" >
+                    <input type="submit" value="Sofortkaufen">
+                </form> 
+				
+                <?php
+            }
+        }
+    
+    ?>
+    
+    <!-- Sprint 5 Denis Kevljanin ENDE -->
     <!--  Sprint 3 Kerstin Gräter Start-->
     <form action='index.php?url=GTHcontroller' method="post">
         <input type="submit" value="Größentabelle" name="tabelle">
@@ -119,10 +142,5 @@ Zeitaufwand: 8 Stunden-->
     <a href="index.php?url=BewertungController/bewertungAnzeigen/<?php echo $data['data']['Produktnummer'] ?>">Rezensionen</a>
     <!-- Sprint 3 Christian Frindt Ende -->
     <!-- Sprint 2 Marcel Riedl Start -->
-      <!-- Sprint 2 Marcel Riedl Ende -->
-      <!-- Sprint 5 Renato Cabriolu Start -->
-       <blockquote>
-        <!-- Sprint 5 Renato Cabriolu Ende -->
-        <!-- Sprint 2 Marcel Riedl Start -->
 </main> 
 <!-- Sprint Marcel Riedl Ende -->

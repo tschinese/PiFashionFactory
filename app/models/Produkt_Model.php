@@ -312,7 +312,9 @@ class Produkt_Model {
     // function um Produkte aus einer Kategorie zu sehen
     function liste($kategorie) {
         // SQL Statement
-        $this->sql = 'Select Produktnummer, Benennung, Farbe_farbe, Groese_groese, Hersteller_hersteller, Preis, SalePreis, Kategorie_katID from Produkt where Kategorie_katID = ' . $kategorie;
+        $this->sql = 'Select Produktnummer, Benennung, Farbe_farbe, Groese_groese, '
+                . 'Hersteller_hersteller, Preis, SalePreis, Kategorie_katID '
+                . 'from Produkt where Kategorie_katID = ' . $kategorie;
         // Verbindung zur Datenbank herstellen
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
