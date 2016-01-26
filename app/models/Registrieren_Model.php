@@ -43,13 +43,14 @@ class Registrieren_Model{
         
     }
     //Methode zum Registrieren eines Kunden anhand der $_POST- Parameter die vom View übergeben werden
-    public function hinzufuegen($Email,$Passwort,$Vorname,$Nachname,$Geschlecht,$Geburtsdatum,$Plz,$Strasse){
+    public function hinzufuegen($Email,$Passwort,$Vorname,$Nachname,$Geschlecht,$Geburtsdatum,$Plz,$Ort,$Strasse){
         $this->sql ="insert into Email (Email, Passwort)values ('$Email', '$Passwort')";
 		
         echo 'Sie wurden erfolgreich registriert!!!';
         $this->con->query($this->sql);
 		
-		$this->sql = "insert into Kunde (Vorname, Nachname, Geschlecht, Geburtsdatum, Rolle, EMail_email)
+		$this->sql = "insert ignore into postleitzahl (PLZ, Ort) VALUES ('$Plz', '$Ort');
+                    insert into Kunde (Vorname, Nachname, Geschlecht, Geburtsdatum, Rolle, EMail_email)
                     values ('$Vorname', '$Nachname', '$Geschlecht', '$Geburtsdatum','0','$Email');
 					insert into Adresse (Straße,Kunde_Kundennummer,Postleitzahl_PLZ) values ('$Strasse', Last_insert_id(),'$Plz');"; 
 		$this->con->query($this->sql);

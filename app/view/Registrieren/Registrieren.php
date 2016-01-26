@@ -91,6 +91,15 @@
       							</div>
     							</div>
   						</div>
+                                                <div class="form-group">
+    							<label for="Ort" class="col-sm-2 control-label">Ort</label>
+    							<div class="col-sm-10">
+    								<div class="input-group">
+    									<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+                                                                        <input type="text" class="form-control" id="Plz" placeholder="Ulm" name = "Ort" required="required">
+      							</div>
+    							</div>
+  						</div>
                                             	<div class="form-group">
     							<label for="Strasse" class="col-sm-2 control-label">Strasse</label>
     							<div class="col-sm-10">

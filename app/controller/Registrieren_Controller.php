@@ -28,6 +28,7 @@ class Registrieren_Controller extends Controller{
     private $Geschlecht;
     private $Geburtsdatum;
     private $Plz;
+    private $Ort;
     private $Strasse;
     // Erzeigt die View des Registrieren Controllers
     public function index(){     
@@ -48,11 +49,12 @@ class Registrieren_Controller extends Controller{
         $this->Geschlecht = $_POST['Geschlecht'];
         $this->Geburtsdatum = $_POST['Geburtsdatum'];
         $this->Plz = $_POST['Plz'];
+        $this->Ort = $_POST['Ort'];
         $this->Strasse = $_POST['Strasse'];
         
         $Registrieren= $this->model('Registrieren_Model');
         $Registrieren->hinzufuegen($this->Email,$this->Passwort,$this->Vorname,$this->Nachname,$this->Geschlecht,$this->Geburtsdatum,
-                $this->Plz,$this->Strasse);
+                $this->Plz,$this->Ort,$this->Strasse);
         
         $this->view('Header',[]);
         $this->view('Registrieren/Registrieren',[ $this->model('Registrieren_Model')]);

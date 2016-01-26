@@ -24,16 +24,16 @@ $profil = $data;
 <h2>Profil</h2>
 <table>
 <!-- Eingügen vin Isset
-<tr><td>Vorame:</td><td><?php print $profil->vorname; ?></td></tr>
-<tr><td>Nachname:</td><td><?php print $profil->name; ?></td></tr>
-<tr><td>Geschlecht:</td><td><?php print $profil->geschlecht; ?></td></tr>
-<tr><td>Geburtstag:</td><td><?php print $profil->geburtstag; ?></td></tr>
-<tr><td>Stra&szlig;e:</td><td><?php print $profil->strasse; ?></td></tr>
-<tr><td>PLZ:</td><td><?php print $profil->plz; ?></td></tr>
-<tr><td>Ort:</td><td><?php print $profil->ort; ?></td></tr>
+<tr><td>Vorame:</td><td><?php // print $profil->vorname; ?></td></tr>
+<tr><td>Nachname:</td><td><?php // print $profil->name; ?></td></tr>
+<tr><td>Geschlecht:</td><td><?php // print $profil->geschlecht; ?></td></tr>
+<tr><td>Geburtstag:</td><td><?php // print $profil->geburtstag; ?></td></tr>
+<tr><td>Stra&szlig;e:</td><td><?php // print $profil->strasse; ?></td></tr>
+<tr><td>PLZ:</td><td><?php // print $profil->plz; ?></td></tr>
+<tr><td>Ort:</td><td><?php // print $profil->ort; ?></td></tr>
 </table>
 <form method="post" action="index.php?url=Profilcontroller/bearbeiten">
-<input type="text" name="id" value="<?php print $profil->id; ?>" hidden />
+<input type="text" name="id" value="<?php // print $profil->id; ?>" hidden />
 <button type="submit">Bearbeiten</button>
 </form>
 <!-- Sprint 3 Hanim Yerlikaya Ende -->
