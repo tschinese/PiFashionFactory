@@ -62,9 +62,9 @@ class FilterModel {
         } else if (!empty($preis) && !empty($groesse) && !empty($farbe)) {
             $sql = $select . $where . '(' . $preis . ') AND (' . $groesse . ') AND (' . $farbe . ') AND '. $kategorie ;
         } else {
-			
-            $sql = "SELECT * FROM Produkt";
-			
+	?>		
+            <h1 id="leer"> Leider ergab Ihre Suche keine Treffer </h1>
+	<?php		
         }
 		//Sprint 5 ENDE
 		

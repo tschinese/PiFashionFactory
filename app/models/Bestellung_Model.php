@@ -1,27 +1,24 @@
 <?php
+
 //Sprint 5, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 07.01.2016 Version 1
 //UserStory: #490 Als Programmierer möchte ich bereits vorhandenen Code updaten
 //Task: (490-2) eigene Files überarbeiten
 //Gesamtaufwand: 2 Stunden
 //Beschreibung: Einfügen des Gutscheinpreises falls vorhanden und beenden von Sessions
-
 //Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 23.11.2015 Version 2
 //UserStory: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
 //Task: (270-2) #10330 Zusammenführen
 //Aufwand: 7 Stunden
-
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 09.11.2015 Version 1
 //UserStory: Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben.
 //Task: 110-2 (#10190) MVC Programmieren
 //Aufwand: 5 Stunden
 //Beschreibung: Es wird der grundlegende Aufbau der Bestellabwicklung als MVC erstellt.
 // Hier wird das Model dazu erstellt
-
 //Sprint 1: Bestellabwicklung 
-
-
 // include um die Klasse Connect_Mysql einzubinden
 require_once '../app/config/Connect_Mysql.php';
+
 //Objekt von Denis Kevljanins Mail
 //require_once '../app/controller/mail.php';
 
@@ -98,20 +95,19 @@ class Bestellung_Model {
         $stmt->execute();
 
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	$con = null;
-	$this->con->schließen();
+        $con = null;
+        $this->con->schließen();
         return $row;
-       
     }
-	
+
     // function um Lieferadressen anzuzeigen
-    function lieferadresseanzeigen($kundennummer){
+    function lieferadresseanzeigen($kundennummer) {
 
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
 
-        $sql = 'select l.Vorname, l.Nachname, l.Straße, l.Postleitzahl_PLZ, p.Ort from lieferadresse l join postleitzahl p where l.Kunde_Kundennummer = '. $kundennummer.' and l.Postleitzahl_PLZ = p.PLZ';
-        $this->sql=$sql;
+        $sql = 'select l.Vorname, l.Nachname, l.Straße, l.Postleitzahl_PLZ, p.Ort from lieferadresse l join postleitzahl p where l.Kunde_Kundennummer = ' . $kundennummer . ' and l.Postleitzahl_PLZ = p.PLZ';
+        $this->sql = $sql;
         $stmt = $con->prepare($sql);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -126,93 +122,149 @@ class Bestellung_Model {
     // Gesamtpreis und Abschicken der Bestätigungsmail
     function bestellungabschließen() {
         //Speicherung von Daten aus Warenkorb in table Bestellung und Bestellliste
-        $total = sizeof($_SESSION['warenkorb'])+1;
-		
+        $total = sizeof($_SESSION['warenkorb']) + 1;
+
         $a = 1;
         $gesamtpreis = 0;
         $kundennr = $_SESSION['logged']['id'];
         $this->con = new Connect_Mysql();
-	$con = $this->con->verbinden();
-		
+        $con = $this->con->verbinden();
+
         $sql1 = 'insert into bestellung (bestellnummer, Gesamtpreis, Datum, Kunde_Kundennummer) values (null, 0.0, null , ' . $kundennr . ');';
-            //Aufsführung von sql1
-            $stmt = $con->query($sql1);
+        //Aufsführung von sql1
+        $stmt1 = $con->prepare($sql1);
+        $stmt1->execute();
         $sql2 = 'Select bestellnummer from bestellung order by bestellnummer desc Limit 0,1;';
-            //Ausführung von sql2
-            $stmt = $con->prepare($sql2);
-            $stmt->execute();
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        //Ausführung von sql2
+        $stmt = $con->prepare($sql2);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $bestellnr = $row['bestellnummer'];
-        
+
         while ($a < $total) {
             $menge = $_SESSION['warenkorb'][$a]['anzahl'];
             $produktnr = $_SESSION['warenkorb'][$a]['produktNummer'];
-            
-            $sql3 = 'insert into Bestellliste (Produkt_Produktnummer, Bestellung_Bestellnummer, Menge) values (' 
-                . $produktnr . ', ' . $bestellnr . ',' . $menge . ') ';
-                //Ausführung von sql3
-                $stmt = $con->query($sql3);
+
+            $sql3 = 'insert into Bestellliste (Produkt_Produktnummer, Bestellung_Bestellnummer, Menge) values ('
+                    . $produktnr . ', ' . $bestellnr . ',' . $menge . ') ';
+            //Ausführung von sql3
+            $stmt = $con->query($sql3);
             $sql = 'select Preis, SalePreis from produkt where Produktnummer = ' . $produktnr;
-                //Ausführung von sql
-                $stmt = $con->prepare($sql);
-                $stmt->execute();
-                $row0 = $stmt->fetch(PDO::FETCH_ASSOC);
+            //Ausführung von sql
+            $stmt = $con->prepare($sql);
+            $stmt->execute();
+            $row0 = $stmt->fetch(PDO::FETCH_ASSOC);
             //Berechnung von Preis * Menge pro Produkt
-                if($row0['SalePreis']<$row0['Preis']){
-                    $preis = $row0['SalePreis'] * $menge;
-                }else{
-                    $preis = $row0['Preis'] * $menge;
-                }
-                
-                //Sprint 5, Kerstin Gräter START
-                //Aufsummieren auf Gesamtpreis
+            if ($row0['SalePreis'] < $row0['Preis']) {
+                $preis = $row0['SalePreis'] * $menge;
+            } else {
+                $preis = $row0['Preis'] * $menge;
+            }
+
+            //Sprint 5, Kerstin Gräter START
+            //Aufsummieren auf Gesamtpreis
 //                if(isset($_POST['code'])&& !empty($_POST['code'])){
 //                    $gesamtpreis+=$_SESSION['gutschein']['gesamtpreis'];
 //                }
 //                else {
 //                    $gesamtpreis+=$preis;                    
 //                }
-                //Sprint 5, Kerstin Gräter ENDE
+            //Sprint 5, Kerstin Gräter ENDE
             $gesamtpreis+=$preis;
             $a++;
         }
-        
-		
-        
+
+
+
         $sql4 = 'Update Bestellung set Gesamtpreis = ' . $gesamtpreis . 'where Bestellnummer = ' . $bestellnr;
         //Ausführung sql4
         $stmt = $con->prepare($sql4);
         $stmt->execute();
-		
+
 
         //Objekt von Denis Kevljanins Mail
-		//$mail = new Mail();
-                
-        
-		
-		//echo 'MAIL ABGESCHICKT<br>';
-		
-	$sql5 = 'select p.Produktnummer, p.Benennung, p.Preis, p.Farbe_farbe, p.Groese_groese, p.Hersteller_hersteller, l.Menge, b.Gesamtpreis '
-            .'from produkt p join (bestellung b join bestellliste l)'
-            .' where l.Bestellung_bestellnummer = '
-            .$bestellnr.' and b.bestellnummer = '
-            .$bestellnr.' and b.Kunde_Kundennummer = '
-            .$kundennr.' and p.Produktnummer = l.Produkt_Produktnummer';
-	$stmt = $con->prepare($sql5);
-	$stmt->execute();
-	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
+        //$mail = new Mail();
+        //echo 'MAIL ABGESCHICKT<br>';
+
+        $sql5 = 'select p.Produktnummer, p.Benennung, p.Preis, p.Farbe_farbe, p.Groese_groese, p.Hersteller_hersteller, l.Menge, b.Gesamtpreis '
+                . 'from produkt p join (bestellung b join bestellliste l)'
+                . ' where l.Bestellung_bestellnummer = '
+                . $bestellnr . ' and b.bestellnummer = '
+                . $bestellnr . ' and b.Kunde_Kundennummer = '
+                . $kundennr . ' and p.Produktnummer = l.Produkt_Produktnummer';
+        $stmt = $con->prepare($sql5);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         //Kerstin Gräter START, Sprint 5
         // Session Warenkorb und gutschein beenden
         unset($_SESSION['warenkorb']);
         unset($_SESSION['gutschein']);
         //Kerstin Gräter ENDE, Sprint5
-        
         //Connection schließen
-	$con = null;
+        $con = null;
         $this->con->schließen();
-        
-	return $data;
+
+        return $data;
     }
 
+    // Nachtrag nach allen Sprints
+    function abschliessen($konto) {
+        // connection erstellen
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+
+        // einzufügende Variablen
+        $gesamtpreis = $_SESSION['Summe'];
+        $kunde = $_SESSION['logged']['id'];
+
+        // Bestellung in Datenbank anlegen
+        $sql1 = 'insert into bestellung (bestellnummer, Gesamtpreis, Datum, Kunde_Kundennummer, konto) '
+                . 'values (null, ' . $gesamtpreis . ' , null, ' . $kunde . ', '.$konto.');';
+        $stmt1 = $con->prepare($sql1);
+        $stmt1->execute();
+
+        // Bestellnummer herausfinden
+        $sql2 = 'select bestellnummer from bestellung order by bestellnummer desc Limit 0,1;';
+        $stmt2 = $con->prepare($sql2);
+        $stmt2->execute();
+        $row2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        $bestellnummer = $row2[0]['bestellnummer'];
+
+		// Bestellliste anlegen
+        $counter = 1;
+        $total = sizeOf($_SESSION['warenkorb'])+1;
+
+        while ($counter < $total) {
+            $produkt = $_SESSION['warenkorb'][$counter]['produktNummer'];
+            $anzahl = $_SESSION['warenkorb'][$counter]['anzahl'];
+            $sql3 = 'insert into bestellliste(Produkt_Produktnummer, Bestellung_Bestellnummer, Menge) '
+                    . 'values(' . $produkt . ',' . $bestellnummer . ' ,' . $anzahl . ' )';
+            $stmt3 = $con->prepare($sql3);
+            $stmt3->execute();
+            $counter++;
+        }
+
+        // Bestellte Produkte ausgeben
+        $sql4 = 'select p.Benennung, p.Preis, p.SalePreis, p.Farbe_Farbe, p.Groese_Groese, p.Hersteller_Hersteller, l.Menge '
+                . 'from produkt p join bestellliste l '
+                . 'where Bestellung_bestellnummer = ' . $bestellnummer . ' and p.produktnummer = l.Produkt_Produktnummer;';
+        $stmt4 = $con->prepare($sql4);
+        $stmt4->execute();
+        $row4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
+
+
+        $data = array(produkt => $row4, bestellnummer => $bestellnummer);
+
+        // Session variablen beenden
+        unset($_SESSION['warenkorb']);
+        unset($_SESSION['gutschein']);
+
+        // Connection schließen
+        $con = null;
+        $this->con->schließen();
+
+        return $data;
+    }
+    // Nachtrag ende
 }

@@ -40,7 +40,7 @@
                     else if($wahl == 'Visa'){
                             //Input der Visa Kreditkarte
                            ?><label for="ziff">16 stellige Nummer</label>                
-                           <input type="number" min="16" max="16" id="ziff"><br>
+                           <input type="number" id="ziff"><br>
                            <label for="expireD">Gültig bis</label>                
                            <input type="date" id="expireD"><br>
                            <input type="hidden" id="art" value="<?php echo $wahl ?>">
@@ -50,7 +50,7 @@
                             
                             //Input der Master Kreditkarte
                            ?><label for="Ziff">16 stellige Nummer</label>                
-                           <input type="number" min="16" max="16" id="ziff"><br>
+                           <input type="number" id="ziff"><br>
                            <label for="expireD">Gültig bis</label>                
                            <input type="date" id="expireD"><br>
                            <input type="hidden" id="art" value="<?php echo $wahl ?>">

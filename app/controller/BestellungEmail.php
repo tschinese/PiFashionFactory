@@ -27,16 +27,16 @@ class BestellungEmail
         for ($i = 0; $i < count($data); $i++)
         {
             $html .= '<tr>';
-            $html .= '<td>'.$data[$i]['Menge'].'</td>';
-            $html .= '<td>'.$data[$i]['Produktnummer'].'</td>';
-            $html .= '<td>'.$data[$i]['Hersteller_hersteller'].'</td>';
-            $html .= '<td>'.$data[$i]['Bennennung'].'</td>';
-            $html .= '<td>'.$data[$i]['Farbe_farbe'].'</td>';
-            $html .= '<td>'.$data[$i]['Groese_groese'].'</td>';
+            $html .= '<td>'.$data['bestellung']['produkt'][$i]['Menge'].'</td>';
+            $html .= '<td>'.$data['bestellung']['produkt'][$i]['Produktnummer'].'</td>';
+            $html .= '<td>'.$data['bestellung']['produkt'][$i]['Hersteller_hersteller'].'</td>';
+            $html .= '<td>'.$data['bestellung']['produkt'][$i]['Bennennung'].'</td>';
+            $html .= '<td>'.$data['bestellung']['produkt'][$i]['Farbe_farbe'].'</td>';
+            $html .= '<td>'.$data['bestellung']['produkt'][$i]['Groese_groese'].'</td>';
             $html .= '<td>'.$data[$i]['Preis'].' &euro;</td>';
-            $html .= '<td>'.($data[$i]['Menge'] * $data[$i]['Preis']).' &euro;</td>';
+            $html .= '<td>'.($data['bestellung']['produkt'][$i]['Menge'] * $data['bestellung']['produkt'][$i]['Preis']).' &euro;</td>';
             $html .= '</tr>';
-            $gesamt += ($data[$i]['Menge'] * $data[$i]['Preis']);
+            $gesamt += ($data['bestellung']['produkt'][$i]['Menge'] * $data['bestellung']['produkt'][$i]['Preis']);
         }
         $html .= '<tr><td colspan="7"><b>Gesamt: </b></td><td><b>'.$gesamt.' &euro;</b></td></tr>';
         $html .= '</table>';
