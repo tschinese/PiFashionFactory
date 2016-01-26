@@ -1,0 +1,41 @@
+#rahmen{
+	padding-left: 10px;
+    background-color: white;
+    border: #000000 solid 1px;
+	
+    
+}
+#kform{
+	margin-right: 75%;
+	 margin-top:10px;
+	 margin-left:10px;
+	 background-color: white;
+	 border: #000000 solid 1px;
+    
+}
+#kform1{
+    margin-right: 75%;
+	margin-top:10px;
+	margin-left:10px;
+    background-color: white;
+    border: #000000 solid 1px;
+	
+    
+}
+#radioB{
+	margin-top: 10px;
+	margin-left: 50px;
+}
+#radioB1{
+	margin-top: 10px;
+	margin-left: 50px;
+}
+#labelK{
+	padding-left:5px;
+}
+#labelK1{
+	padding-left:5px;
+}
+
+
+

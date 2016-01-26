@@ -2,12 +2,19 @@ h1{
 	color: rgb(51,122,183);
 }
 #paypal{
-
-
+	margin-bottom: 10px;
+	background-color: white;
+	border: #000000 solid 1px;
 }
 
 #nachname{
 
 	float: left;
+
+}
+#payBtn{
+	margin: 10px;
+	margin-right: 70%;
+	border: #000000 solid 1px;
 
 }

@@ -16,9 +16,17 @@
         
         <title></title>
         <link href="../public/css/StyleBezahlart.css" type="text/css" rel="stylesheet">
+        <link href="../public/css/StyleKonten.css" type="text/css" rel="stylesheet">
         
     </head>
     <body>
+        
+        <!-- Vorname und Nachname des Users -->
+        <?php if (isset($_SESSION['logged']) && $_SESSION['logged']['flag'] == true) {
+                    require_once("../app/controller/LoginController.php");
+                    $user = new LoginController();
+                    $userFull = $user->gebeUser(); 
+        } ?>
         
         <h1>Wählen Sie eine Zahlungsweise aus</h1>
             <!--Gibt die entgültige Lieferadresse an-->
@@ -73,26 +81,80 @@
 
                             <!-- Hier wird auf Kerstins Bestellungabschließen verlinkt, sobald ihr File fertig ist-->
 
-                            <input type="hidden" name="return" value=""/>
+                            <input type="hidden" name="return" value="http://wfprj-wf5.informatik.hs-ulm.de/36/SprintReview/PiFashionFactory/public/index.php?url=BestellungAbschliesenCon"/>
 
                             <input type="hidden" name="cancel_return" value=""/>
 
                             <!-- Paypal Button  -->
+                            <div id="payBtn">
                             <input type="image" name="submit" border="0" width="200" height="100" src="http://2slick.com/web/wp-content/themes/smartit/admin/extensions/timthumb.php?src=http%3A%2F%2F2slick.com%2Fweb%2Fwp-content%2Fuploads%2F2012%2F12%2Fpaypal_845x563.jpg&w=845" alt="PayPal – The safer, easier way to pay online"/>
-                          
+                            </div>
 
                           </form>
                          </div>
-						 <!--
-						 <form action="index.php?url=BezahlartuebersichtController/beenden">
-                            <input type="hidden" name="action" value="Submit Form">
-							<input type="image"  border="0" width="200" height="100" src="https://shimg.csl-computer.com/templates/xtc2/images/payment_logos/nachnahme_240px.jpg"  />
-                            /* if($_POST['action'] == "Submit Form"){
-								$nachname = new BezahlartuebersichtController();
-								$nachname->beenden();
-							}*/
-						 </form> -->
-						
+            
+            
+                         <?php 
+                         
+                            require_once '../app/controller/KontoController.php';
+                            $kn = new KontoController();
+                            $kontos = $kn->wahl();
+                            
+                
+                            if($kontos != null){ ?> 
+                            <div id="rahmen">
+                                <form action="index.php?url=BestellungAbschliesenCon" method="post">
+                                    <h2>Vorhandene Kontos</h2>
+                                    <fieldset>
+                                      
+                                      <?php 
+                                        if($kontos[0][0]!= null){
+                                            $ctr = 0;
+                                            $length = sizeof($kontos[0]);
+                                            //Ausgabe der Bankkontos
+                                            while($ctr < $length){ ?> 
+
+                                        <div id="kform"><div id="radioB"> <input type="radio" id="bk" name="Zahlmethode" value="<?php echo $kontos[0][$ctr]['kNummer'];?>"></div>
+                                            <div id="labelK">
+                                            <label for="bk"> Name:<?php echo $userFull['vorname']?>,<?php echo $userFull['nachname'];?></label><br>
+                                            <label for="bk"> Kontotyp: <?php  echo $kontos[0][$ctr]['kontoTyp'];?></label><br>
+                                            <label for="bk"> Kontonummer:<?php  echo $kontos[0][$ctr]['kNummer'];?></label><br>
+                                            <label for="bk"> Bankleitzahl:<?php  echo $kontos[0][$ctr]['blz'];?></label><br>
+                                            </div>
+                                        </div>
+                                        <?php $ctr++; }
+                                        
+                                         } 
+                                         if($kontos[1][0]!= null){
+                                            $ctr = 0;
+                                            $length = sizeof($kontos[1]);
+                                            //Ausgabe der Bankkontos
+                                            while($ctr < $length){ ?> 
+                                        
+                                        <div id="kform1"><div id="radioB1">  <input type="radio" id="kr" name="Zahlmethode" value="<?php  echo $kontos[1][$ctr]['zifferKredit'];?>"></div>
+                                                 <div id="labelK1">
+                                                  <label for="kr"> Name:<?php echo $userFull['vorname']?>,<?php echo $userFull['nachname'];?></label><br>
+                                                  <label for="kr"> Kontotyp:<?php  echo $kontos[1][$ctr]['kontoTyp']; ?></label><br>
+                                                  <label for="kr"> Kartennummer: <?php  echo $kontos[1][$ctr]['zifferKredit'];?></label><br>
+                                                  <label for="kr"> Kontotyp:<?php  echo $kontos[1][$ctr]['expireDate']; ?></label><br>
+                                                 </div>
+                                        </div>  
+                                                  <?php $ctr++;
+                                            } 
+                                         } ?>
+                                        <br><br><br>
+                                      <input type="submit" name="auswahl" value="Abschicken">
+                                      <br><br>
+                                    </fieldset>
+                                </form>
+                                </div>
+                            <?php }else{?>
+                            <h3> oder registrieren Sie ein neues Konto! </h3>  
+                             <a href="index.php?=KontoController/callView">Neues Konto anlegen</a>
+            
+                            <?php } ?>	
+                            
+                             		
 
             
         
